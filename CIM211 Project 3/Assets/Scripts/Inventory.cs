@@ -12,17 +12,15 @@ public class Inventory : MonoBehaviour
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
 
     #region inventoryStuff
-    // Transfroms
     public InvSlot[] enemyInvSlots;
-
-    // Slots
-    public InvItem[] enemyItemSlots;
 
     public List<InvItem> enemyItems;
     public List<GameObject> spawnedItems;
     public List<GameObject> playerItems;
 
     public InvDeadBody currentDeadBody;
+
+    private PlayerEnhancements playerEnhancements;
     #endregion
 
     private void Start()
@@ -30,6 +28,7 @@ public class Inventory : MonoBehaviour
         spawnedItems = new List<GameObject>();
         canvas = gameObject.GetComponent<Canvas>();
         player = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        playerEnhancements = GameObject.Find("Player").GetComponent<PlayerEnhancements>();
     }
 
     public void CloseInventory()
@@ -125,5 +124,10 @@ public class Inventory : MonoBehaviour
     public void RemovePlayerItem(GameObject i)
     {
         playerItems.Remove(i);
+    }
+
+    public void UpdatePlayerEnhancements()
+    {
+        playerEnhancements.UpdateStats();
     }
 }

@@ -23,7 +23,7 @@ public class InvSlot : MonoBehaviour, IDropHandler
         {
             if (canDrop && eventData.pointerDrag.GetComponent<InvDragDrop>().invItem.itemType == slotType)
             {
-                if (currentItem)
+                if (currentItem && currentItem != eventData.pointerDrag)
                 {
                     inv.RemovePlayerItem(currentItem);
                     Destroy(currentItem);
@@ -36,6 +36,7 @@ public class InvSlot : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<InvDragDrop>().inSlot = true;
                 eventData.pointerDrag.GetComponent<InvDragDrop>().startPos = gameObject.GetComponent<RectTransform>().localPosition;
                 inv.playerItems.Add(eventData.pointerDrag.gameObject);
+                inv.UpdatePlayerEnhancements();
 
                 currentItem = eventData.pointerDrag.gameObject;
 

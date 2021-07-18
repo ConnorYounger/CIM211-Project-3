@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Body
   sprite: {fileID: 0}
+  maxHealthMultiplier: 100
+  maxStaminaMultiplier: 0
+  autoHealMultilpier: 0
+  movementSpeedMultiplier: 0
+  jumpHeightMultiliper: 0
+  vision: 0
+  brain: 0

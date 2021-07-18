@@ -7,4 +7,13 @@ public class InvItem : ScriptableObject
 {
     public string itemType = "Arm";
     public Sprite sprite;
+
+    [Header("Stats")]
+    public float maxHealthMultiplier = 0;
+    public float maxStaminaMultiplier = 0;
+    public float autoHealMultilpier = 0;
+    public float movementSpeedMultiplier = 0;
+    public float jumpHeightMultiliper = 0;
+    public int vision = 0;
+    public bool brain;
 }

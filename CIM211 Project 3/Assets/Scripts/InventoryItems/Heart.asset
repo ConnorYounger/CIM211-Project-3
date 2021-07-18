@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Heart
   sprite: {fileID: 0}
+  maxHealthMultiplier: 0
+  maxStaminaMultiplier: 0
+  autoHealMultilpier: 1
+  movementSpeedMultiplier: 0
+  jumpHeightMultiliper: 0
+  vision: 0
+  brain: 0

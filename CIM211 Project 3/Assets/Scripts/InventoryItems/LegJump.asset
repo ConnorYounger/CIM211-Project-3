@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: LeftLeg
   sprite: {fileID: 0}
+  maxHealthMultiplier: 0
+  maxStaminaMultiplier: 0
+  autoHealMultilpier: 0
+  movementSpeedMultiplier: 0
+  jumpHeightMultiliper: 3
+  vision: 0
+  brain: 0
