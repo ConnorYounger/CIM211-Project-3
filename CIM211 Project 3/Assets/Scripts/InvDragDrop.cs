@@ -16,7 +16,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     private void Start()
     {
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
         rectTransform = gameObject.GetComponent<RectTransform>();
         startPos = gameObject.GetComponent<RectTransform>().localPosition;
