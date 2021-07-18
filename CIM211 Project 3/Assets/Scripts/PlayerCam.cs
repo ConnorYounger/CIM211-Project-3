@@ -30,6 +30,7 @@ public class PlayerCam : MonoBehaviour
             if (hit.collider.GetComponent<InvDeadBody>() && Input.GetKeyDown(KeyCode.E) && !inv.canvas.enabled)
             {
                 inv.OpenInventory();
+                hit.collider.GetComponent<InvDeadBody>().InventoryPassThroughItems(inv);
             }
         }
     }

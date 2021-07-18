@@ -6,5 +6,5 @@ using UnityEngine;
 public class InvItem : ScriptableObject
 {
     public string itemType = "Arm";
-
+    public Sprite sprite;
 }
