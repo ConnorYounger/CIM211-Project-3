@@ -7,7 +7,8 @@ public class PlayerEnhancements : MonoBehaviour
     public Inventory inventory;
 
     [Header("Health")]
-    public float playerMaxHealth = 100;
+    public float playerMaxHealthH;
+    public float playerMaxHealthB;
     public float basePlayerMaxHealth = 100;
     public float autoHealMultiplier = 0;
     public float baseAutoHealMultiplier = 0;
@@ -15,10 +16,17 @@ public class PlayerEnhancements : MonoBehaviour
     [Header("Movement")]
     public float maxStamina = 0;
     public float baseMaxStamina = 100;
-    public float movementSpeedMultipluer = 0;
+    public float movementSpeedMultipluerL = 0;
+    public float movementSpeedMultipluerR = 0;
     public float baseMovementSpeedMultipluer = 1;
-    public float jumpHeightMultiplier = 0;
+    public float jumpHeightMultiplierL = 0;
+    public float jumpHeightMultiplierR = 0;
     public float baseJumpHeightMultiplier = 1;
+
+    [Header("Weapons")]
+    private PlayerWeaponSystem weaponSystem;
+    public int leftArmWeaponCode = 0;
+    public int rightArmWeaponCode = 0;
 
     [Header("Other")]
     public int vision = 0;
@@ -32,6 +40,7 @@ public class PlayerEnhancements : MonoBehaviour
 
     private void Start()
     {
+        weaponSystem = player.GetComponent<PlayerWeaponSystem>();
         inventory = GameObject.Find("InventoryCanvas").GetComponent<Inventory>();
         fPSController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         UpdateStats();
@@ -59,13 +68,36 @@ public class PlayerEnhancements : MonoBehaviour
         {
             foreach (InvItem item in items)
             {
-                playerMaxHealth += item.maxHealthMultiplier;
-                maxStamina += item.maxStaminaMultiplier;
-                autoHealMultiplier += item.autoHealMultilpier;
-                movementSpeedMultipluer += item.movementSpeedMultiplier;
-                jumpHeightMultiplier += item.jumpHeightMultiliper;
-                vision += item.vision;
-                brain = item.brain;
+                // Set Variables
+                if(item.itemType == "Head")
+                    playerMaxHealthH = item.maxHealthMultiplier;
+                if(item.itemType == "Body")
+                    playerMaxHealthB = item.maxHealthMultiplier;
+                if(item.itemType == "Lungs")
+                    maxStamina = item.maxStaminaMultiplier;
+                if(item.itemType == "Heart")
+                    autoHealMultiplier = item.autoHealMultilpier;
+
+                if(item.itemType == "LeftLeg")
+                {
+                    movementSpeedMultipluerL = item.movementSpeedMultiplier;
+                    jumpHeightMultiplierL = item.jumpHeightMultiliper;
+                }
+                if (item.itemType == "RightLeg")
+                {
+                    movementSpeedMultipluerR = item.movementSpeedMultiplier;
+                    jumpHeightMultiplierR = item.jumpHeightMultiliper;
+                }
+
+                if(item.itemType == "eyes")
+                    visionMultiplier = item.vision;
+                if(item.brain)
+                    brain = item.brain;
+
+                if(item.leftArmWeaponCode > 0)
+                    leftArmWeaponCode = item.leftArmWeaponCode;
+                if(item.rightArmWeaponCode > 0)
+                    rightArmWeaponCode = item.rightArmWeaponCode;
             }
         }
 
@@ -74,13 +106,15 @@ public class PlayerEnhancements : MonoBehaviour
 
     void SetStats()
     {
-        fPSController.m_WalkSpeed = baseMovementSpeedMultipluer + movementSpeedMultipluer;
-        fPSController.m_RunSpeed = baseMovementSpeedMultipluer + movementSpeedMultipluer;
-        fPSController.m_JumpSpeed = baseJumpHeightMultiplier + jumpHeightMultiplier;
+        fPSController.m_WalkSpeed = baseMovementSpeedMultipluer + movementSpeedMultipluerL + movementSpeedMultipluerR;
+        fPSController.m_RunSpeed = 10 + movementSpeedMultipluerL + movementSpeedMultipluerR;
+        fPSController.m_JumpSpeed = baseJumpHeightMultiplier + jumpHeightMultiplierL + jumpHeightMultiplierR;
 
-        player.maxHealth = basePlayerMaxHealth + playerMaxHealth;
+        player.maxHealth = basePlayerMaxHealth + playerMaxHealthH + playerMaxHealthB;
         player.autoHealMultilpier = baseAutoHealMultiplier + autoHealMultiplier;
         player.maxStamina = baseMaxStamina + maxStamina;
+
+        weaponSystem.SetWeapons(leftArmWeaponCode, rightArmWeaponCode);
 
         SetVision();
     }

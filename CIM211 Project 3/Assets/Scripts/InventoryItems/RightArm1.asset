@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17dc81498c8671f4d927964b9cdeac06, type: 3}
-  m_Name: RightLegSpeed
+  m_Name: RightArm1
   m_EditorClassIdentifier: 
-  itemType: RightLeg
+  itemType: RightArm
   sprite: {fileID: 0}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0
-  movementSpeedMultiplier: 2
+  movementSpeedMultiplier: 0
   jumpHeightMultiliper: 0
   vision: 0
   brain: 0
   leftArmWeaponCode: 0
-  rightArmWeaponCode: 0
+  rightArmWeaponCode: 1
