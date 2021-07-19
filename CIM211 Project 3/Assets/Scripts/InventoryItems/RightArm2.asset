@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: RightArm
   sprite: {fileID: 0}
+  color: {r: 0.6492772, g: 1, b: 0, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0

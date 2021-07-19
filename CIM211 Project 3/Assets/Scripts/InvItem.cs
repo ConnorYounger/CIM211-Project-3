@@ -7,6 +7,7 @@ public class InvItem : ScriptableObject
 {
     public string itemType = "Arm";
     public Sprite sprite;
+    public Color color;
 
     [Header("Stats")]
     public float maxHealthMultiplier = 0;

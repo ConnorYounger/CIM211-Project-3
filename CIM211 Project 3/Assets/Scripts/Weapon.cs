@@ -17,6 +17,13 @@ public class Weapon : MonoBehaviour
     public GameObject projectile;
     public Transform shootPoint;
     public float projectileSpeed = 10;
+    public float launchForce = 50;
+
+    [Header("Melee Weapon")]
+    public MeleeCollision meleeCollision;
+    public float hitDelayTime = 0.1f;
+    public float hitFinishTime = 0.3f;
+    public int multiHitCount = 1;
 
     [Header("Animation")]
     public Animator animator;
@@ -25,7 +32,8 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        
+        if (meleeCollision)
+            meleeCollision.SetStats(damage, multiHitCount, hitDelayTime, hitFinishTime);
     }
 
     void Update()
@@ -35,7 +43,7 @@ public class Weapon : MonoBehaviour
             if (!right && Input.GetButton("Fire1"))
                 FireWeapon();
             else if (right && Input.GetButton("Fire2"))
-                FireProjectile();
+                FireWeapon();
         }
         
 
@@ -44,15 +52,19 @@ public class Weapon : MonoBehaviour
 
     void FireWeapon()
     {
+        fireRateCoolDown = fireRate + fireAnimationBuffer;
+        canFire = false;
+
         // Shoot Weapon
         if (isProjectileWeapon)
             FireProjectile();
+        else
+            meleeCollision.StartCoroutine("MeleeAttack");
 
-        if(animator)
-            animator.Play("");
-
-        fireRateCoolDown = fireRate + fireAnimationBuffer;
-        canFire = false;
+        if (animator)
+        {
+            animator.Play("Fire");
+        }
     }
 
     void FireRateCoolDown()
@@ -75,6 +87,11 @@ public class Weapon : MonoBehaviour
             proj.GetComponent<Projectile>().damage = damage;
             proj.GetComponent<Projectile>().speed = projectileSpeed;
             Destroy(proj, 5);
+
+            if(launchForce > 0)
+            {
+                proj.GetComponent<Rigidbody>().AddForce(Vector3.forward * launchForce);
+            }
         }
         else
             Debug.LogError("No Projectile Was Set");
