@@ -4,40 +4,16 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    #region lootPools
-    [Header("Loot Pools")]
-    public InvItem[] lootPool1;
-    public InvItem[] lootPool2;
-    public InvItem[] lootPool3;
-    public InvItem[] lootPool4;
-    public InvItem[] lootPool5;
-    public InvItem[] lootPoolFinal;
-
-    [System.Serializable]
-    public struct lootPoolsTest
-    {
-        public InvItem[] head;
-        public InvItem[] eyes;
-        public InvItem[] brain;
-        public InvItem[] lungs;
-        public InvItem[] heart;
-        public InvItem[] body;
-        public InvItem[] leftArm;
-        public InvItem[] rightArm;
-        public InvItem[] leftLeg;
-        public InvItem[] rightLeg;
-    }
-
-    public LootPool[] loootPool;
-
-    public lootPoolsTest[] lootPoolss;
-    #endregion
-
     private InvDeadBody enemyInv;
     private int minLootSpawn = 2;
     private int maxLootSpawn = 3;
+    private int currentWave;
+    private LootPool lootPool;
 
-    public void SpawnEnemy(GameObject enemyPrefab, int wave)
+    private int spawnedLoot;
+    private int lootToSpawn;
+
+    public void SpawnEnemy(GameObject enemyPrefab, int wave, LootPool lp)
     {
         Debug.Log("Spawn Enemy");
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
@@ -46,40 +22,6 @@ public class EnemySpawner : MonoBehaviour
         //switch (wave)
         //{
         //    case 1:
-        //        RandomizeItems(lootPool1);
-        //        minLootSpawn = 2;
-        //        maxLootSpawn = 3;
-        //        break;
-        //    case 2:
-        //        RandomizeItems(lootPool2);
-        //        minLootSpawn = 3;
-        //        maxLootSpawn = 4;
-        //        break;
-        //    case 3:
-        //        RandomizeItems(lootPool3);
-        //        minLootSpawn = 4;
-        //        maxLootSpawn = 5;
-        //        break;
-        //    case 4:
-        //        RandomizeItems(lootPool4);
-        //        minLootSpawn = 5;
-        //        maxLootSpawn = 6;
-        //        break;
-        //    case 5:
-        //        RandomizeItems(lootPool5);
-        //        minLootSpawn = 6;
-        //        maxLootSpawn = 7;
-        //        break;
-        //    default:
-        //        RandomizeItems(lootPoolFinal);
-        //        minLootSpawn = lootPoolFinal.Length;
-        //        maxLootSpawn = minLootSpawn;
-        //        break;
-        //}
-
-        //switch (wave)
-        //{
-        //    case 1:
         //        minLootSpawn = 2;
         //        maxLootSpawn = 3;
         //        break;
@@ -105,35 +47,16 @@ public class EnemySpawner : MonoBehaviour
         //        break;
         //}
 
-        RandomizeItemsTest(loootPool[wave - 1], wave);
+        //RandomizeItemsTest(loootPool[wave - 1], wave);
+        currentWave = wave;
+        lootPool = lp;
+        spawnedLoot = 0;
+        StartCoroutine("RandomizeItemsTest");
     }
 
-    void RandomizeItems(InvItem[] lootPool)
+    IEnumerator RandomizeItemsTest()
     {
-        List<InvItem> spawnedLoot = new List<InvItem>();
-
-        while (spawnedLoot.Count < minLootSpawn)
-        {
-            int rand = Random.Range(0, lootPool.Length);
-
-            if(lootPool[rand] != null)
-            {
-                if(spawnedLoot.Count > 0)
-                {
-
-                }
-                else
-                {
-                    //lootPool[rand]
-                }
-            }
-        }
-    }
-
-    void RandomizeItemsTest(LootPool lootPool, int wave)
-    {
-        int spawnedLoot = 0;
-        int lootToSpawn = wave + Random.Range(minLootSpawn, maxLootSpawn + 1);
+        lootToSpawn = currentWave + Random.Range(minLootSpawn, maxLootSpawn + 1);
 
         int rand = Random.Range(0, 10);
 
@@ -240,5 +163,12 @@ public class EnemySpawner : MonoBehaviour
                 }
                 break;
         }
+
+        yield return new WaitForSeconds(0.01f);
+
+        if (spawnedLoot < lootToSpawn)
+            StartCoroutine("RandomizeItemsTest");
+        else
+            enemyInv.UpdateInventory();
     }
 }

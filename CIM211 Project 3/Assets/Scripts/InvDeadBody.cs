@@ -21,6 +21,11 @@ public class InvDeadBody : MonoBehaviour
     {
         inv = new List<InvItem>();
 
+        UpdateInventory();
+    }
+
+    public void UpdateInventory()
+    {
         if (head != null)
             inv.Add(head);
         if (eyes != null)

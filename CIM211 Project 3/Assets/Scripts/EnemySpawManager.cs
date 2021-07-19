@@ -14,6 +14,8 @@ public class EnemySpawManager : MonoBehaviour
 
     public EnemySpawner[] spawnPoints;
 
+    public LootPool[] lootPools;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,10 @@ public class EnemySpawManager : MonoBehaviour
     {
         foreach(EnemySpawner point in spawnPoints)
         {
-            point.SpawnEnemy(enemyPrefab, currentWave);
+            if(currentWave - 1< lootPools.Length)
+                point.SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1]);
+            else
+                point.SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1]);
         }
     }
 }

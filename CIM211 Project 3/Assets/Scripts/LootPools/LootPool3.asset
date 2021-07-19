@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51edea15b147eb349a8666be71e44b33, type: 3}
+  m_Name: LootPool3
+  m_EditorClassIdentifier: 
+  head:
+  - {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
+  - {fileID: 11400000, guid: 1d9474302ac40b641a22c7df61b7f290, type: 2}
+  eyes:
+  - {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
+  - {fileID: 11400000, guid: 16cb052ea82197d4d9b9cc2dc2a72e5a, type: 2}
+  brain:
+  - {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
+  lungs:
+  - {fileID: 11400000, guid: 243d538ccce1c394a9608a66bb8f1f2b, type: 2}
+  - {fileID: 11400000, guid: c2bf32a6525dfd94887f7530ffd68428, type: 2}
+  heart:
+  - {fileID: 11400000, guid: f9c64764df385944981710575e0e2eee, type: 2}
+  - {fileID: 11400000, guid: 9a2b1bde084fa5443b6db0562cc0e141, type: 2}
+  body:
+  - {fileID: 11400000, guid: 288c33eb3c536494781aa88bf6188163, type: 2}
+  - {fileID: 11400000, guid: 4bdeb6b5511c5714f86176fbdf0ce5d9, type: 2}
+  leftArm:
+  - {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
+  - {fileID: 11400000, guid: 7862e0940ab084d4b8280854397f070a, type: 2}
+  rightArm:
+  - {fileID: 11400000, guid: e016e976442f808499049b6b667c6507, type: 2}
+  - {fileID: 11400000, guid: 3284aeb95babada4490ac25d610346cf, type: 2}
+  leftLeg:
+  - {fileID: 11400000, guid: e4ed6da32776adc46a1c03cdfb77a946, type: 2}
+  - {fileID: 11400000, guid: 5a1e4a08ce0a0d446af2dd224ba336a5, type: 2}
+  rightLeg:
+  - {fileID: 11400000, guid: f8d4e4b962c1e4442ba3a66ed8787b86, type: 2}
+  - {fileID: 11400000, guid: fcf00a7edc773f74c8f96998afb150ca, type: 2}

@@ -671,6 +671,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 396556082448528555, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
   spawnPoints:
   - {fileID: 1813028608}
+  lootPools:
+  - {fileID: 11400000, guid: c0c5924d7994e22469e516638d5d814f, type: 2}
+  - {fileID: 11400000, guid: 64538a8d151eb1343a732fc40338fd2a, type: 2}
+  - {fileID: 11400000, guid: 0470f595370009347b364c80be18ba7d, type: 2}
 --- !u!4 &284000737
 Transform:
   m_ObjectHideFlags: 0
@@ -5582,47 +5586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a01d5bcc90161489894040a9cb59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootPool1: []
-  lootPool2: []
-  lootPool3: []
-  lootPool4: []
-  lootPool5: []
-  lootPoolFinal: []
-  loootPool:
-  - {fileID: 11400000, guid: c0c5924d7994e22469e516638d5d814f, type: 2}
-  lootPoolss:
-  - head:
-    - {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
-    eyes:
-    - {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
-    brain: []
-    lungs: []
-    heart: []
-    body: []
-    leftArm: []
-    rightArm: []
-    leftLeg: []
-    rightLeg: []
-  - head: []
-    eyes: []
-    brain: []
-    lungs: []
-    heart: []
-    body: []
-    leftArm: []
-    rightArm: []
-    leftLeg: []
-    rightLeg: []
-  - head: []
-    eyes: []
-    brain: []
-    lungs: []
-    heart: []
-    body: []
-    leftArm: []
-    rightArm: []
-    leftLeg: []
-    rightLeg: []
 --- !u!4 &1813028609
 Transform:
   m_ObjectHideFlags: 0
