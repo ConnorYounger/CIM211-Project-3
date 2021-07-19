@@ -98,6 +98,7 @@ public class Inventory : MonoBehaviour
         s.currentItem = newItem;
         spawnedItems.Add(newItem);
         newItem.GetComponent<Image>().color = i.color;
+        newItem.name = "Item: " + i.name;
     }
 
     public void HideAllItems()

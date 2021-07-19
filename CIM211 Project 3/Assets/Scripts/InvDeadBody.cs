@@ -26,6 +26,8 @@ public class InvDeadBody : MonoBehaviour
 
     public void UpdateInventory()
     {
+        inv.Clear();
+
         if (head != null)
             inv.Add(head);
         if (eyes != null)
