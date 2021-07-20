@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     public float hitScanDis = 0.5f;
 
     public bool isGrenade;
+    public float explosionRadius = 1;
+    public float explosionForce = 100;
 
     public GameObject destroyFx;
     private Vector3 lastPoint;
@@ -19,7 +21,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         MoveForward();
-        CheckForCollision();
+        //CheckForCollision();
     }
 
     void CheckForCollision()
@@ -81,7 +83,7 @@ public class Projectile : MonoBehaviour
         if (!isGrenade)
             Destroy(gameObject);
         else
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.7f);
     }
 
     private void OnDestroy()
@@ -90,6 +92,27 @@ public class Projectile : MonoBehaviour
         {
             GameObject fx = Instantiate(destroyFx, transform.position, Quaternion.identity);
             Destroy(fx, 2);
+        }
+
+        if (isGrenade)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+
+            foreach(Collider ob in colliders)
+            {
+                Rigidbody rb = ob.GetComponent<Rigidbody>();
+                EnemyHealth e = ob.GetComponent<EnemyHealth>();
+
+                if(rb != null)
+                {
+                    rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                }
+
+                if(e != null)
+                {
+                    e.TakeDamage(damage);
+                }
+            }
         }
     }
 }

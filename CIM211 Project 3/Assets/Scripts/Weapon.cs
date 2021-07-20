@@ -90,7 +90,7 @@ public class Weapon : MonoBehaviour
 
             if(launchForce > 0)
             {
-                proj.GetComponent<Rigidbody>().AddForce(Vector3.forward * launchForce);
+                proj.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * launchForce);
             }
         }
         else

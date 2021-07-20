@@ -111,7 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   speed: 0
-  hitScanDis: 1e-10
+  hitScanDis: 0.5
+  isGrenade: 0
+  explosionRadius: 1
+  explosionForce: 100
   destroyFx: {fileID: 4942812516054273534, guid: 04842a5134001ab43af8560c2dfab691, type: 3}
 --- !u!54 &8825614290324096542
 Rigidbody:

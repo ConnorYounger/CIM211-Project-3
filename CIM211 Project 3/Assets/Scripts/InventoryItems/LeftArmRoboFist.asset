@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17dc81498c8671f4d927964b9cdeac06, type: 3}
-  m_Name: RightArm1
+  m_Name: LeftArmRoboFist
   m_EditorClassIdentifier: 
-  itemType: RightArm
+  itemType: LeftArm
   sprite: {fileID: 0}
-  color: {r: 0.88938755, g: 0.9433962, b: 0, a: 1}
+  color: {r: 0.85877466, g: 1, b: 0, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0
@@ -22,5 +22,5 @@ MonoBehaviour:
   jumpHeightMultiliper: 0
   vision: 0
   brain: 0
-  leftArmWeaponCode: 0
-  rightArmWeaponCode: 1
+  leftArmWeaponCode: 1
+  rightArmWeaponCode: 0

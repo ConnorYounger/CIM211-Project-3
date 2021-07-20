@@ -27,7 +27,7 @@ public class PlayerCam : MonoBehaviour
             //Debug.Log(hit.collider.gameObject.name);
             Debug.DrawLine(transform.position, hit.point, Color.blue);
 
-            if (hit.collider.GetComponent<InvDeadBody>() && Input.GetKeyDown(KeyCode.E) && !inv.canvas.enabled)
+            if (hit.collider.GetComponent<InvDeadBody>() && hit.collider.GetComponent<InvDeadBody>().showInv && Input.GetKeyDown(KeyCode.E) && !inv.canvas.enabled)
             {
                 inv.OpenInventory();
                 hit.collider.GetComponent<InvDeadBody>().InventoryPassThroughItems(inv);

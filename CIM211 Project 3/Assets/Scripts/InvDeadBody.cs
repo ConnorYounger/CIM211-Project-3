@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InvDeadBody : MonoBehaviour
 {
+    public bool showInv;
+
     public InvItem head;
     public InvItem eyes;
     public InvItem brain;
@@ -21,7 +23,7 @@ public class InvDeadBody : MonoBehaviour
     {
         inv = new List<InvItem>();
 
-        UpdateInventory();
+        //UpdateInventory();
     }
 
     public void UpdateInventory()
@@ -48,6 +50,8 @@ public class InvDeadBody : MonoBehaviour
             inv.Add(leftLeg);
         if (rightLeg != null)
             inv.Add(rightLeg);
+
+        showInv = true;
     }
 
     public void InventoryPassThroughItems(Inventory i)

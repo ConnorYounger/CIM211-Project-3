@@ -32,9 +32,13 @@ MonoBehaviour:
   leftArm:
   - {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
   - {fileID: 11400000, guid: 7862e0940ab084d4b8280854397f070a, type: 2}
+  - {fileID: 11400000, guid: c211ab7f6d500314398d6bc90b94ce6f, type: 2}
+  - {fileID: 11400000, guid: ef1978cd39867c04daa7910c0a12a838, type: 2}
   rightArm:
   - {fileID: 11400000, guid: e016e976442f808499049b6b667c6507, type: 2}
   - {fileID: 11400000, guid: 3284aeb95babada4490ac25d610346cf, type: 2}
+  - {fileID: 11400000, guid: 23b683d0a2e1df24d888afdc203d44f3, type: 2}
+  - {fileID: 11400000, guid: 5488152a5e8b54745b74ae511479ce53, type: 2}
   leftLeg:
   - {fileID: 11400000, guid: e4ed6da32776adc46a1c03cdfb77a946, type: 2}
   - {fileID: 11400000, guid: 5a1e4a08ce0a0d446af2dd224ba336a5, type: 2}

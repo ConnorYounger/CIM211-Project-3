@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class EnemySpawManager : MonoBehaviour
 {
+    [Header("Refrences")]
     public LevelStats levelStats;
-
-    public int currentWave;
-    public int baseWaveEnemyCount = 5;
-    public int waveEnemyCount;
 
     public GameObject enemyPrefab;
 
     public EnemySpawner[] spawnPoints;
 
     public LootPool[] lootPools;
+
+    [Header("Wave Stats")]
+    public int currentWave;
+    public int baseWaveEnemyCount = 5;
+    public float waveEnemyCountMultiplier = 0.5f;
+    public int waveEnemySpawnedCount;
+    public int waveEnemyKilledCount;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +33,50 @@ public class EnemySpawManager : MonoBehaviour
         {
             SpawnNewWave();
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            currentWave++;
+        }
+
+        if(Input.GetKeyDown(KeyCode.DownArrow) && currentWave > 0)
+        {
+            currentWave--;
+        }
+    }
+
+    void NewWave()
+    {
+        currentWave++;
+        SpawnNewWave();
     }
 
     void SpawnNewWave()
     {
-        foreach(EnemySpawner point in spawnPoints)
+        waveEnemyKilledCount = 0;
+        waveEnemySpawnedCount = Mathf.RoundToInt(baseWaveEnemyCount * (currentWave + waveEnemyCountMultiplier));
+        EnemySpawManager sM = gameObject.GetComponent<EnemySpawManager>();
+
+        Debug.Log("Enemies to spawn: " + waveEnemySpawnedCount);
+
+        for(int i = 0; i < waveEnemySpawnedCount; i++)
         {
-            if(currentWave - 1< lootPools.Length)
-                point.SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1]);
+            int randPoint = Random.Range(0, spawnPoints.Length);
+
+            if (currentWave - 1 < lootPools.Length)
+                spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1], sM);
             else
-                point.SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1]);
+                spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1], sM);
+        }
+    }
+
+    public void KilledEnemy()
+    {
+        waveEnemyKilledCount++;
+
+        if(waveEnemyKilledCount == waveEnemySpawnedCount)
+        {
+            NewWave();
         }
     }
 }

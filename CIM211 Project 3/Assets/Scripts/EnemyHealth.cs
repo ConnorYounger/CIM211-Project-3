@@ -9,33 +9,49 @@ public class EnemyHealth : MonoBehaviour
 
     public TMP_Text healthText;
 
-    // Start is called before the first frame update
+    private InvDeadBody inv;
+    public EnemySpawManager spawManager;
+
+    public bool isDead;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        inv = gameObject.GetComponent<InvDeadBody>();
     }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-
-        if(health <= 0)
+        if (!isDead)
         {
-            Die();
-        }
+            health -= damage;
 
-        if (healthText)
-            healthText.text = health.ToString();
+            if (health > 0)
+            {
+                if (healthText)
+                    healthText.text = health.ToString();
+            }
+            else
+                Die();
+        }
     }
 
     void Die()
     {
+        isDead = true;
+
         Debug.Log("EnemyDie");
+
+        if (healthText)
+            healthText.text = "Dead X(";
+
+        if(inv != null)
+        {
+            inv.UpdateInventory();
+        }
+
+        if (spawManager)
+        {
+            spawManager.KilledEnemy();
+        }
     }
 }

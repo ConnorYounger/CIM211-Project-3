@@ -13,11 +13,11 @@ public class EnemySpawner : MonoBehaviour
     private int spawnedLoot;
     private int lootToSpawn;
 
-    public void SpawnEnemy(GameObject enemyPrefab, int wave, LootPool lp)
+    public void SpawnEnemy(GameObject enemyPrefab, int wave, LootPool lp, EnemySpawManager spawnManager)
     {
-        Debug.Log("Spawn Enemy");
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
         enemyInv = enemy.GetComponent<InvDeadBody>();
+        enemy.GetComponent<EnemyHealth>().spawManager = spawnManager;
 
         //switch (wave)
         //{
@@ -164,11 +164,9 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0);
 
         if (spawnedLoot < lootToSpawn)
             StartCoroutine("RandomizeItemsTest");
-        else
-            enemyInv.UpdateInventory();
     }
 }
