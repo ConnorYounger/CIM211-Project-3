@@ -12,18 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51edea15b147eb349a8666be71e44b33, type: 3}
   m_Name: LootPool1
   m_EditorClassIdentifier: 
-  head:
-  - {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
+  head: []
   eyes:
   - {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
-  brain:
-  - {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
+  brain: []
   lungs:
   - {fileID: 11400000, guid: 243d538ccce1c394a9608a66bb8f1f2b, type: 2}
   heart:
   - {fileID: 11400000, guid: f9c64764df385944981710575e0e2eee, type: 2}
-  body:
-  - {fileID: 11400000, guid: 288c33eb3c536494781aa88bf6188163, type: 2}
+  body: []
   leftArm:
   - {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
   rightArm:

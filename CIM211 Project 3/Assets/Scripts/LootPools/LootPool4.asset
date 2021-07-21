@@ -20,7 +20,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b6f5c8654adfa14c8881317c50a63e7, type: 2}
   brain:
   - {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
-  lungs: []
+  lungs:
+  - {fileID: 11400000, guid: c2bf32a6525dfd94887f7530ffd68428, type: 2}
+  - {fileID: 11400000, guid: 79b72d44129da17468a0a733a731bf97, type: 2}
   heart:
   - {fileID: 11400000, guid: 9a2b1bde084fa5443b6db0562cc0e141, type: 2}
   - {fileID: 11400000, guid: 303a03869b623c04c9ae0a0de9b25d16, type: 2}

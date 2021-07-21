@@ -172,13 +172,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   right: 1
+  playerCam: {fileID: 0}
   damage: 10
   fireRate: 0.6
   fireAnimationBuffer: 0.1
+  bulletSpread: 0.02
   isProjectileWeapon: 1
   projectile: {fileID: 5953138763934446095, guid: 09e6d2aaabdc1f046947c615c4ca50ed, type: 3}
   shootPoint: {fileID: 1709202571048230940}
-  projectileSpeed: 10
+  projectileSpeed: 30
   launchForce: 0
   meleeCollision: {fileID: 0}
   hitDelayTime: 0.1

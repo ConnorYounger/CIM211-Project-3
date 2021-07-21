@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     private InvDeadBody enemyInv;
-    private int minLootSpawn = 2;
-    private int maxLootSpawn = 3;
+    private int minLootSpawn = 0;
+    private int maxLootSpawn = 2;
     private int currentWave;
     private LootPool lootPool;
 
@@ -51,13 +51,13 @@ public class EnemySpawner : MonoBehaviour
         currentWave = wave;
         lootPool = lp;
         spawnedLoot = 0;
+        lootToSpawn = currentWave + Random.Range(minLootSpawn, maxLootSpawn + 1);
+
         StartCoroutine("RandomizeItemsTest");
     }
 
     IEnumerator RandomizeItemsTest()
     {
-        lootToSpawn = currentWave + Random.Range(minLootSpawn, maxLootSpawn + 1);
-
         int rand = Random.Range(0, 10);
 
         switch (rand)

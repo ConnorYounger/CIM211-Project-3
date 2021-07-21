@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LeftArmBlade
   m_EditorClassIdentifier: 
   itemType: LeftArm
-  sprite: {fileID: 0}
-  color: {r: 0.61624885, g: 1, b: 0, a: 1}
+  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  color: {r: 0.75800997, g: 0.9622642, b: 0.8169863, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0

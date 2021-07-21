@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public bool right;
+    public Transform playerCam;
 
     [Header("Stats")]
     public float damage = 10;
@@ -18,6 +19,7 @@ public class Weapon : MonoBehaviour
     public Transform shootPoint;
     public float projectileSpeed = 10;
     public float launchForce = 50;
+    public float bulletSpread = 0.05f;
 
     [Header("Melee Weapon")]
     public MeleeCollision meleeCollision;
@@ -45,7 +47,6 @@ public class Weapon : MonoBehaviour
             else if (right && Input.GetButton("Fire2"))
                 FireWeapon();
         }
-        
 
         FireRateCoolDown();
     }
@@ -81,9 +82,20 @@ public class Weapon : MonoBehaviour
 
     void FireProjectile()
     {
-        if (projectile)
+        if (projectile && playerCam)
         {
+            RaycastHit hit;
+            Vector3 shootDir = playerCam.forward;
+            shootDir.x += Random.Range(-bulletSpread, bulletSpread);
+            shootDir.y += Random.Range(-bulletSpread, bulletSpread);
+
+            Physics.Raycast(playerCam.position, shootDir, out hit, 1000, ~LayerMask.GetMask("Player"));
+
             GameObject proj = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+
+            if(hit.collider != null)
+                proj.transform.LookAt(hit.point);
+
             proj.GetComponent<Projectile>().damage = damage;
             proj.GetComponent<Projectile>().speed = projectileSpeed;
             Destroy(proj, 5);
@@ -94,6 +106,6 @@ public class Weapon : MonoBehaviour
             }
         }
         else
-            Debug.LogError("No Projectile Was Set");
+            Debug.LogError("No Projectile/PlayerCam Was Set");
     }
 }

@@ -25,7 +25,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9c64764df385944981710575e0e2eee, type: 2}
   body:
   - {fileID: 11400000, guid: 288c33eb3c536494781aa88bf6188163, type: 2}
-  - {fileID: 11400000, guid: 4bdeb6b5511c5714f86176fbdf0ce5d9, type: 2}
   leftArm:
   - {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
   - {fileID: 11400000, guid: 7862e0940ab084d4b8280854397f070a, type: 2}

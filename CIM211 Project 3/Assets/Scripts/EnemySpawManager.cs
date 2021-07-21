@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class EnemySpawManager : MonoBehaviour
     public EnemySpawner[] spawnPoints;
 
     public LootPool[] lootPools;
+
+    [Header("UI")]
+    public TMP_Text waveCounter;
+    public TMP_Text enemyCounter;
 
     [Header("Wave Stats")]
     public int currentWave;
@@ -31,7 +36,7 @@ public class EnemySpawManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            SpawnNewWave();
+            StartCoroutine("SpawnNewWave");
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -48,16 +53,20 @@ public class EnemySpawManager : MonoBehaviour
     void NewWave()
     {
         currentWave++;
-        SpawnNewWave();
+        waveCounter.text = "Wave: " + currentWave;
+        StartCoroutine("SpawnNewWave");
     }
 
-    void SpawnNewWave()
+    IEnumerator SpawnNewWave()
     {
         waveEnemyKilledCount = 0;
         waveEnemySpawnedCount = Mathf.RoundToInt(baseWaveEnemyCount * (currentWave + waveEnemyCountMultiplier));
         EnemySpawManager sM = gameObject.GetComponent<EnemySpawManager>();
 
+        UpdateEnemyCounterUI();
+
         Debug.Log("Enemies to spawn: " + waveEnemySpawnedCount);
+
 
         for(int i = 0; i < waveEnemySpawnedCount; i++)
         {
@@ -67,12 +76,20 @@ public class EnemySpawManager : MonoBehaviour
                 spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1], sM);
             else
                 spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1], sM);
+
+            yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    void UpdateEnemyCounterUI()
+    {
+        enemyCounter.text = "Enemies to kill: " + waveEnemyKilledCount + " / " + waveEnemySpawnedCount;
     }
 
     public void KilledEnemy()
     {
         waveEnemyKilledCount++;
+        UpdateEnemyCounterUI();
 
         if(waveEnemyKilledCount == waveEnemySpawnedCount)
         {

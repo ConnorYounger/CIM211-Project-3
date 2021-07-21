@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RAssultRifle
   m_EditorClassIdentifier: 
   itemType: RightArm
-  sprite: {fileID: 0}
-  color: {r: 0.93333334, g: 0.91425705, b: 0, a: 1}
+  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  color: {r: 1, g: 0.9855502, b: 0.23113209, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0
