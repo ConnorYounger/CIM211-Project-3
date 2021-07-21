@@ -37,6 +37,7 @@ public class PlayerEnhancements : MonoBehaviour
     [Header("Refrences")]
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
     public PlayerHealth player;
+    public EnemySpawManager enemySpawManager;
 
     private void Start()
     {
@@ -89,9 +90,9 @@ public class PlayerEnhancements : MonoBehaviour
                     jumpHeightMultiplierR = item.jumpHeightMultiliper;
                 }
 
-                if(item.itemType == "eyes")
+                if(item.itemType == "Eyes")
                     visionMultiplier = item.vision;
-                if(item.brain)
+                if (item.brain)
                     brain = item.brain;
 
                 if(item.leftArmWeaponCode > 0)
@@ -122,6 +123,8 @@ public class PlayerEnhancements : MonoBehaviour
     void SetVision()
     {
         vision = baseVisionMultiplier + visionMultiplier;
+
+        enemySpawManager.VisionUpdate(vision);
 
         switch (vision)
         {

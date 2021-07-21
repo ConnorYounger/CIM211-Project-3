@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     private int spawnedLoot;
     private int lootToSpawn;
 
+    private EnemySpawManager enemySpawManager;
+
     public void SpawnEnemy(GameObject enemyPrefab, int wave, LootPool lp, EnemySpawManager spawnManager)
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
@@ -54,6 +56,16 @@ public class EnemySpawner : MonoBehaviour
         lootToSpawn = currentWave + Random.Range(minLootSpawn, maxLootSpawn + 1);
 
         StartCoroutine("RandomizeItemsTest");
+
+        if(enemySpawManager == null)
+        {
+            enemySpawManager = spawnManager;
+        }
+        
+        if(enemySpawManager != null)
+        {
+            enemySpawManager.AddEnemy(enemy);
+        }
     }
 
     IEnumerator RandomizeItemsTest()

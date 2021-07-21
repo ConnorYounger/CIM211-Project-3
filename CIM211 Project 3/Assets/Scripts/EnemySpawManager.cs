@@ -25,9 +25,12 @@ public class EnemySpawManager : MonoBehaviour
     public int waveEnemySpawnedCount;
     public int waveEnemyKilledCount;
 
+    public List<GameObject> aliveEnemies;
+
     // Start is called before the first frame update
     void Start()
     {
+        aliveEnemies = new List<GameObject>();
         currentWave = levelStats.currentWave;
     }
 
@@ -86,14 +89,53 @@ public class EnemySpawManager : MonoBehaviour
         enemyCounter.text = "Enemies to kill: " + waveEnemyKilledCount + " / " + waveEnemySpawnedCount;
     }
 
-    public void KilledEnemy()
+    public void AddEnemy(GameObject enemy)
     {
+        aliveEnemies.Add(enemy);
+    }
+
+    public void KilledEnemy(GameObject enemy)
+    {
+        aliveEnemies.Remove(enemy);
+
         waveEnemyKilledCount++;
         UpdateEnemyCounterUI();
 
         if(waveEnemyKilledCount == waveEnemySpawnedCount)
         {
             NewWave();
+        }
+    }
+
+    public void VisionUpdate(int vision)
+    {
+        Debug.Log("Vision Update: Current Vision " + vision);
+
+        foreach(GameObject enemy in aliveEnemies)
+        {
+            if (enemy.GetComponent<Outline>())
+            {
+                Outline o = enemy.GetComponent<Outline>();
+
+                switch (vision)
+                {
+                    case 2:
+                        o.enabled = false;
+                        enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = true;
+                        break;
+                    case 3:
+                        o.enabled = true;
+                        o.OutlineMode = Outline.Mode.OutlineVisible;
+                        break;
+                    case 4:
+                        o.enabled = true;
+                        o.OutlineMode = Outline.Mode.OutlineAndSilhouette;
+                        break;
+                    default:
+                        o.enabled = false;
+                        break;
+                }
+            }
         }
     }
 }

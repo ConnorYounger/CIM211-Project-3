@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (spawManager)
         {
-            spawManager.KilledEnemy();
+            spawManager.KilledEnemy(gameObject);
         }
     }
 }
