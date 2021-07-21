@@ -19,7 +19,8 @@ public class Weapon : MonoBehaviour
     public Transform shootPoint;
     public float projectileSpeed = 10;
     public float launchForce = 50;
-    public float bulletSpread = 0.05f;
+    public float baseBulletSpread = 0.05f;
+    private float bulletSpread;
 
     [Header("Melee Weapon")]
     public MeleeCollision meleeCollision;
@@ -36,6 +37,8 @@ public class Weapon : MonoBehaviour
     {
         if (meleeCollision)
             meleeCollision.SetStats(damage, multiHitCount, hitDelayTime, hitFinishTime);
+
+        bulletSpread = baseBulletSpread;
     }
 
     void Update()
@@ -107,5 +110,14 @@ public class Weapon : MonoBehaviour
         }
         else
             Debug.LogError("No Projectile/PlayerCam Was Set");
+    }
+
+    public void SetBloom(float bloomMultiplier)
+    {
+        if(bloomMultiplier > 0)
+        {
+            float i = baseBulletSpread / bloomMultiplier;
+            bulletSpread = i;
+        }
     }
 }

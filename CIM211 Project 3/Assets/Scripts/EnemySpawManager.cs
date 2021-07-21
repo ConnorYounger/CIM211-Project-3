@@ -26,6 +26,7 @@ public class EnemySpawManager : MonoBehaviour
     public int waveEnemyKilledCount;
 
     public List<GameObject> aliveEnemies;
+    private int vision = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +83,8 @@ public class EnemySpawManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+
+        VisionUpdate(vision);
     }
 
     void UpdateEnemyCounterUI()
@@ -96,6 +99,11 @@ public class EnemySpawManager : MonoBehaviour
 
     public void KilledEnemy(GameObject enemy)
     {
+        if(vision > 1)
+        {
+            enemy.GetComponent<Outline>().enabled = false;
+        }
+
         aliveEnemies.Remove(enemy);
 
         waveEnemyKilledCount++;
@@ -107,9 +115,11 @@ public class EnemySpawManager : MonoBehaviour
         }
     }
 
-    public void VisionUpdate(int vision)
+    public void VisionUpdate(int v)
     {
-        Debug.Log("Vision Update: Current Vision " + vision);
+        Debug.Log("Vision Update: Current Vision " + v);
+
+        vision = v;
 
         foreach(GameObject enemy in aliveEnemies)
         {
@@ -117,12 +127,13 @@ public class EnemySpawManager : MonoBehaviour
             {
                 Outline o = enemy.GetComponent<Outline>();
 
-                switch (vision)
+                if(v > 1)
+                    enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = true;
+                else
+                    enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = false;
+
+                switch (v)
                 {
-                    case 2:
-                        o.enabled = false;
-                        enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = true;
-                        break;
                     case 3:
                         o.enabled = true;
                         o.OutlineMode = Outline.Mode.OutlineVisible;

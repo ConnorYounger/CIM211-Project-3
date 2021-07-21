@@ -14407,7 +14407,7 @@ MonoBehaviour:
   showInv: 0
   head: {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
   eyes: {fileID: 11400000, guid: 16cb052ea82197d4d9b9cc2dc2a72e5a, type: 2}
-  brain: {fileID: 0}
+  brain: {fileID: 11400000, guid: 4a070ec52630100468fae0ebd3fa6e9f, type: 2}
   heart: {fileID: 0}
   lungs: {fileID: 0}
   body: {fileID: 0}
@@ -16011,7 +16011,7 @@ MonoBehaviour:
   showInv: 0
   head: {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
   eyes: {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
-  brain: {fileID: 0}
+  brain: {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
   heart: {fileID: 0}
   lungs: {fileID: 0}
   body: {fileID: 0}
@@ -17710,9 +17710,11 @@ MonoBehaviour:
   vision: 0
   visionMultiplier: 0
   baseVisionMultiplier: 1
-  brain: 0
+  baseBrain: 0
+  brainMultiplier: 0
   player: {fileID: 1864466377}
   enemySpawManager: {fileID: 284000736}
+  weapons: []
 --- !u!114 &1864466379
 MonoBehaviour:
   m_ObjectHideFlags: 0

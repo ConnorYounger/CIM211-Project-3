@@ -32,12 +32,14 @@ public class PlayerEnhancements : MonoBehaviour
     public int vision = 0;
     public int visionMultiplier = 0;
     public int baseVisionMultiplier = 1;
-    public bool brain;
+    public float baseBrain = 0;
+    public float brainMultiplier = 0;
 
     [Header("Refrences")]
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
     public PlayerHealth player;
     public EnemySpawManager enemySpawManager;
+    public List<Weapon> weapons;
 
     private void Start()
     {
@@ -45,6 +47,19 @@ public class PlayerEnhancements : MonoBehaviour
         inventory = GameObject.Find("InventoryCanvas").GetComponent<Inventory>();
         fPSController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         UpdateStats();
+
+        GetWeapons();
+    }
+
+    void GetWeapons()
+    {
+        weapons = new List<Weapon>();
+
+        for(int i = 0; i < gameObject.GetComponent<PlayerWeaponSystem>().leftArmWeapons.Length; i++)
+        {
+            weapons.Add(gameObject.GetComponent<PlayerWeaponSystem>().rightArmWeapons[i].GetComponent<Weapon>());
+            weapons.Add(gameObject.GetComponent<PlayerWeaponSystem>().leftArmWeapons[i].GetComponent<Weapon>());
+        }
     }
 
     public void UpdateStats()
@@ -92,8 +107,8 @@ public class PlayerEnhancements : MonoBehaviour
 
                 if(item.itemType == "Eyes")
                     visionMultiplier = item.vision;
-                if (item.brain)
-                    brain = item.brain;
+                if (item.brain > 0)
+                    brainMultiplier = item.brain;
 
                 if(item.leftArmWeaponCode > 0)
                     leftArmWeaponCode = item.leftArmWeaponCode;
@@ -114,6 +129,11 @@ public class PlayerEnhancements : MonoBehaviour
         player.maxHealth = basePlayerMaxHealth + playerMaxHealthH + playerMaxHealthB;
         player.autoHealMultilpier = baseAutoHealMultiplier + autoHealMultiplier;
         player.maxStamina = baseMaxStamina + maxStamina;
+
+        foreach(Weapon weapon in weapons)
+        {
+            weapon.SetBloom(baseBrain + brainMultiplier);
+        }
 
         weaponSystem.SetWeapons(leftArmWeaponCode, rightArmWeaponCode);
 

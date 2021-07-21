@@ -16,7 +16,7 @@ public class InvItem : ScriptableObject
     public float movementSpeedMultiplier = 0;
     public float jumpHeightMultiliper = 0;
     public int vision = 0;
-    public bool brain;
+    public float brain = 0;
 
     [Header("Weapons")]
     public int leftArmWeaponCode;
