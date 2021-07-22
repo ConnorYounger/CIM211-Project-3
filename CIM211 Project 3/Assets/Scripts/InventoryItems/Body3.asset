@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 0
+  itemName: Robot Body
+  itemLevel: 3
+  itemBuff: Max Health +200
+  itemFlavourText: A metal body.

@@ -127,10 +127,10 @@ public class EnemySpawManager : MonoBehaviour
             {
                 Outline o = enemy.GetComponent<Outline>();
 
-                if(v > 1)
-                    enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = true;
+                if (v > 1)
+                    enemy.GetComponent<EnemyHealth>().ShowHealthUI();
                 else
-                    enemy.GetComponent<EnemyHealth>().healthText.gameObject.GetComponent<TMP_Text>().enabled = false;
+                    enemy.GetComponent<EnemyHealth>().HideHealthUI();
 
                 switch (v)
                 {

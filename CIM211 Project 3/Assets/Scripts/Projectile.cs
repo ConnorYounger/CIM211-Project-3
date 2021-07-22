@@ -21,37 +21,50 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         MoveForward();
+        CheckForCollision();
+    }
+
+    private void FixedUpdate()
+    {
         //CheckForCollision();
     }
 
     void CheckForCollision()
     {
-        RaycastHit sphereHit;
-        Physics.SphereCast(transform.position, 0.1f, Vector3.forward, out sphereHit);
+        //RaycastHit sphereHit;
+        //Physics.SphereCast(transform.position, 0.1f, Vector3.forward, out sphereHit);
 
-        if (sphereHit.collider)
+        //if (sphereHit.collider)
+        //{
+        //    if (sphereHit.collider.GetComponent<EnemyHealth>())
+        //    {
+        //        //DealDamage(sphereHit.collider.GetComponent<EnemyHealth>());
+        //    }
+        //    else
+        //    {
+        //        if (lastPoint != null)
+        //        {
+        //            RaycastHit hit;
+        //            Physics.Raycast(lastPoint, transform.position, out hit, hitScanDis, LayerMask.GetMask("PlayerProjectile"));
+
+        //            if (hit.collider)
+        //            {
+        //                Destroy(gameObject);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            lastPoint = transform.position;
+        //        }
+        //    }
+        //}
+
+        RaycastHit hit;
+        Physics.Raycast(lastPoint, transform.position, out hit, hitScanDis, LayerMask.GetMask("PlayerProjectile"));
+
+        if (hit.collider && hit.collider.GetComponent<EnemyHealth>() == null)
         {
-            if (sphereHit.collider.GetComponent<EnemyHealth>())
-            {
-                DealDamage(sphereHit.collider.GetComponent<EnemyHealth>());
-            }
-            else
-            {
-                if (lastPoint != null)
-                {
-                    RaycastHit hit;
-                    Physics.Raycast(lastPoint, transform.position, out hit, hitScanDis, LayerMask.GetMask("PlayerProjectile"));
-
-                    if (hit.collider)
-                    {
-                        Destroy(gameObject);
-                    }
-                }
-                else
-                {
-                    lastPoint = transform.position;
-                }
-            }
+            Destroy(gameObject);
         }
     }
 

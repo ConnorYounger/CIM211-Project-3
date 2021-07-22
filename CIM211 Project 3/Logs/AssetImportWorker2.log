@@ -1,0 +1,1685 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.9f1 (108be757e447) revision 1084391'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19043.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 16348 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+F:/Connor Stuff/Unity/CIM211 Project 3/CIM211-Project-3/CIM211 Project 3
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+63550
+Successfully changed project path to: F:/Connor Stuff/Unity/CIM211 Project 3/CIM211-Project-3/CIM211 Project 3
+F:/Connor Stuff/Unity/CIM211 Project 3/CIM211-Project-3/CIM211 Project 3
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 80.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.9f1 (108be757e447)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Connor Stuff/Unity/CIM211 Project 3/CIM211-Project-3/CIM211 Project 3/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
+    Vendor:   
+    VRAM:     2988 MB
+    Driver:   27.21.14.6677
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56360
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002729 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 70.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 12.845 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001669 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 71.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.102 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.43 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3109 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.5 MB.
+System memory in use after: 156.1 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 3536.
+Total: 4.638500 ms (FindLiveObjects: 0.321600 ms CreateObjectMapping: 0.152900 ms MarkObjects: 2.491100 ms  DeleteObjects: 1.671400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/InventoryItems/Brain2.asset
+  artifactKey: Guid(4a070ec52630100468fae0ebd3fa6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Brain2.asset using Guid(4a070ec52630100468fae0ebd3fa6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b6cebf3816074cb185e03c9a6f559a') in 0.049320 seconds
+  Import took 0.054758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Scripts/InventoryItems/Brain1.asset
+  artifactKey: Guid(efc379dabb41b4247bed37c4d279e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Brain1.asset using Guid(efc379dabb41b4247bed37c4d279e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaeb088d8add9d64e71abeb155569e3b') in 0.007427 seconds
+  Import took 0.012956 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002276 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.076 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 144.6 MB.
+System memory in use after: 142.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3539.
+Total: 4.303500 ms (FindLiveObjects: 0.331200 ms CreateObjectMapping: 0.187300 ms MarkObjects: 2.359100 ms  DeleteObjects: 1.424500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 11341.570981 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ab38e7e180dcffe798f1debd649bd9') in 0.573402 seconds
+  Import took 0.580471 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.666373 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1d9757b7276560ad302318a2004a6aa') in 0.075251 seconds
+  Import took 0.085631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.447595 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c55bfc52b5e304f050a52a5fb4cd0428') in 0.050468 seconds
+  Import took 0.063382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 343.490612 seconds.
+  path: Assets/AssetStore/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs
+  artifactKey: Guid(db7667203062c644ea1877077e30ebd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs using Guid(db7667203062c644ea1877077e30ebd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc85b1e931e8d17b433aecb98871b4e1') in 0.070530 seconds
+  Import took 0.077580 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001703 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.073 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 149.9 MB.
+System memory in use after: 147.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3588.
+Total: 5.058300 ms (FindLiveObjects: 0.576400 ms CreateObjectMapping: 0.492100 ms MarkObjects: 2.558200 ms  DeleteObjects: 1.430200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.655107 seconds.
+  path: Assets/TextMesh Pro
+  artifactKey: Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro using Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b4cbde9565bf190136f1148817e1ea') in 0.015981 seconds
+  Import took 0.025134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002528 seconds.
+  path: Assets/TextMesh Pro
+  artifactKey: Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro using Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b4cbde9565bf190136f1148817e1ea') in 0.014227 seconds
+  Import took 0.021697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.482668 seconds.
+  path: Assets/AssetStore/Unity UI Samples
+  artifactKey: Guid(a95332d12ea520b43b5296acf503fb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples using Guid(a95332d12ea520b43b5296acf503fb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88aae67710d4285c76990c157c32802c') in 0.013447 seconds
+  Import took 0.019124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.588437 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Fonts
+  artifactKey: Guid(9e3f0765f3440a541951dd9223a17825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Fonts using Guid(9e3f0765f3440a541951dd9223a17825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f01cd0983e7e045a6e488ba363a0d760') in 0.043912 seconds
+  Import took 0.050024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.845723 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Fonts/Jupiter
+  artifactKey: Guid(017120279e2244a70b07c667291aca40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Fonts/Jupiter using Guid(017120279e2244a70b07c667291aca40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b58bbcddb4ce139822ea63b493f2dd60') in 0.010687 seconds
+  Import took 0.018070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 218.380122 seconds.
+  path: Assets/AssetStore/Fonts/Tourney-Italic-VariableFont_wdth,wght.ttf
+  artifactKey: Guid(66150c493472f574ab74bf26a0c6c5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/Tourney-Italic-VariableFont_wdth,wght.ttf using Guid(66150c493472f574ab74bf26a0c6c5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c8d6d79c8fa15f3c412c910329e9ab7') in 0.460574 seconds
+  Import took 0.467675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght.ttf
+  artifactKey: Guid(a3d3c44e8d1db9342b3eb6891ee002ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght.ttf using Guid(a3d3c44e8d1db9342b3eb6891ee002ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80d6c6d599704a10d31eb7a71c3ece79') in 0.034080 seconds
+  Import took 0.039427 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.015112 seconds.
+  path: Assets/AssetStore/Fonts/static
+  artifactKey: Guid(c2e8b7ca386c9984db984941c4ca2148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static using Guid(c2e8b7ca386c9984db984941c4ca2148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4238bc1d1c16a3c079e90ad35dec4c79') in 0.011983 seconds
+  Import took 0.018338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.107729 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney
+  artifactKey: Guid(96f7e717f7fe7ce44b44cdefca61588c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney using Guid(96f7e717f7fe7ce44b44cdefca61588c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6986bcceee3168b8976e0ed041aeed97') in 0.015771 seconds
+  Import took 0.021746 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.051832 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Black.ttf
+  artifactKey: Guid(b51dbcf6123e0ea43b4d63c80e484083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Black.ttf using Guid(b51dbcf6123e0ea43b4d63c80e484083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f911bbd75d8e9b150208192450b50cdb') in 0.021246 seconds
+  Import took 0.026918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Thin.ttf
+  artifactKey: Guid(1851d7b3453889944be897586ebee55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Thin.ttf using Guid(1851d7b3453889944be897586ebee55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e338e1fef414909137b405d9ec7cd0e') in 0.031247 seconds
+  Import took 0.037466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-LightItalic.ttf
+  artifactKey: Guid(9387f1461ff2313428bc5ef66509b5d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-LightItalic.ttf using Guid(9387f1461ff2313428bc5ef66509b5d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cde65f36aa2cb90877e61c4d6fb3e24') in 0.031560 seconds
+  Import took 0.037448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraLight.ttf
+  artifactKey: Guid(476ddf9183c125d4099d29951cd1a0ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraLight.ttf using Guid(476ddf9183c125d4099d29951cd1a0ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '879d2237f475c93d3a746568e5a55409') in 0.035708 seconds
+  Import took 0.041740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraLightItalic.ttf
+  artifactKey: Guid(77228afe6dae8ce45ad9b8dde0d11a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraLightItalic.ttf using Guid(77228afe6dae8ce45ad9b8dde0d11a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd1fb05eb0fc041a652bd71ea8e590cb') in 0.031070 seconds
+  Import took 0.036958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Regular.ttf
+  artifactKey: Guid(588cafd8a6a4dc146b8ddd2a9614ddc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Regular.ttf using Guid(588cafd8a6a4dc146b8ddd2a9614ddc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c20b0cab7334d47b80ae96dee6332bc') in 0.027380 seconds
+  Import took 0.032620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraBold.ttf
+  artifactKey: Guid(9deab7d5bd3c04c43a1dac6616d75b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraBold.ttf using Guid(9deab7d5bd3c04c43a1dac6616d75b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c16f425c7ed8a6700a25968b21ffc64d') in 0.027808 seconds
+  Import took 0.033933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Italic.ttf
+  artifactKey: Guid(79d899bc287173e4694fcb16cd7aba06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Italic.ttf using Guid(79d899bc287173e4694fcb16cd7aba06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67901e08c91053b02c5dd1980f3c498') in 0.043486 seconds
+  Import took 0.049330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-BlackItalic.ttf
+  artifactKey: Guid(ada4dc68db404684a933377fae5d5beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-BlackItalic.ttf using Guid(ada4dc68db404684a933377fae5d5beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a786396d184d484f31138cd949e2eec') in 0.026879 seconds
+  Import took 0.032202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Light.ttf
+  artifactKey: Guid(bd4678ef9d768d048b9c0a6b6fe4a285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Light.ttf using Guid(bd4678ef9d768d048b9c0a6b6fe4a285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541778d9e7b440dc019893506b7755e7') in 0.027248 seconds
+  Import took 0.032427 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-SemiBold.ttf
+  artifactKey: Guid(af2554f288214b640a9546f18ac7d6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-SemiBold.ttf using Guid(af2554f288214b640a9546f18ac7d6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31802e850dfd89b1e7c171c2d7695d6f') in 0.027751 seconds
+  Import took 0.033128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-MediumItalic.ttf
+  artifactKey: Guid(bd803046532a0814a9a7506a0dde4374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-MediumItalic.ttf using Guid(bd803046532a0814a9a7506a0dde4374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e47fd0ceeb6d0801dc3ae9d256eb98a1') in 0.025903 seconds
+  Import took 0.031185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-SemiBoldItalic.ttf
+  artifactKey: Guid(0af46875818858a4c991895f8e8291c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-SemiBoldItalic.ttf using Guid(0af46875818858a4c991895f8e8291c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2442623e0ac08eec6a0a7b05a5ba995') in 0.049240 seconds
+  Import took 0.054811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Medium.ttf
+  artifactKey: Guid(fa81fe60c01e2ce41b29326ed0b30c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Medium.ttf using Guid(fa81fe60c01e2ce41b29326ed0b30c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd54f339383379ff78923054506393691') in 0.045408 seconds
+  Import took 0.050914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-ThinItalic.ttf
+  artifactKey: Guid(215787f7463b7e14e867f8d71f7f92a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-ThinItalic.ttf using Guid(215787f7463b7e14e867f8d71f7f92a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c3f20bc77a6cd2c4cab96bf3ef21901') in 0.025860 seconds
+  Import took 0.031545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-Bold.ttf
+  artifactKey: Guid(53edee51b13d0384fa2dff82f751c100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-Bold.ttf using Guid(53edee51b13d0384fa2dff82f751c100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cabbe4d00ab16eceb342eabf02c483d') in 0.040294 seconds
+  Import took 0.045481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-BoldItalic.ttf
+  artifactKey: Guid(d024d67e6d024044a967af2dacff339d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-BoldItalic.ttf using Guid(d024d67e6d024044a967af2dacff339d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2303fa988c7aa67417bfffd512ca5b') in 0.032548 seconds
+  Import took 0.038330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraBoldItalic.ttf
+  artifactKey: Guid(facf39987a47fc048a4932d97ff025be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/static/Tourney/Tourney-ExtraBoldItalic.ttf using Guid(facf39987a47fc048a4932d97ff025be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3c58fbf3cdeafd991c279f342fc7c0d') in 0.520303 seconds
+  Import took 0.526887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 44.683411 seconds.
+  path: Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght SDF.asset
+  artifactKey: Guid(4c8bad3e9d3469141ae79cd0b36a890a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght SDF.asset using Guid(4c8bad3e9d3469141ae79cd0b36a890a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b87c6fec23a63adbb526c2f22605da3') in 0.115277 seconds
+  Import took 0.124034 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001786 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.141 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.4 MB.
+System memory in use after: 148.0 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3670.
+Total: 4.196900 ms (FindLiveObjects: 0.373800 ms CreateObjectMapping: 0.163200 ms MarkObjects: 2.141600 ms  DeleteObjects: 1.516300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1802.198578 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backdrops/Background.png
+  artifactKey: Guid(e58daef5d8e6325438b5984bb3381161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backdrops/Background.png using Guid(e58daef5d8e6325438b5984bb3381161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8ef6bcff825cfd00fd3930c4fad3ff') in 0.254619 seconds
+  Import took 0.262865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png
+  artifactKey: Guid(827c9cd4a3943534f909ac6473e17288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png using Guid(827c9cd4a3943534f909ac6473e17288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33aee34edd644e7697590a90533578cd') in 0.034027 seconds
+  Import took 0.039446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButton.png
+  artifactKey: Guid(cc13a01071c4dba42850111446ae7cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButton.png using Guid(cc13a01071c4dba42850111446ae7cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22d998ccf5ddeb6403a8eb74a9796e6') in 0.031003 seconds
+  Import took 0.037084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButtonHighlight.png
+  artifactKey: Guid(a069a07b314c35e47b4a12bec7d3c2b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButtonHighlight.png using Guid(a069a07b314c35e47b4a12bec7d3c2b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb442ef2b3405fd6556bee647d332715') in 0.024090 seconds
+  Import took 0.029124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png
+  artifactKey: Guid(5485e2f56028a3c4cb54f5caa167377e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png using Guid(5485e2f56028a3c4cb54f5caa167377e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fc198e8e0f4ebab641b6285b77478a7') in 0.016681 seconds
+  Import took 0.022051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000425 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png
+  artifactKey: Guid(0c6271a290ef75b4c97d58746c86c5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png using Guid(0c6271a290ef75b4c97d58746c86c5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f651109c7e226474f91da4172ddbda5') in 0.037528 seconds
+  Import took 0.044066 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backdrops/Background.png
+  artifactKey: Guid(e58daef5d8e6325438b5984bb3381161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backdrops/Background.png using Guid(e58daef5d8e6325438b5984bb3381161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8ef6bcff825cfd00fd3930c4fad3ff') in 0.042376 seconds
+  Import took 0.049481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/PanelBack.png
+  artifactKey: Guid(163c737a06e84bc4695f5d63cf768360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/PanelBack.png using Guid(163c737a06e84bc4695f5d63cf768360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b96ba37011aeaa745b28bfe1b147dac1') in 0.029686 seconds
+  Import took 0.036327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButton.png
+  artifactKey: Guid(0edcec3058e127b4dbf403b7244387b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButton.png using Guid(0edcec3058e127b4dbf403b7244387b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '747c604b65bb955c5c8adc5ce5933a5d') in 0.026402 seconds
+  Import took 0.031965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png
+  artifactKey: Guid(5b1a64ea234fb2343b8d0686c51280de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png using Guid(5b1a64ea234fb2343b8d0686c51280de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4978daa7d5fe21b00d1df92ffa943f1') in 0.021956 seconds
+  Import took 0.028026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png
+  artifactKey: Guid(3d8675433a508ec47b8f895201eacf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png using Guid(3d8675433a508ec47b8f895201eacf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4707e36e79dfa8eacb7b8aaf20a60afa') in 0.023546 seconds
+  Import took 0.030221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/cross.png
+  artifactKey: Guid(3452fdf7d6ff8f14b890828e786dc49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/cross.png using Guid(3452fdf7d6ff8f14b890828e786dc49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6b43d74a88f8c0ca48e00b2cf3bb5b') in 0.026158 seconds
+  Import took 0.031964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png
+  artifactKey: Guid(4db017495c69e8140a56a0e2b669e3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png using Guid(4db017495c69e8140a56a0e2b669e3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6549a6020d20cdae8463f67e4ffc00') in 0.021268 seconds
+  Import took 0.028325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png
+  artifactKey: Guid(eb5f6e2757c821940b69cf1456f7865a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png using Guid(eb5f6e2757c821940b69cf1456f7865a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d15098721d0e0d077ef6fe5a32f8953') in 0.020969 seconds
+  Import took 0.027827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/locked.png
+  artifactKey: Guid(3b79d382948a54b46ac4759a2aaedb55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/locked.png using Guid(3b79d382948a54b46ac4759a2aaedb55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '966dabd4d36af144b08def88c93ca9db') in 0.062847 seconds
+  Import took 0.068107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/pause.png
+  artifactKey: Guid(e9bcaedd5a3c4dd46a840986abc3b5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/pause.png using Guid(e9bcaedd5a3c4dd46a840986abc3b5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b293cee83cf535ee9f3f1bdba87daca') in 0.024071 seconds
+  Import took 0.030218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButtonPressed.png
+  artifactKey: Guid(df24f8f95ec266b42878d94ec2dc26d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RectButtonPressed.png using Guid(df24f8f95ec266b42878d94ec2dc26d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eb7ae3b026e38a12b023c4a398de291') in 0.017592 seconds
+  Import took 0.023036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/HorizontalPanel.png
+  artifactKey: Guid(ae92dbe3b10e7da48ad8a870bfb8349d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/HorizontalPanel.png using Guid(ae92dbe3b10e7da48ad8a870bfb8349d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87f43c983eb0c5f67168aecae2d271c2') in 0.017343 seconds
+  Import took 0.022298 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/checkmark.png
+  artifactKey: Guid(15d7316ae86a58d48b7a2ace54743b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/checkmark.png using Guid(15d7316ae86a58d48b7a2ace54743b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e43aa7e29d841206d74ab0e5661018c3') in 0.019295 seconds
+  Import took 0.024748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/PanelBackDark.png
+  artifactKey: Guid(75911251b19bbf5488f2d02bb7aa582a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Backgrounds/PanelBackDark.png using Guid(75911251b19bbf5488f2d02bb7aa582a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f3082f1c1e0df3a47d1942ea79f1cc') in 0.018210 seconds
+  Import took 0.024094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Accents/HeaderBackground.png
+  artifactKey: Guid(73c9ff8b1d6e5ce4faf1037ff2b442e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Accents/HeaderBackground.png using Guid(73c9ff8b1d6e5ce4faf1037ff2b442e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c20482bae0a1368959d88b076695437') in 0.015314 seconds
+  Import took 0.021016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Joystick/Hat.png
+  artifactKey: Guid(d14bb586fdeba1e4999c922c002fed95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Joystick/Hat.png using Guid(d14bb586fdeba1e4999c922c002fed95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea938078ad7edf956a87ade8c0834eca') in 0.021821 seconds
+  Import took 0.028625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Joystick/Directional.png
+  artifactKey: Guid(140dca64046910f419179e3cce975fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Joystick/Directional.png using Guid(140dca64046910f419179e3cce975fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a7b8470396b7313982db1f2f101b235') in 0.022651 seconds
+  Import took 0.029915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png
+  artifactKey: Guid(9d7c6e4896067aa4fa512a00f692ac1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png using Guid(9d7c6e4896067aa4fa512a00f692ac1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '420a1e8e959e6b575913689621210ba0') in 0.055633 seconds
+  Import took 0.062452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButtonSelected.png
+  artifactKey: Guid(5fd74727aae5a774d8172865e4f97ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButtonSelected.png using Guid(5fd74727aae5a774d8172865e4f97ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbe7a0be853f3dcff1c9674d521a4318') in 0.029258 seconds
+  Import took 0.035394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png
+  artifactKey: Guid(49b611e658efbf443b686a4036f74fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png using Guid(49b611e658efbf443b686a4036f74fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f082c2919987f249118250803fd8e8') in 0.021800 seconds
+  Import took 0.028243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png
+  artifactKey: Guid(9866a92691696b346901281f2b329034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png using Guid(9866a92691696b346901281f2b329034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec38cf53c12504b3654b875127426c7f') in 0.022869 seconds
+  Import took 0.028710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png
+  artifactKey: Guid(a94c9a7eb94ceec4a8d67a1890e22e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png using Guid(a94c9a7eb94ceec4a8d67a1890e22e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ebafa23e2605d1a6eebe7d69f45ab2f') in 0.020488 seconds
+  Import took 0.027709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png
+  artifactKey: Guid(a3983c59ebf804b4abba687bd7c9e92f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png using Guid(a3983c59ebf804b4abba687bd7c9e92f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aefb1e5ff46ff9878af2000706bcc00a') in 0.023789 seconds
+  Import took 0.032956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButtonPressed.png
+  artifactKey: Guid(9f076e00891c8fa46a67c32cd752162d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/LargeButtonPressed.png using Guid(9f076e00891c8fa46a67c32cd752162d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76baf6db4365859c35212ecb0682d508') in 0.026176 seconds
+  Import took 0.033015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png
+  artifactKey: Guid(f588d850485d0ae479d73cf3bd0b7b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png using Guid(f588d850485d0ae479d73cf3bd0b7b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '461b6ccbe22ff938fe4543773c8715bc') in 0.022680 seconds
+  Import took 0.029325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.162591 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButton.png
+  artifactKey: Guid(836072f69e641344aae6945e6f6e743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButton.png using Guid(836072f69e641344aae6945e6f6e743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f7ee3e78c9c34f3d5df73cc369a8885') in 0.029869 seconds
+  Import took 0.036629 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonHighlight.png
+  artifactKey: Guid(934b20b79d3e5634eab9b75bfe79c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonHighlight.png using Guid(934b20b79d3e5634eab9b75bfe79c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d99b2df4a95da28932af4cc53eae2f') in 0.033832 seconds
+  Import took 0.040220 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButton.png
+  artifactKey: Guid(4eb4aeae04894ed478198905b6f00102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButton.png using Guid(4eb4aeae04894ed478198905b6f00102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0af95cc5556663a30de5e3922e21ce54') in 0.064400 seconds
+  Import took 0.070742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonHighlight.png
+  artifactKey: Guid(934b20b79d3e5634eab9b75bfe79c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonHighlight.png using Guid(934b20b79d3e5634eab9b75bfe79c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d99b2df4a95da28932af4cc53eae2f') in 0.014864 seconds
+  Import took 0.019821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png
+  artifactKey: Guid(0626b924325d1c34cafa6b22297f4e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png using Guid(0626b924325d1c34cafa6b22297f4e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76b2fa1d1086fa3ad7079e41b95aca8c') in 0.016216 seconds
+  Import took 0.021742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButton.png
+  artifactKey: Guid(836072f69e641344aae6945e6f6e743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButton.png using Guid(836072f69e641344aae6945e6f6e743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f7ee3e78c9c34f3d5df73cc369a8885') in 0.015232 seconds
+  Import took 0.020002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png
+  artifactKey: Guid(ea5873cfd9158664f89459f0c9e1d853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png using Guid(ea5873cfd9158664f89459f0c9e1d853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38b65099458f09e2c0ad4c7a99dca4ee') in 0.025548 seconds
+  Import took 0.031675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonPressed.png
+  artifactKey: Guid(10f2b04f47430e249ace6ba5506f9395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/RoundButtonPressed.png using Guid(10f2b04f47430e249ace6ba5506f9395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f76141bda3bfd9ebc846f3b18b43480') in 0.028123 seconds
+  Import took 0.035700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064964 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButtonHighlighted.png
+  artifactKey: Guid(3971177a773a29c46b83d4492528330f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButtonHighlighted.png using Guid(3971177a773a29c46b83d4492528330f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fc610dfc0bc8f0aa0c0027659a46231') in 0.022091 seconds
+  Import took 0.029667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Toggle/Toggle.png
+  artifactKey: Guid(6e70150e406cb6c439fdd81f3fdd481e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Toggle/Toggle.png using Guid(6e70150e406cb6c439fdd81f3fdd481e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6df4fc73965b916e842d82604535ebb1') in 0.027319 seconds
+  Import took 0.035366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButtonPressed.png
+  artifactKey: Guid(cfc1bf498a1e3294eaae38d03f42e049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Buttons/SquareButtonPressed.png using Guid(cfc1bf498a1e3294eaae38d03f42e049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a438b6be0928e0fe2e94319e80deeabb') in 0.033060 seconds
+  Import took 0.042573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/wrench.png
+  artifactKey: Guid(8c7d66e7c447bfa4db7e5ad0455df11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Icons/wrench.png using Guid(8c7d66e7c447bfa4db7e5ad0455df11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2daac93e8dd69838af9f00be43241c3') in 0.021143 seconds
+  Import took 0.027148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png
+  artifactKey: Guid(e4f1fee3de32377429fd1348fae62b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png using Guid(e4f1fee3de32377429fd1348fae62b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57520f84d9646f5edfc09c036a495d73') in 0.022561 seconds
+  Import took 0.028809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/AssetStore/DualCorStudios/BasicUIConcrete/Toggle/ToggleBack.png
+  artifactKey: Guid(4e5fd43efa40277459e77c218e17e78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/DualCorStudios/BasicUIConcrete/Toggle/ToggleBack.png using Guid(4e5fd43efa40277459e77c218e17e78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecfd2ee6b772c95980d54a5b50785017') in 0.025760 seconds
+  Import took 0.032413 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001607 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.207 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.5 MB.
+System memory in use after: 148.1 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3683.
+Total: 4.188700 ms (FindLiveObjects: 0.354200 ms CreateObjectMapping: 0.163700 ms MarkObjects: 2.030000 ms  DeleteObjects: 1.639200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001620 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.136 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.6 MB.
+System memory in use after: 148.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3686.
+Total: 4.661200 ms (FindLiveObjects: 0.655200 ms CreateObjectMapping: 0.179200 ms MarkObjects: 2.127400 ms  DeleteObjects: 1.698400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001629 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.544 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.6 MB.
+System memory in use after: 148.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3689.
+Total: 8.077100 ms (FindLiveObjects: 1.487800 ms CreateObjectMapping: 0.715300 ms MarkObjects: 3.334300 ms  DeleteObjects: 2.538100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 922.317548 seconds.
+  path: Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght SDF.asset
+  artifactKey: Guid(4c8bad3e9d3469141ae79cd0b36a890a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Fonts/Tourney-VariableFont_wdth,wght SDF.asset using Guid(4c8bad3e9d3469141ae79cd0b36a890a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e6e03559ccfe9c17309e4a8ab7cdb4') in 0.329905 seconds
+  Import took 0.346438 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003456 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.510 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.8 MB.
+System memory in use after: 148.4 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3729.
+Total: 7.405000 ms (FindLiveObjects: 0.540600 ms CreateObjectMapping: 0.274000 ms MarkObjects: 4.371100 ms  DeleteObjects: 2.217800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001639 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.160 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.8 MB.
+System memory in use after: 148.4 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3732.
+Total: 4.225300 ms (FindLiveObjects: 0.358000 ms CreateObjectMapping: 0.164300 ms MarkObjects: 2.036600 ms  DeleteObjects: 1.665300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001713 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.197 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.8 MB.
+System memory in use after: 148.4 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3735.
+Total: 4.492400 ms (FindLiveObjects: 0.430100 ms CreateObjectMapping: 0.223800 ms MarkObjects: 2.222000 ms  DeleteObjects: 1.615200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001872 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 150.8 MB.
+System memory in use after: 148.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3738.
+Total: 5.709400 ms (FindLiveObjects: 0.347200 ms CreateObjectMapping: 0.166600 ms MarkObjects: 3.203100 ms  DeleteObjects: 1.990800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 47370.768975 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(1db7240ccee5d74499ec6944820b56be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0454ac218195c8df88c8f7237022de') in 1.428568 seconds
+  Import took 1.445314 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001619 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.376 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.0 MB.
+System memory in use after: 148.6 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3777.
+Total: 7.258800 ms (FindLiveObjects: 1.761700 ms CreateObjectMapping: 0.303800 ms MarkObjects: 3.043500 ms  DeleteObjects: 2.147500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.613307 seconds.
+  path: Assets/Prefabs/CannonProjectile1.prefab
+  artifactKey: Guid(09e6d2aaabdc1f046947c615c4ca50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CannonProjectile1.prefab using Guid(09e6d2aaabdc1f046947c615c4ca50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7535dae5a60ecc52c08355edf753c23') in 0.274017 seconds
+  Import took 0.299184 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001605 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.149 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.2 MB.
+System memory in use after: 148.8 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3818.
+Total: 4.749500 ms (FindLiveObjects: 0.362100 ms CreateObjectMapping: 0.162600 ms MarkObjects: 2.418300 ms  DeleteObjects: 1.805100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.670364 seconds.
+  path: Assets/Prefabs/CannonProjectile1.prefab
+  artifactKey: Guid(09e6d2aaabdc1f046947c615c4ca50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CannonProjectile1.prefab using Guid(09e6d2aaabdc1f046947c615c4ca50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8edc5ba41ca15b8777269ab0b0740267') in 0.239115 seconds
+  Import took 0.247822 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001627 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.204 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.3 MB.
+System memory in use after: 148.9 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3858.
+Total: 4.408000 ms (FindLiveObjects: 0.365600 ms CreateObjectMapping: 0.164400 ms MarkObjects: 2.185400 ms  DeleteObjects: 1.691500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001786 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.136 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.4 MB.
+System memory in use after: 149.0 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3861.
+Total: 5.131000 ms (FindLiveObjects: 0.375100 ms CreateObjectMapping: 0.182500 ms MarkObjects: 2.822200 ms  DeleteObjects: 1.749600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.162562 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 12.789 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.4 MB.
+System memory in use after: 149.0 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3864.
+Total: 5.997000 ms (FindLiveObjects: 0.366300 ms CreateObjectMapping: 0.150500 ms MarkObjects: 3.698300 ms  DeleteObjects: 1.761100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 16928.219876 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.xcf
+  artifactKey: Guid(9844a10a623926b4db92b4b9905762da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.xcf using Guid(9844a10a623926b4db92b4b9905762da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8c2ede3f5346fd3c95021e5c184ed11') in 4.248265 seconds
+  Import took 4.335684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.045896 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png
+  artifactKey: Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png using Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fffedcda4f527f5873c026390643341e') in 0.341245 seconds
+  Import took 0.368304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.314203 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png
+  artifactKey: Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png using Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3dca3cbe0c63fbe1f3126a5deb82467') in 0.258855 seconds
+  Import took 0.283693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 476.010244 seconds.
+  path: Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png
+  artifactKey: Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/Unity UI Samples/Textures and Sprites/SF UI/SF Window Custom.png using Guid(24e04693a4ebdfa4da463b5b4165d71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8ed3d0491dbb17597836dac7f56796b') in 0.052901 seconds
+  Import took 0.082254 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001646 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.622 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 149.1 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3870.
+Total: 4.655700 ms (FindLiveObjects: 0.468500 ms CreateObjectMapping: 0.170500 ms MarkObjects: 2.355400 ms  DeleteObjects: 1.660100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001987 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 149.1 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3873.
+Total: 5.936200 ms (FindLiveObjects: 0.400800 ms CreateObjectMapping: 0.455800 ms MarkObjects: 3.394800 ms  DeleteObjects: 1.682900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 738.839932 seconds.
+  path: Assets/Scripts/InvItem.cs
+  artifactKey: Guid(17dc81498c8671f4d927964b9cdeac06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InvItem.cs using Guid(17dc81498c8671f4d927964b9cdeac06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8b5b26d9503aafa1fba15f7d1321570') in 0.023731 seconds
+  Import took 0.048318 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.866923 seconds.
+  path: Assets/Scripts/InvSlot.cs
+  artifactKey: Guid(60870c04d8c87444686c7e1672647c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InvSlot.cs using Guid(60870c04d8c87444686c7e1672647c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2f69d4d88935542e15785adc60effd') in 0.017082 seconds
+  Import took 0.044938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.692470 seconds.
+  path: Assets/Scripts/InvDragDrop.cs
+  artifactKey: Guid(c14206d279eb55a4fbf59a73cef87102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InvDragDrop.cs using Guid(c14206d279eb55a4fbf59a73cef87102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5007631806466562fa29b17d50c95095') in 0.012467 seconds
+  Import took 0.041532 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002159 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.195 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 149.1 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3876.
+Total: 5.331000 ms (FindLiveObjects: 0.378300 ms CreateObjectMapping: 0.165500 ms MarkObjects: 2.209200 ms  DeleteObjects: 2.576700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.856564 seconds.
+  path: Assets/Scripts/InvDragDrop.cs
+  artifactKey: Guid(c14206d279eb55a4fbf59a73cef87102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InvDragDrop.cs using Guid(c14206d279eb55a4fbf59a73cef87102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a660bc2e4ae72f10d6b6b5cd72791207') in 0.012075 seconds
+  Import took 0.031826 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001777 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.209 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 149.1 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3879.
+Total: 4.792800 ms (FindLiveObjects: 0.393100 ms CreateObjectMapping: 0.187300 ms MarkObjects: 2.325100 ms  DeleteObjects: 1.886300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002707 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.421 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 149.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3882.
+Total: 6.056300 ms (FindLiveObjects: 0.415800 ms CreateObjectMapping: 0.178800 ms MarkObjects: 3.092500 ms  DeleteObjects: 2.367700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002758 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.251 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 149.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3885.
+Total: 5.446900 ms (FindLiveObjects: 0.381700 ms CreateObjectMapping: 0.216900 ms MarkObjects: 3.105200 ms  DeleteObjects: 1.741600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 221.534113 seconds.
+  path: Assets/Scripts/UIItemInfo.cs
+  artifactKey: Guid(eca9bab01f456ba4481530f3d6602d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIItemInfo.cs using Guid(eca9bab01f456ba4481530f3d6602d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0101c10262db7fbf2652c94dc07f56f') in 0.058895 seconds
+  Import took 0.140243 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002043 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.154 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.7 MB.
+System memory in use after: 149.3 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3889.
+Total: 4.986300 ms (FindLiveObjects: 0.357600 ms CreateObjectMapping: 0.147400 ms MarkObjects: 2.775100 ms  DeleteObjects: 1.704700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003022 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.386 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.7 MB.
+System memory in use after: 149.3 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3892.
+Total: 6.524500 ms (FindLiveObjects: 0.369300 ms CreateObjectMapping: 0.145000 ms MarkObjects: 2.852900 ms  DeleteObjects: 3.155800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001694 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.116 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.7 MB.
+System memory in use after: 149.3 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3895.
+Total: 4.869400 ms (FindLiveObjects: 0.395100 ms CreateObjectMapping: 0.160400 ms MarkObjects: 2.698000 ms  DeleteObjects: 1.614300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 574.621080 seconds.
+  path: Assets/Scripts/UIItemInfo.cs
+  artifactKey: Guid(eca9bab01f456ba4481530f3d6602d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIItemInfo.cs using Guid(eca9bab01f456ba4481530f3d6602d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb20a167b4576e0368a213c1a6025e8d') in 0.012907 seconds
+  Import took 0.018911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 218.794065 seconds.
+  path: Assets/Scripts/InventoryItems/Body1.asset
+  artifactKey: Guid(288c33eb3c536494781aa88bf6188163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Body1.asset using Guid(288c33eb3c536494781aa88bf6188163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76aedf2f840a077bc8e885d27d8d17b2') in 0.122150 seconds
+  Import took 0.132586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Scripts/InventoryItems/Brain2.asset
+  artifactKey: Guid(4a070ec52630100468fae0ebd3fa6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Brain2.asset using Guid(4a070ec52630100468fae0ebd3fa6e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ea33753eb9815f64c993dc8e92ad81e') in 0.012479 seconds
+  Import took 0.019216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000489 seconds.
+  path: Assets/Scripts/InventoryItems/Brain1.asset
+  artifactKey: Guid(efc379dabb41b4247bed37c4d279e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Brain1.asset using Guid(efc379dabb41b4247bed37c4d279e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d4627552b532a90fa41b6eb27973933') in 0.012215 seconds
+  Import took 0.041938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/Scripts/InventoryItems/Eyes2.asset
+  artifactKey: Guid(16cb052ea82197d4d9b9cc2dc2a72e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Eyes2.asset using Guid(16cb052ea82197d4d9b9cc2dc2a72e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '730be611262d346040c0309905f90071') in 0.013920 seconds
+  Import took 0.024785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004245 seconds.
+  path: Assets/Scripts/InventoryItems/Body2.asset
+  artifactKey: Guid(4bdeb6b5511c5714f86176fbdf0ce5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Body2.asset using Guid(4bdeb6b5511c5714f86176fbdf0ce5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc794c2e76238434147544054d1e6190') in 0.012202 seconds
+  Import took 0.027879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Scripts/InventoryItems/Eyes1.asset
+  artifactKey: Guid(f2a351db7317a7849b821948263413fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Eyes1.asset using Guid(f2a351db7317a7849b821948263413fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1297fa02626b3e7a9e33eb87bd262f0e') in 0.013897 seconds
+  Import took 0.021571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000453 seconds.
+  path: Assets/Scripts/InventoryItems/Eyes3.asset
+  artifactKey: Guid(5b6f5c8654adfa14c8881317c50a63e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Eyes3.asset using Guid(5b6f5c8654adfa14c8881317c50a63e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ed0d21951266b63f56b4397824b7215') in 0.013781 seconds
+  Import took 0.020795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000409 seconds.
+  path: Assets/Scripts/InventoryItems/Body3.asset
+  artifactKey: Guid(d8d06a2a6f56a1242ae14a4b94685b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/InventoryItems/Body3.asset using Guid(d8d06a2a6f56a1242ae14a4b94685b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '538859fe7b674fe4db4bb85d53c0565a') in 0.012422 seconds
+  Import took 0.033341 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002076 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.8 MB.
+System memory in use after: 149.4 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3898.
+Total: 7.267100 ms (FindLiveObjects: 0.495400 ms CreateObjectMapping: 0.196600 ms MarkObjects: 3.902800 ms  DeleteObjects: 2.670400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001855 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.197 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.8 MB.
+System memory in use after: 149.4 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3901.
+Total: 4.908600 ms (FindLiveObjects: 0.385000 ms CreateObjectMapping: 0.189700 ms MarkObjects: 2.335100 ms  DeleteObjects: 1.997200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001758 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.9 MB.
+System memory in use after: 149.4 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3904.
+Total: 4.591400 ms (FindLiveObjects: 0.390700 ms CreateObjectMapping: 0.172800 ms MarkObjects: 2.244400 ms  DeleteObjects: 1.780000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001866 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.147 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.9 MB.
+System memory in use after: 149.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3907.
+Total: 6.526600 ms (FindLiveObjects: 0.419900 ms CreateObjectMapping: 0.173100 ms MarkObjects: 3.872800 ms  DeleteObjects: 2.059200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001784 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.117 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.9 MB.
+System memory in use after: 149.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3910.
+Total: 4.707500 ms (FindLiveObjects: 0.399800 ms CreateObjectMapping: 0.186700 ms MarkObjects: 2.413500 ms  DeleteObjects: 1.706000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001815 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.127 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.0 MB.
+System memory in use after: 149.5 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3913.
+Total: 4.940900 ms (FindLiveObjects: 0.397900 ms CreateObjectMapping: 0.258800 ms MarkObjects: 2.536600 ms  DeleteObjects: 1.745800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001702 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.0 MB.
+System memory in use after: 149.6 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3916.
+Total: 5.401700 ms (FindLiveObjects: 0.906100 ms CreateObjectMapping: 0.239700 ms MarkObjects: 2.498400 ms  DeleteObjects: 1.756100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001917 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.202 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.0 MB.
+System memory in use after: 149.6 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3919.
+Total: 6.475800 ms (FindLiveObjects: 0.469300 ms CreateObjectMapping: 0.412700 ms MarkObjects: 2.853400 ms  DeleteObjects: 2.738800 ms)
+

@@ -54,4 +54,16 @@ public class EnemyHealth : MonoBehaviour
             spawManager.KilledEnemy(gameObject);
         }
     }
+
+    public void ShowHealthUI()
+    {
+        healthText.enabled = true;
+        healthText.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void HideHealthUI()
+    {
+        healthText.enabled = false;
+        healthText.transform.GetChild(0).gameObject.SetActive(false);
+    }
 }

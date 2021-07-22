@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 0
+  itemName: Robot Eyes
+  itemLevel: 1
+  itemBuff: See Enemy Health
+  itemFlavourText: Robo vision.

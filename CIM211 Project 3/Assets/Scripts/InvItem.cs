@@ -21,4 +21,10 @@ public class InvItem : ScriptableObject
     [Header("Weapons")]
     public int leftArmWeaponCode;
     public int rightArmWeaponCode;
+
+    [Header("Text Elements")]
+    public string itemName;
+    public int itemLevel;
+    public string itemBuff;
+    [TextArea] public string itemFlavourText;
 }

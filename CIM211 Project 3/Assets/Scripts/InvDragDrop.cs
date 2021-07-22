@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Inventory inv;
     private Canvas canvas;
@@ -16,9 +16,14 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public InvItem invItem;
 
+    private Canvas itemInfoCanvas;
+    private UIItemInfo itemInfo;
+
     private void Start()
     {
         canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
+        itemInfoCanvas = GameObject.Find("ItemInfoCanvas").GetComponent<Canvas>();
+        itemInfo = itemInfoCanvas.GetComponent<UIItemInfo>();
         inv = GameObject.Find("InventoryCanvas").GetComponent<Inventory>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
         rectTransform = gameObject.GetComponent<RectTransform>();
@@ -64,7 +69,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("OnPointerDown");
+        Debug.Log("OnPointerDown");
 
     }
 
@@ -74,5 +79,27 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
         gameObject.GetComponent<RectTransform>().anchoredPosition = startPos;
         inSlot = true;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerOver");
+        SetItemInfo();
+    }
+
+    void SetItemInfo()
+    {
+        itemInfo.itemNameText.text = invItem.itemName;
+        itemInfo.itemLevelText.text = "Lv: " + invItem.itemLevel;
+        itemInfo.itemBuffText.text = invItem.itemBuff;
+        itemInfo.itemFlavourText.text = invItem.itemFlavourText;
+
+        itemInfoCanvas.enabled = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerExit");
+        itemInfoCanvas.enabled = false;
     }
 }
