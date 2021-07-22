@@ -25,7 +25,26 @@ public class UIItemInfo : MonoBehaviour
     {
         if (canvas.enabled)
         {
-            Vector2 pos = new Vector2(Input.mousePosition.x + 250, Input.mousePosition.y + 150);
+            float posX = 0;
+            float posY = 0;
+
+            float xBuffer = 480;
+            float yBuffer = 400;
+
+            Debug.Log(Input.mousePosition);
+            Debug.Log(Screen.height - yBuffer + ", " + Input.mousePosition.y);
+
+            if (Input.mousePosition.x < Screen.width - xBuffer)
+                posX = Input.mousePosition.x + 250;
+            else
+                posX = Screen.width - 250;
+
+            if (Input.mousePosition.y < Screen.height - yBuffer)
+                posY = Input.mousePosition.y + 150;
+            else
+                posY = Screen.height - 140;
+
+            Vector2 pos = new Vector2(posX, posY);
             rectTransform.anchoredPosition = pos / canvas.scaleFactor;
         }
     }

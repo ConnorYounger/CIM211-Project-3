@@ -39,7 +39,6 @@ public class PlayerEnhancements : MonoBehaviour
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
     public PlayerHealth player;
     public EnemySpawManager enemySpawManager;
-    public List<Weapon> weapons;
 
     private void Start()
     {
@@ -47,19 +46,6 @@ public class PlayerEnhancements : MonoBehaviour
         inventory = GameObject.Find("InventoryCanvas").GetComponent<Inventory>();
         fPSController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         UpdateStats();
-
-        GetWeapons();
-    }
-
-    void GetWeapons()
-    {
-        weapons = new List<Weapon>();
-
-        for(int i = 0; i < gameObject.GetComponent<PlayerWeaponSystem>().leftArmWeapons.Length; i++)
-        {
-            weapons.Add(gameObject.GetComponent<PlayerWeaponSystem>().rightArmWeapons[i].GetComponent<Weapon>());
-            weapons.Add(gameObject.GetComponent<PlayerWeaponSystem>().leftArmWeapons[i].GetComponent<Weapon>());
-        }
     }
 
     public void UpdateStats()
@@ -130,10 +116,7 @@ public class PlayerEnhancements : MonoBehaviour
         player.autoHealMultilpier = baseAutoHealMultiplier + autoHealMultiplier;
         player.maxStamina = baseMaxStamina + maxStamina;
 
-        foreach(Weapon weapon in weapons)
-        {
-            weapon.SetBloom(baseBrain + brainMultiplier);
-        }
+        gameObject.GetComponent<PlayerWeaponSystem>().weaponAccuracyMultiplier = baseBrain + brainMultiplier;
 
         weaponSystem.SetWeapons(leftArmWeaponCode, rightArmWeaponCode);
 

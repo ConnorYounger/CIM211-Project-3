@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
         if (meleeCollision)
             meleeCollision.SetStats(damage, multiHitCount, hitDelayTime, hitFinishTime);
 
-        bulletSpread = baseBulletSpread;
+        //bulletSpread = baseBulletSpread;
     }
 
     void Update()
@@ -114,10 +114,12 @@ public class Weapon : MonoBehaviour
 
     public void SetBloom(float bloomMultiplier)
     {
-        if(bloomMultiplier > 0)
+        if (bloomMultiplier > 0)
         {
             float i = baseBulletSpread / bloomMultiplier;
             bulletSpread = i;
+
+            //Debug.Log("set " + gameObject.name + " bloom to " + bulletSpread);
         }
     }
 }

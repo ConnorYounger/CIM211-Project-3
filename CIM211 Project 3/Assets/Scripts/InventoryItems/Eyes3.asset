@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 0
   rightArmWeaponCode: 0
   itemName: Robot Eyes
-  itemLevel: 1
-  itemBuff: See Enemy Health
+  itemLevel: 3
+  itemBuff: See Enemy Through Walls
   itemFlavourText: Robo vision.

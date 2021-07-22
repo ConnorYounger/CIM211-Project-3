@@ -10,6 +10,8 @@ public class PlayerWeaponSystem : MonoBehaviour
     public int leftArmWeaponCode;
     public int rightArmWeaponCode;
 
+    public float weaponAccuracyMultiplier;
+
     private void Start()
     {
         UpdateWeapons();
@@ -31,6 +33,7 @@ public class PlayerWeaponSystem : MonoBehaviour
             if(i == leftArmWeaponCode)
             {
                 leftArmWeapons[i].SetActive(true);
+                leftArmWeapons[i].GetComponent<Weapon>().SetBloom(weaponAccuracyMultiplier);
             }
             else
             {
@@ -44,6 +47,8 @@ public class PlayerWeaponSystem : MonoBehaviour
             if (i == rightArmWeaponCode)
             {
                 rightArmWeapons[i].SetActive(true);
+                rightArmWeapons[i].GetComponent<Weapon>().SetBloom(weaponAccuracyMultiplier);
+                Debug.Log("set bloom from system");
             }
             else
             {

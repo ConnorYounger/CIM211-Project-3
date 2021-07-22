@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 2
+  itemName: Blade
+  itemLevel: 1
+  itemBuff: 
+  itemFlavourText: Knife arms are pretty cool.

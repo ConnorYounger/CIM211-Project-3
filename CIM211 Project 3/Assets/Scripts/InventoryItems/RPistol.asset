@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 3
+  itemName: Arm Cannon
+  itemLevel: 1
+  itemBuff: 
+  itemFlavourText: Pew Pew arms

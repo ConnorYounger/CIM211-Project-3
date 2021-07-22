@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 0
+  itemName: Mechanical Skull
+  itemLevel: 3
+  itemBuff: Max Health +150
+  itemFlavourText: A robot skull.

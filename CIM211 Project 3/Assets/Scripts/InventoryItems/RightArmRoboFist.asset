@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 0
   rightArmWeaponCode: 1
+  itemName: Mechanical Arm
+  itemLevel: 1
+  itemBuff: 
+  itemFlavourText: Robot arms.

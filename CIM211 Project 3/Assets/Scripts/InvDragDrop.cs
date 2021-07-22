@@ -47,7 +47,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+        //Debug.Log("OnEndDrag");
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
         inv.ShowAllItems();
@@ -69,13 +69,13 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+        //Debug.Log("OnPointerDown");
 
     }
 
     public void ResetPos()
     {
-        Debug.Log("Reset Pos");
+        //Debug.Log("Reset Pos");
 
         gameObject.GetComponent<RectTransform>().anchoredPosition = startPos;
         inSlot = true;
@@ -83,7 +83,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerOver");
+        //Debug.Log("OnPointerOver");
         SetItemInfo();
     }
 
@@ -99,7 +99,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("OnPointerExit");
+        //Debug.Log("OnPointerExit");
         itemInfoCanvas.enabled = false;
     }
 }

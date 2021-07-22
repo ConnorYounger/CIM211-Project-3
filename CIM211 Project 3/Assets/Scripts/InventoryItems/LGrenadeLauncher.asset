@@ -24,3 +24,7 @@ MonoBehaviour:
   brain: 0
   leftArmWeaponCode: 5
   rightArmWeaponCode: 0
+  itemName: Grenade Launcher
+  itemLevel: 1
+  itemBuff: 
+  itemFlavourText: These are pretty cool :)
