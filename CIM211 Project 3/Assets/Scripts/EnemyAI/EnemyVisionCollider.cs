@@ -25,7 +25,7 @@ public class EnemyVisionCollider : MonoBehaviour
 
             if (hit.collider && hit.collider.gameObject.name == "Player")
             {
-                Debug.Log("Has found the player");
+                //Debug.Log("Has found the player");
                 enemy.hasFoundPlayer = true;
             }
             else

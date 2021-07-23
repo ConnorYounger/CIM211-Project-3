@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public float autoHealMultilpier;
+    public float damageCoolDownTime = 0.2f;
+    private bool canTakeDamage = true;
+    private bool canAutoHeal = true;
+    public float autoHealCoolDown = 1;
 
     [Header("Sprinting")]
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
@@ -24,18 +28,47 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("UI Refrences")]
     public Slider staminaSlider;
+    public Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
         currentStamina = maxStamina;
         fPSController = gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+
+        StartCoroutine("SetCurrentHealth");
+    }
+
+    IEnumerator SetCurrentHealth()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        currentHealth = maxHealth;
+        UpdateSliders();
     }
 
     // Update is called once per frame
     void Update()
     {
         StaminaCoolDown();
+        AutoHeal();
+    }
+    
+    void AutoHeal()
+    {
+        if (canAutoHeal && autoHealMultilpier > 0)
+        {
+            if(currentHealth < maxHealth)
+            {
+                currentHealth += 2 * autoHealMultilpier * Time.deltaTime;
+                UpdateSliders();
+            }
+            else
+            {
+                currentHealth = maxHealth;
+                canAutoHeal = false;
+            }
+        }
     }
 
     void StaminaCoolDown()
@@ -45,7 +78,6 @@ public class PlayerHealth : MonoBehaviour
             canSprint = true;
             fPSController.canSprint = true;
             staminaSlider.fillRect.GetComponent<Image>().color = stamColour;
-            // change bar color
         }
 
         if (restoreStamina)
@@ -79,9 +111,10 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine("RestoreStamina");
     }
 
-    void UpdateSliders()
+    public void UpdateSliders()
     {
         staminaSlider.value = currentStamina / maxStamina;
+        healthSlider.value = currentHealth / maxHealth;
     }
 
     IEnumerator RestoreStamina()
@@ -96,5 +129,45 @@ public class PlayerHealth : MonoBehaviour
         //staminaSlider.fillRect.GetComponent<Image>().color = stamRechargeColour;
 
         restoreStamina = true;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (canTakeDamage)
+        {
+            currentHealth -= damage;
+            StartCoroutine("TakeDamageCoolDown");
+
+            StopCoroutine("AutoHealCoolDown");
+            StartCoroutine("AutoHealCoolDown");
+        }
+
+        if(currentHealth <= 0)
+        {
+            Lose();
+        }
+    }
+
+    IEnumerator TakeDamageCoolDown()
+    {
+        canTakeDamage = false;
+
+        yield return new WaitForSeconds(damageCoolDownTime);
+
+        canTakeDamage = true;
+    }
+
+    public IEnumerator AutoHealCoolDown()
+    {
+        canAutoHeal = false;
+
+        yield return new WaitForSeconds(autoHealCoolDown);
+
+        canAutoHeal = true;
+    }
+
+    void Lose()
+    {
+        Debug.Log("Player lose");
     }
 }

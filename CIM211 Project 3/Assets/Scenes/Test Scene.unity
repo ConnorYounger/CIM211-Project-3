@@ -15350,7 +15350,7 @@ MonoBehaviour:
   head: {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
   eyes: {fileID: 11400000, guid: 16cb052ea82197d4d9b9cc2dc2a72e5a, type: 2}
   brain: {fileID: 11400000, guid: 4a070ec52630100468fae0ebd3fa6e9f, type: 2}
-  heart: {fileID: 0}
+  heart: {fileID: 11400000, guid: 9a2b1bde084fa5443b6db0562cc0e141, type: 2}
   lungs: {fileID: 11400000, guid: c2bf32a6525dfd94887f7530ffd68428, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
@@ -16195,7 +16195,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 987482763}
   m_FillRect: {fileID: 1095096301}
   m_HandleRect: {fileID: 987482762}
@@ -16421,8 +16421,8 @@ MonoBehaviour:
   idlePointCollection: {fileID: 410471867}
   otherBabies: []
   animator: {fileID: 0}
-  meleeHitCollider: {fileID: 0}
-  meleeDamage: 0
+  meleeHitCollider: {fileID: 1932529474}
+  meleeDamage: 10
   rangedDamage: 0
   playerVisionDistance: 10
   playerVisionAngle: 20
@@ -17339,7 +17339,7 @@ MonoBehaviour:
   head: {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
   eyes: {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
   brain: {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
-  heart: {fileID: 0}
+  heart: {fileID: 11400000, guid: f9c64764df385944981710575e0e2eee, type: 2}
   lungs: {fileID: 11400000, guid: 243d538ccce1c394a9608a66bb8f1f2b, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: ef1978cd39867c04daa7910c0a12a838, type: 2}
@@ -18146,7 +18146,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 370365270}
   m_FillRect: {fileID: 2004863349}
   m_HandleRect: {fileID: 370365269}
@@ -18900,7 +18900,7 @@ MonoBehaviour:
   head: {fileID: 11400000, guid: a0b1dbdd27c980542baaa3c1f69d7a74, type: 2}
   eyes: {fileID: 11400000, guid: 5b6f5c8654adfa14c8881317c50a63e7, type: 2}
   brain: {fileID: 0}
-  heart: {fileID: 0}
+  heart: {fileID: 11400000, guid: 303a03869b623c04c9ae0a0de9b25d16, type: 2}
   lungs: {fileID: 11400000, guid: 79b72d44129da17468a0a733a731bf97, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
@@ -19215,6 +19215,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   autoHealMultilpier: 0
+  damageCoolDownTime: 0.2
+  autoHealCoolDown: 1
   maxStamina: 0
   currentStamina: 0
   stamConsumption: 1
@@ -19224,6 +19226,7 @@ MonoBehaviour:
   stamConsumptionColour: {r: 0.8396226, g: 0.73167855, b: 0.019802418, a: 1}
   stamRechargeColour: {r: 0.52508056, g: 0.5283019, b: 0, a: 1}
   staminaSlider: {fileID: 1084207300}
+  healthSlider: {fileID: 1621887542}
 --- !u!114 &1864466378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19727,6 +19730,115 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1932529474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932529478}
+  - component: {fileID: 1932529477}
+  - component: {fileID: 1932529476}
+  - component: {fileID: 1932529475}
+  - component: {fileID: 1932529479}
+  m_Layer: 0
+  m_Name: MeleeCollisionBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1932529475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932529474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1932529476
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932529474}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 863df50f230c3e5488bb2bba896c20df, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1932529477
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932529474}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1932529478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932529474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.03}
+  m_LocalScale: {x: 1, y: 0.7113, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151532572}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932529479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932529474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57da73b5f6da7c24fa146d32b67d9be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1151532564}
 --- !u!1 &1981968182
 GameObject:
   m_ObjectHideFlags: 0

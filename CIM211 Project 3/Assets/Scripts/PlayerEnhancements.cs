@@ -117,6 +117,9 @@ public class PlayerEnhancements : MonoBehaviour
         player.maxStamina = baseMaxStamina + maxStamina;
         player.currentStamina = player.maxStamina;
 
+        player.UpdateSliders();
+        player.StartCoroutine("AutoHealCoolDown");
+
         gameObject.GetComponent<PlayerWeaponSystem>().weaponAccuracyMultiplier = baseBrain + brainMultiplier;
 
         weaponSystem.SetWeapons(leftArmWeaponCode, rightArmWeaponCode);

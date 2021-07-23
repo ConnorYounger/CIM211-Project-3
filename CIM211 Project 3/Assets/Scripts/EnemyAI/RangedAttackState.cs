@@ -15,13 +15,13 @@ namespace StatePattern
 
         public override void OnStateEnter()
         {
-            Debug.Log("Entering Roming State");
+            Debug.Log("Entering RangedAttack State");
             
         }
 
         public override void OnStateExit()
         {
-            Debug.Log("Exiting Roming State");
+            Debug.Log("Exiting RangedAttack State");
         }
     }
 }

@@ -18,8 +18,8 @@ namespace StatePattern
         public GameObject meleeHitCollider;
 
         [Header("Enemy Stats")]
-        public float meleeDamage;
-        public float rangedDamage;
+        public float meleeDamage = 10;
+        public float rangedDamage = 10;
 
         [Header("State Stats")]
         public float playerVisionDistance = 10;
@@ -56,6 +56,11 @@ namespace StatePattern
             currentState.OnStateExit();
             currentState = state;
             currentState.OnStateEnter();
+        }
+
+        public void DealMeleeDamage()
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
         }
     }
 }

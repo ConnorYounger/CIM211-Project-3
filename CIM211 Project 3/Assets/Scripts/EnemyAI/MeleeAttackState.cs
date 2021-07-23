@@ -22,7 +22,7 @@ namespace StatePattern
             ChasePlayer();
             AttackPlayer();
             CoolDownTimer();
-            //AttackStages();
+            AttackStages();
         }
 
         void AttackStages()
@@ -93,7 +93,7 @@ namespace StatePattern
 
         public override void OnStateEnter()
         {
-            Debug.Log("Entering Roming State");
+            Debug.Log("Entering MeleeAttack State");
             canAttack = true;
             attackStage = 0;
             collisionTimer = 0;
@@ -102,7 +102,7 @@ namespace StatePattern
 
         public override void OnStateExit()
         {
-            Debug.Log("Exiting Roming State");
+            Debug.Log("Exiting MeleeAttack State");
         }
     }
 }
