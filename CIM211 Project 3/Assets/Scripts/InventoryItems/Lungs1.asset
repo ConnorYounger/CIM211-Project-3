@@ -27,4 +27,4 @@ MonoBehaviour:
   itemName: Mechanical Lungs
   itemLevel: 1
   itemBuff: Max Stamina +25
-  itemFlavourText: Robotic lungs, don't have to worry about lung cancer anymore ;)
+  itemFlavourText: Robotic lungs

@@ -19,6 +19,11 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private Canvas itemInfoCanvas;
     private UIItemInfo itemInfo;
 
+    [Header("Colours")]
+    public Color level1Colour;
+    public Color level2Colour;
+    public Color level3Colour;
+
     private void Start()
     {
         canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
@@ -93,6 +98,19 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         itemInfo.itemLevelText.text = "Lv: " + invItem.itemLevel;
         itemInfo.itemBuffText.text = invItem.itemBuff;
         itemInfo.itemFlavourText.text = invItem.itemFlavourText;
+
+        switch (invItem.itemLevel)
+        {
+            case 2:
+                itemInfo.itemLevelText.color = level2Colour;
+                break;
+            case 3:
+                itemInfo.itemLevelText.color = level3Colour;
+                break;
+            default:
+                itemInfo.itemLevelText.color = level1Colour;
+                break;
+        }
 
         itemInfoCanvas.enabled = true;
     }
