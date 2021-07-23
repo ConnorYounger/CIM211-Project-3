@@ -23,6 +23,22 @@ namespace StatePattern
         {
             Travel();
             DrawDebugLines();
+            SearchForPlayer();
+        }
+
+        void SearchForPlayer()
+        {
+            if (enemy.hasFoundPlayer)
+            {
+                if (enemy.rangedDamage > 0)
+                {
+                    enemy.SetState(new RangedAttackState(enemy));
+                }
+                else
+                {
+                    enemy.SetState(new MeleeAttackState(enemy));
+                }
+            }
         }
 
         void Travel()

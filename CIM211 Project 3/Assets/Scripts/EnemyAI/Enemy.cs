@@ -13,11 +13,24 @@ namespace StatePattern
         public GameObject idlePointCollection;
         public Transform[] otherBabies;
 
+        [Header("Animation")]
+        public Animator animator;
+        public GameObject meleeHitCollider;
+
+        [Header("Enemy Stats")]
+        public float meleeDamage;
+        public float rangedDamage;
+
+        [Header("State Stats")]
+        public float playerVisionDistance = 10;
+        public float playerVisionAngle = 20;
         public float stateWaitTime = 10;
         public float idleCoolDownTime = 10;
 
         public float travelTime = 7;
         public int travelChance = 10;
+
+        public bool hasFoundPlayer;
 
         private State currentState;
 

@@ -32,6 +32,22 @@ namespace StatePattern
             MoveToIdlePoint();
             IdleTimer();
             TravelTimer();
+            SearchForPlayer();
+        }
+
+        void SearchForPlayer()
+        {
+            if (enemy.hasFoundPlayer)
+            {
+                if(enemy.rangedDamage > 0)
+                {
+                    enemy.SetState(new RangedAttackState(enemy));
+                }
+                else
+                {
+                    enemy.SetState(new MeleeAttackState(enemy));
+                }
+            }
         }
 
         void SearchForNewIdlePoint()
