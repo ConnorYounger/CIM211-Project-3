@@ -2959,6 +2959,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: canSprint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_UseHeadBob
       value: 0
       objectReference: {fileID: 0}
@@ -14832,7 +14836,7 @@ MonoBehaviour:
   eyes: {fileID: 11400000, guid: 16cb052ea82197d4d9b9cc2dc2a72e5a, type: 2}
   brain: {fileID: 11400000, guid: 4a070ec52630100468fae0ebd3fa6e9f, type: 2}
   heart: {fileID: 0}
-  lungs: {fileID: 0}
+  lungs: {fileID: 11400000, guid: c2bf32a6525dfd94887f7530ffd68428, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
   rightArm: {fileID: 11400000, guid: 23b683d0a2e1df24d888afdc203d44f3, type: 2}
@@ -16763,7 +16767,7 @@ MonoBehaviour:
   eyes: {fileID: 11400000, guid: f2a351db7317a7849b821948263413fb, type: 2}
   brain: {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
   heart: {fileID: 0}
-  lungs: {fileID: 0}
+  lungs: {fileID: 11400000, guid: 243d538ccce1c394a9608a66bb8f1f2b, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: ef1978cd39867c04daa7910c0a12a838, type: 2}
   rightArm: {fileID: 11400000, guid: 3284aeb95babada4490ac25d610346cf, type: 2}
@@ -18324,7 +18328,7 @@ MonoBehaviour:
   eyes: {fileID: 11400000, guid: 5b6f5c8654adfa14c8881317c50a63e7, type: 2}
   brain: {fileID: 0}
   heart: {fileID: 0}
-  lungs: {fileID: 0}
+  lungs: {fileID: 11400000, guid: 79b72d44129da17468a0a733a731bf97, type: 2}
   body: {fileID: 0}
   leftArm: {fileID: 11400000, guid: 3acb07ef49ab0eb468ddd573dc7aacb4, type: 2}
   rightArm: {fileID: 11400000, guid: 5488152a5e8b54745b74ae511479ce53, type: 2}
@@ -18640,6 +18644,13 @@ MonoBehaviour:
   autoHealMultilpier: 0
   maxStamina: 0
   currentStamina: 0
+  stamConsumption: 1
+  canSprint: 1
+  restoreStaminaCoolDown: 1
+  stamColour: {r: 1, g: 0.9529412, b: 0, a: 1}
+  stamConsumptionColour: {r: 0.8396226, g: 0.73167855, b: 0.019802418, a: 1}
+  stamRechargeColour: {r: 0.52508056, g: 0.5283019, b: 0, a: 1}
+  staminaSlider: {fileID: 1084207300}
 --- !u!114 &1864466378
 MonoBehaviour:
   m_ObjectHideFlags: 0

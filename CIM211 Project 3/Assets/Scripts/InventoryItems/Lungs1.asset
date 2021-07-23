@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 0, g: 0.7698326, b: 1, a: 1}
   maxHealthMultiplier: 0
-  maxStaminaMultiplier: 25
+  maxStaminaMultiplier: 50
   autoHealMultilpier: 0
   movementSpeedMultiplier: 0
   jumpHeightMultiliper: 0
@@ -26,5 +26,5 @@ MonoBehaviour:
   rightArmWeaponCode: 0
   itemName: Mechanical Lungs
   itemLevel: 1
-  itemBuff: Max Stamina +25
+  itemBuff: Max Stamina +50
   itemFlavourText: Robotic lungs

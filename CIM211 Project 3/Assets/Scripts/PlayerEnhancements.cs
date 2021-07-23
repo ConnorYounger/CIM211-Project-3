@@ -115,6 +115,7 @@ public class PlayerEnhancements : MonoBehaviour
         player.maxHealth = basePlayerMaxHealth + playerMaxHealthH + playerMaxHealthB;
         player.autoHealMultilpier = baseAutoHealMultiplier + autoHealMultiplier;
         player.maxStamina = baseMaxStamina + maxStamina;
+        player.currentStamina = player.maxStamina;
 
         gameObject.GetComponent<PlayerWeaponSystem>().weaponAccuracyMultiplier = baseBrain + brainMultiplier;
 
