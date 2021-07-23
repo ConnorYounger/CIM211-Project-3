@@ -79,6 +79,17 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void DealDamage(PlayerHealth player)
+    {
+        if (!deltDamage)
+        {
+            deltDamage = true;
+            player.TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
+    }
+
     void MoveForward()
     {
         if(speed > 0)
@@ -89,14 +100,29 @@ public class Projectile : MonoBehaviour
     {
 
         if (collision.gameObject.GetComponent<EnemyHealth>())
-        {
             DealDamage(collision.gameObject.GetComponent<EnemyHealth>());
+
+        if (collision.gameObject.GetComponent<PlayerHealth>())
+        {
+            Debug.Log("Hit Player");
+
+            DealDamage(collision.gameObject.GetComponent<PlayerHealth>());
         }
 
         if (!isGrenade)
             Destroy(gameObject);
         else
             Destroy(gameObject, 0.7f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<PlayerHealth>())
+        {
+            Debug.Log("Hit Player");
+
+            DealDamage(other.gameObject.GetComponent<PlayerHealth>());
+        }
     }
 
     private void OnDestroy()
@@ -115,6 +141,7 @@ public class Projectile : MonoBehaviour
             {
                 Rigidbody rb = ob.GetComponent<Rigidbody>();
                 EnemyHealth e = ob.GetComponent<EnemyHealth>();
+                PlayerHealth p = ob.GetComponent<PlayerHealth>();
 
                 if(rb != null)
                 {
@@ -124,6 +151,11 @@ public class Projectile : MonoBehaviour
                 if(e != null)
                 {
                     e.TakeDamage(damage);
+                }
+
+                if(p != null)
+                {
+                    p.TakeDamage(damage);
                 }
             }
         }

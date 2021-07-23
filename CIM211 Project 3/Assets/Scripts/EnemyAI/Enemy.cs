@@ -18,8 +18,16 @@ namespace StatePattern
         public GameObject meleeHitCollider;
 
         [Header("Enemy Stats")]
+        public InvDeadBody inventory;
         public float meleeDamage = 10;
-        public float rangedDamage = 10;
+        public float rangedDamage;
+        
+        [Header("Weapon Refrences")]
+        public Transform leftArmShootPoint;
+        public Transform rightArmShootPoint;
+
+        public GameObject projectile;
+        public GameObject grenade;
 
         [Header("State Stats")]
         public float playerVisionDistance = 10;

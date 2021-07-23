@@ -17,8 +17,8 @@ TagManager:
   - PlayerProjectile
   - PostProcessing
   - Vision
-  - 
-  - 
+  - Enemy
+  - EnemyProjectile
   - 
   - 
   - 
