@@ -16,12 +16,18 @@ namespace StatePattern
         public float stateWaitTime = 10;
         public float idleCoolDownTime = 10;
 
+        public float travelTime = 7;
+        public int travelChance = 10;
+
         private State currentState;
 
         public NavMeshAgent navAgent;
 
         private void Start()
         {
+            Debug.Log("Startt");
+            player = GameObject.Find("Player");
+
             currentState = new IdleState(this);
 
             navAgent = gameObject.GetComponent<NavMeshAgent>();

@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 396556082448528555, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300683645127908943, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
       propertyPath: m_Constraints
@@ -266,7 +266,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &42510212
 MeshCollider:
@@ -632,6 +632,50 @@ Transform:
   m_Father: {fileID: 1863631606}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &167225885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167225886}
+  - component: {fileID: 167225887}
+  m_Layer: 0
+  m_Name: IdlePoint (5)
+  m_TagString: IdlePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &167225886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167225885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.6108336, y: 2.972, z: 22.909624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410471868}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &167225887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167225885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &196876641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6908263046915529614, guid: 60232aefa242d8248bdeb9340f2988ea, type: 3}
@@ -680,6 +724,8 @@ MonoBehaviour:
   otherBabies: []
   stateWaitTime: 10
   idleCoolDownTime: 10
+  travelTime: 7
+  travelChance: 10
   navAgent: {fileID: 0}
 --- !u!1 &212057685
 GameObject:
@@ -1376,6 +1422,9 @@ Transform:
   - {fileID: 1256341299}
   - {fileID: 1491979263}
   - {fileID: 1981968183}
+  - {fileID: 1236948951}
+  - {fileID: 768823270}
+  - {fileID: 167225886}
   m_Father: {fileID: 1345035348}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3014,6 +3063,50 @@ Transform:
   m_Father: {fileID: 1492127021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &768823269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768823270}
+  - component: {fileID: 768823271}
+  m_Layer: 0
+  m_Name: IdlePoint (4)
+  m_TagString: IdlePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768823270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768823269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.660833, y: 0.576, z: 13.179251}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410471868}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &768823271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768823269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &780642536
 GameObject:
   m_ObjectHideFlags: 0
@@ -15905,8 +15998,10 @@ MonoBehaviour:
   wanderPointCollection: {fileID: 1863631605}
   idlePointCollection: {fileID: 410471867}
   otherBabies: []
-  stateWaitTime: 10
+  stateWaitTime: 3
   idleCoolDownTime: 10
+  travelTime: 7
+  travelChance: 10
   navAgent: {fileID: 0}
 --- !u!195 &1151532565
 NavMeshAgent:
@@ -16299,6 +16394,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206782789}
   m_CullTransparentMesh: 1
+--- !u!1 &1236948950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236948951}
+  - component: {fileID: 1236948952}
+  m_Layer: 0
+  m_Name: IdlePoint (3)
+  m_TagString: IdlePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236948951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236948950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.906834, y: 0.576, z: 24.659624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410471868}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1236948952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236948950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1256341298
 GameObject:
   m_ObjectHideFlags: 0
@@ -16311,7 +16450,7 @@ GameObject:
   - component: {fileID: 1256341300}
   m_Layer: 0
   m_Name: IdlePoint
-  m_TagString: Untagged
+  m_TagString: IdlePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17116,7 +17255,7 @@ GameObject:
   - component: {fileID: 1491979264}
   m_Layer: 0
   m_Name: IdlePoint (1)
-  m_TagString: Untagged
+  m_TagString: IdlePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17129,7 +17268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491979262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4, y: 0.576, z: -9.3}
+  m_LocalPosition: {x: -8.4, y: 0.576, z: -5.090375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 410471868}
@@ -19152,7 +19291,7 @@ GameObject:
   - component: {fileID: 1981968184}
   m_Layer: 0
   m_Name: IdlePoint (2)
-  m_TagString: Untagged
+  m_TagString: IdlePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
