@@ -11,7 +11,6 @@ namespace StatePattern
 
         public GameObject wanderPointCollection;
         public GameObject idlePointCollection;
-        public Transform[] otherBabies;
 
         [Header("Animation")]
         public Animator animator;
@@ -21,6 +20,7 @@ namespace StatePattern
         public InvDeadBody inventory;
         public float meleeDamage = 10;
         public float rangedDamage;
+        public EnemyHealth enemyHealth;
         
         [Header("Weapon Refrences")]
         public Transform leftArmShootPoint;
@@ -37,6 +37,8 @@ namespace StatePattern
 
         public float travelTime = 7;
         public int travelChance = 10;
+
+        public float numbOfAlerts = 2;
 
         public bool hasFoundPlayer;
 
@@ -57,6 +59,21 @@ namespace StatePattern
         private void Update()
         {
             currentState.Tick();
+        }
+
+        public void SetStats()
+        {
+            enemyVisionDistance *= 1 + inventory.eyes.vision / 2;
+
+            enemyHealth.maxHealth += inventory.body.maxHealthMultiplier + inventory.head.maxHealthMultiplier;
+
+            travelTime *= 1.0f + (inventory.lungs.maxStaminaMultiplier / 100f);
+
+            travelChance = (int)Mathf.Round(inventory.brain.brain);
+
+            navAgent.speed *= 1 + (inventory.leftLeg.movementSpeedMultiplier / 4) + (inventory.rightLeg.movementSpeedMultiplier / 4);
+
+            numbOfAlerts *= Mathf.Round(inventory.brain.brain);
         }
 
         public void SetState(State state)

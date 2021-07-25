@@ -7,7 +7,10 @@ using StatePattern;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 100;
+    public float maxHealth = 100;
+    private float currentHealth;
+    public float healthRegenMultiplier;
+    private bool canHeal = true;
 
     public TMP_Text healthText;
 
@@ -20,23 +23,64 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
+
         inv = gameObject.GetComponent<InvDeadBody>();
+    }
+
+    private void Update()
+    {
+        AutoHeal();
+    }
+
+    void AutoHeal()
+    {
+        if(canHeal && healthRegenMultiplier > 0)
+        {
+            if(currentHealth < maxHealth)
+            {
+                currentHealth += 10 * healthRegenMultiplier * Time.deltaTime;
+                UpdateHealthUI();
+            }
+            else if(currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+                UpdateHealthUI();
+            }
+        }
     }
 
     public void TakeDamage(float damage)
     {
         if (!isDead)
         {
-            health -= damage;
+            currentHealth -= damage;
 
-            if (health > 0)
+            if (currentHealth > 0)
             {
-                if (healthText)
-                    healthText.text = health.ToString();
+                UpdateHealthUI();
+
+                StopCoroutine("AutoHealCoolDown");
+                StartCoroutine("AutoHealCoolDown");
             }
             else
                 Die();
         }
+    }
+
+    void UpdateHealthUI()
+    {
+        if (healthText)
+            healthText.text = currentHealth.ToString();
+    }
+
+    IEnumerator AutoHealCoolDown()
+    {
+        canHeal = false;
+
+        yield return new WaitForSeconds(2);
+
+        canHeal = true;
     }
 
     void Die()

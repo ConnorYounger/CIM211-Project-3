@@ -956,12 +956,12 @@ MonoBehaviour:
   player: {fileID: 1864466371}
   wanderPointCollection: {fileID: 1863631605}
   idlePointCollection: {fileID: 410471867}
-  otherBabies: []
   animator: {fileID: 0}
   meleeHitCollider: {fileID: 0}
   inventory: {fileID: 0}
   meleeDamage: 0
   rangedDamage: 0
+  enemyHealth: {fileID: 0}
   leftArmShootPoint: {fileID: 0}
   rightArmShootPoint: {fileID: 0}
   aimPoint: {fileID: 0}
@@ -972,6 +972,7 @@ MonoBehaviour:
   idleCoolDownTime: 10
   travelTime: 7
   travelChance: 10
+  numbOfAlerts: 2
   hasFoundPlayer: 0
   navAgent: {fileID: 0}
 --- !u!1 &212057685
@@ -15609,7 +15610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 100
+  healthRegenMultiplier: 0
   healthText: {fileID: 0}
   spawManager: {fileID: 0}
   enemy: {fileID: 0}
@@ -16567,12 +16569,12 @@ MonoBehaviour:
   player: {fileID: 1864466371}
   wanderPointCollection: {fileID: 1863631605}
   idlePointCollection: {fileID: 410471867}
-  otherBabies: []
   animator: {fileID: 0}
   meleeHitCollider: {fileID: 1932529474}
   inventory: {fileID: 1151532568}
   meleeDamage: 10
   rangedDamage: 1
+  enemyHealth: {fileID: 1151532567}
   leftArmShootPoint: {fileID: 1549879221}
   rightArmShootPoint: {fileID: 902610508}
   aimPoint: {fileID: 9700292}
@@ -16583,6 +16585,7 @@ MonoBehaviour:
   idleCoolDownTime: 10
   travelTime: 7
   travelChance: 10
+  numbOfAlerts: 2
   hasFoundPlayer: 0
   navAgent: {fileID: 0}
 --- !u!195 &1151532565
@@ -16607,6 +16610,17 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1151532567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1617512439067172094, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
+  m_PrefabInstance: {fileID: 36015496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151532563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1151532568 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7334066882253050162, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
@@ -17523,7 +17537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 100
+  healthRegenMultiplier: 0
   healthText: {fileID: 0}
   spawManager: {fileID: 0}
   enemy: {fileID: 0}
@@ -19207,7 +19222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 100
+  healthRegenMultiplier: 0
   healthText: {fileID: 0}
   spawManager: {fileID: 0}
   enemy: {fileID: 0}
@@ -20551,7 +20567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 100
+  healthRegenMultiplier: 0
   healthText: {fileID: 403941378}
   spawManager: {fileID: 0}
   enemy: {fileID: 0}

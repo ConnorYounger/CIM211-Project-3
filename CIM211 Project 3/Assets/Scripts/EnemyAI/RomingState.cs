@@ -61,11 +61,14 @@ namespace StatePattern
         {
             Collider[] colliders = Physics.OverlapSphere(enemy.transform.position, enemy.enemyVisionDistance);
 
+            int alertedEnemies = 0;
+
             foreach (Collider collider in colliders)
             {
-                if (collider.GetComponent<Enemy>())
+                if (collider.GetComponent<Enemy>() && alertedEnemies < enemy.numbOfAlerts)
                 {
                     collider.GetComponent<Enemy>().hasFoundPlayer = true;
+                    alertedEnemies++;
                 }
             }
         }
