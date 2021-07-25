@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StatePattern
 {
@@ -19,14 +20,58 @@ namespace StatePattern
 
         public float bulletSpread = 0.05f;
 
+        public float followDistance = 10;
+        public float pointRadius = 10;
+
         public GameObject lProjectile;
         public GameObject rProjectile;
+
+        private bool moveTowardsPlayer;
+        private float moveCoolDownTime = 5;
+        private float moveTimer;
 
         public override void Tick()
         {
             ShootAtPlayer();
             FireRateCoolDowns();
             SteerTowardsPlayer();
+            FollowPlayer();
+            MoveCoolDownTimer();
+        }
+
+        void MoveCoolDownTimer()
+        {
+            if (!moveTowardsPlayer && moveTimer > 0)
+                moveTimer -= Time.deltaTime;
+            else
+                moveTowardsPlayer = true;
+        }
+
+        void FollowPlayer()
+        {
+            if(moveTowardsPlayer)
+            {
+                moveTimer = moveCoolDownTime;
+                moveTowardsPlayer = false;
+
+                enemy.navAgent.SetDestination(RandomNavmeshLocation(pointRadius));
+            }
+        }
+
+        public Vector3 RandomNavmeshLocation(float radius)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * radius;
+            randomDirection += enemy.player.transform.position;
+
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+
+            if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+            {
+                finalPosition = hit.position;
+            }
+
+            return finalPosition;
         }
 
         void SteerTowardsPlayer()
@@ -37,6 +82,22 @@ namespace StatePattern
 
             var rotation = (Quaternion.LookRotation(lookPos));
             enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, rotation, Time.deltaTime * damping);
+
+            AimAtPlayer();
+        }
+
+        void AimAtPlayer()
+        {
+            float damping = 2;
+            Vector3 lookPos = enemy.player.transform.position - enemy.aimPoint.transform.position;
+
+            var rotation = (Quaternion.LookRotation(lookPos));
+            enemy.aimPoint.transform.rotation = Quaternion.Slerp(enemy.aimPoint.transform.rotation, rotation, Time.deltaTime * damping);
+        }
+
+        public float CalculateRotationValue(float value)
+        {
+            return (value / 360) * 30000;
         }
 
         void FireRateCoolDowns()
@@ -86,14 +147,12 @@ namespace StatePattern
 
         void FireProjectile(GameObject projectile, Transform shootPoint)
         {
-            //GameObject bullet = GameObject.Instantiate(projectile, shootPoint.position, shootPoint.rotation);
-
             RaycastHit hit;
-            Vector3 shootDir = shootPoint.forward;
+            Vector3 shootDir = enemy.aimPoint.forward;
             shootDir.x += Random.Range(-bulletSpread, bulletSpread);
             shootDir.y += Random.Range(-bulletSpread, bulletSpread);
 
-            Physics.Raycast(shootPoint.position, shootDir, out hit, 1000, ~LayerMask.GetMask("Player"));
+            Physics.Raycast(enemy.aimPoint.position, shootDir, out hit, 1000, ~LayerMask.GetMask("Vision"));
 
             GameObject bullet = GameObject.Instantiate(projectile, shootPoint.position, shootPoint.rotation);
 

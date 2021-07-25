@@ -39,13 +39,28 @@ namespace StatePattern
         {
             if (enemy.hasFoundPlayer)
             {
-                if(enemy.rangedDamage > 0)
+                AlertNearByEnemies();
+
+                if (enemy.rangedDamage > 0)
                 {
                     enemy.SetState(new RangedAttackState(enemy));
                 }
                 else
                 {
                     enemy.SetState(new MeleeAttackState(enemy));
+                }
+            }
+        }
+
+        void AlertNearByEnemies()
+        {
+            Collider[] colliders = Physics.OverlapSphere(enemy.transform.position, enemy.enemyVisionDistance);
+
+            foreach (Collider collider in colliders)
+            {
+                if (collider.GetComponent<Enemy>())
+                {
+                    collider.GetComponent<Enemy>().hasFoundPlayer = true;
                 }
             }
         }

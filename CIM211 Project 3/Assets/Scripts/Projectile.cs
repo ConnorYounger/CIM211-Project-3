@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float damage;
     public float speed;
-    public float hitScanDis = 0.5f;
+    public float hitScanDis = 1f;
 
     public bool isGrenade;
     public float explosionRadius = 1;
@@ -21,7 +21,9 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         MoveForward();
-        CheckForCollision();
+
+        if(!isGrenade)
+            CheckForCollision();
     }
 
     private void FixedUpdate()
@@ -60,9 +62,17 @@ public class Projectile : MonoBehaviour
         //}
 
         RaycastHit hit;
-        Physics.Raycast(lastPoint, transform.position, out hit, hitScanDis, LayerMask.GetMask("PlayerProjectile"));
+        Physics.Raycast(lastPoint, transform.forward, out hit, hitScanDis, ~LayerMask.GetMask("Player"));
 
-        if (hit.collider && hit.collider.GetComponent<EnemyHealth>() == null)
+        if (hit.collider)
+        {
+            Destroy(gameObject);
+        }
+
+        RaycastHit sphereHit;
+        Physics.SphereCast(transform.position, 0.1f, transform.forward, out sphereHit, .1f, ~LayerMask.GetMask("Player"));
+
+        if (sphereHit.collider && !sphereHit.collider.GetComponent<EnemyHealth>())
         {
             Destroy(gameObject);
         }

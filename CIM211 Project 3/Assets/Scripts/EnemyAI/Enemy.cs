@@ -25,13 +25,13 @@ namespace StatePattern
         [Header("Weapon Refrences")]
         public Transform leftArmShootPoint;
         public Transform rightArmShootPoint;
+        public Transform aimPoint;
 
         public GameObject projectile;
         public GameObject grenade;
 
         [Header("State Stats")]
-        public float playerVisionDistance = 10;
-        public float playerVisionAngle = 20;
+        public float enemyVisionDistance = 10;
         public float stateWaitTime = 10;
         public float idleCoolDownTime = 10;
 
