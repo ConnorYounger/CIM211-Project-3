@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
         //}
 
         RaycastHit hit;
-        Physics.Raycast(lastPoint, transform.forward, out hit, hitScanDis, ~LayerMask.GetMask("Player"));
+        Physics.Raycast(lastPoint, transform.forward, out hit, hitScanDis, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Vision")));
 
         if (hit.collider)
         {
@@ -70,7 +70,7 @@ public class Projectile : MonoBehaviour
         }
 
         RaycastHit sphereHit;
-        Physics.SphereCast(transform.position, 0.1f, transform.forward, out sphereHit, .1f, ~LayerMask.GetMask("Player"));
+        Physics.SphereCast(transform.position, 0.1f, transform.forward, out sphereHit, .1f, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Vision")));
 
         if (sphereHit.collider && !sphereHit.collider.GetComponent<EnemyHealth>())
         {

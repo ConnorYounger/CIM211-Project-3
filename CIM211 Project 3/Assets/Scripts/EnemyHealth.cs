@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
 
     public Enemy enemy;
 
+    public MeshRenderer meshRenderer;
+
     public bool isDead;
 
     void Start()
@@ -62,6 +64,8 @@ public class EnemyHealth : MonoBehaviour
 
                 StopCoroutine("AutoHealCoolDown");
                 StartCoroutine("AutoHealCoolDown");
+
+                enemy.hasFoundPlayer = true;
             }
             else
                 Die();
@@ -116,9 +120,9 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
-        if (gameObject.GetComponent<MeshRenderer>())
+        if (meshRenderer)
         {
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            meshRenderer.material.color = Color.red;
         }
     }
 
