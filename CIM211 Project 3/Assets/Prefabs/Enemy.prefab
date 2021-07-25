@@ -728,7 +728,7 @@ MonoBehaviour:
   stateWaitTime: 3
   idleCoolDownTime: 10
   travelTime: 7
-  travelChance: 10
+  travelChance: 8
   numbOfAlerts: 2
   hasFoundPlayer: 0
   navAgent: {fileID: 0}
