@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 7334066882253050162, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
       propertyPath: leftArm
       value: 
-      objectReference: {fileID: 11400000, guid: c211ab7f6d500314398d6bc90b94ce6f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7334066882253050162, guid: 1db7240ccee5d74499ec6944820b56be, type: 3}
       propertyPath: rightArm
       value: 

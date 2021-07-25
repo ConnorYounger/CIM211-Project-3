@@ -30,6 +30,14 @@ namespace StatePattern
         private float moveCoolDownTime = 5;
         private float moveTimer;
 
+        // Melee
+        private float meleeAttackRange = 2;
+        private int attackStage;
+        private float collisionTimer;
+        private float coolDownTimer;
+        private float attackCoolDown = 1;
+        private bool canMeleeAttack = true;
+
         public override void Tick()
         {
             ShootAtPlayer();
@@ -37,6 +45,65 @@ namespace StatePattern
             SteerTowardsPlayer();
             FollowPlayer();
             MoveCoolDownTimer();
+            CheckForMeleeAttack();
+            MeleeAttackStages();
+            CoolDownTimer();
+        }
+
+        void CheckForMeleeAttack()
+        {
+            if (MeleeDistanceCheck() && canMeleeAttack && (!hasLeftWeapon || !hasRightWeapon))
+            {
+                canMeleeAttack = false;
+                coolDownTimer = attackCoolDown;
+
+                attackStage = 1;
+                collisionTimer = 0.2f;
+
+                //play attack animation
+            }
+        }
+
+        void CoolDownTimer()
+        {
+            if (!canMeleeAttack && coolDownTimer > 0)
+                coolDownTimer -= Time.deltaTime;
+
+            if (!canMeleeAttack && coolDownTimer <= 0)
+                canMeleeAttack = true;
+        }
+
+        void MeleeAttackStages()
+        {
+            if (attackStage > 0)
+            {
+                if (collisionTimer > 0)
+                {
+                    collisionTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    if (attackStage == 1)
+                    {
+                        enemy.meleeHitCollider.SetActive(true);
+                        collisionTimer = 0.4f;
+                        attackStage = 2;
+                    }
+                    else if (attackStage == 2)
+                    {
+                        enemy.meleeHitCollider.SetActive(false);
+                        attackStage = 0;
+                    }
+                }
+            }
+        }
+
+        bool MeleeDistanceCheck()
+        {
+            if (Vector3.Distance(enemy.transform.position, enemy.player.transform.position) < meleeAttackRange)
+                return true;
+            else
+                return false;
         }
 
         void MoveCoolDownTimer()
