@@ -70,7 +70,9 @@ namespace StatePattern
             else
             {
                 if (enemy.navAgent.enabled)
+                {
                     enemy.navAgent.enabled = false;
+                }
             }
         }
 

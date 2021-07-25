@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StatePattern
 {
@@ -56,32 +57,55 @@ namespace StatePattern
 
         void SetCloseByPoints()
         {
-            closeByPoints.Clear();
+            //closeByPoints.Clear();
 
-            Collider[] colliders = Physics.OverlapSphere(centerPoint.transform.position, pointSearchRange);
+            //Collider[] colliders = Physics.OverlapSphere(centerPoint.transform.position, pointSearchRange);
 
-            foreach (Collider collider in colliders)
+            //foreach (Collider collider in colliders)
+            //{
+            //    if (collider.tag == "IdlePoint")
+            //    {
+            //        closeByPoints.Add(collider.transform);
+            //    }
+            //}
+
+            //if(closeByPoints.Count > 0)
+            //{
+            //    int rand = Random.Range(0, closeByPoints.Count);
+            //    targetPoint = closeByPoints[rand];
+            //    enemy.navAgent.enabled = true;
+            //    enemy.navAgent.SetDestination(targetPoint.position);
+
+            //    debugLines.Clear();
+            //    debugLines.Add(targetPoint.position);
+            //}
+            //else
+            //{
+            //    enemy.SetState(new RomingState(enemy));
+            //}
+
+            Debug.Log("Search for a point");
+
+            enemy.navAgent.enabled = true;
+            enemy.navAgent.SetDestination(RandomNavmeshLocation(pointSearchRange));
+        }
+
+        public Vector3 RandomNavmeshLocation(float radius)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * radius;
+            randomDirection += centerPoint.transform.position;
+
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+
+            if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
             {
-                if (collider.tag == "IdlePoint")
-                {
-                    closeByPoints.Add(collider.transform);
-                }
+                finalPosition = hit.position;
             }
 
-            if(closeByPoints.Count > 0)
-            {
-                int rand = Random.Range(0, closeByPoints.Count);
-                targetPoint = closeByPoints[rand];
-                enemy.navAgent.enabled = true;
-                enemy.navAgent.SetDestination(targetPoint.position);
+            Debug.Log("random point");
 
-                debugLines.Clear();
-                debugLines.Add(targetPoint.position);
-            }
-            else
-            {
-                enemy.SetState(new RomingState(enemy));
-            }
+            return finalPosition;
         }
 
         void DrawDebugLines()
@@ -103,8 +127,6 @@ namespace StatePattern
 
             travelTimer = enemy.travelTime;
             isTraveling = true;
-
-            enemy.navAgent.enabled = true;
 
             if (centerPoint == null)
             {

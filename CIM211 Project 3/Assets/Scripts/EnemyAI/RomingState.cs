@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace StatePattern
 {
@@ -24,15 +25,19 @@ namespace StatePattern
         private float traveltimer;
 
         private bool searchingForIdlePoint;
+        private bool roming;
 
         public override void Tick()
         {
-            DrawDebugLines();
-            SearchForNewIdlePoint();
-            MoveToIdlePoint();
-            IdleTimer();
-            TravelTimer();
-            SearchForPlayer();
+            if (roming)
+            {
+                DrawDebugLines();
+                SearchForNewIdlePoint();
+                MoveToIdlePoint();
+                IdleTimer();
+                TravelTimer();
+                SearchForPlayer();
+            }
         }
 
         void SearchForPlayer()
@@ -75,28 +80,49 @@ namespace StatePattern
                     enemy.SetState(new TravelState(enemy));
                 else
                 {
-                    if (closeByPoints.Count > 0)
-                    {
-                        debugLines.Clear();
-                        int rand = Random.Range(0, closeByPoints.Count);
+                    //if (closeByPoints.Count > 0)
+                    //{
+                    //    debugLines.Clear();
+                    //    int rand = Random.Range(0, closeByPoints.Count);
 
-                        targetPoint = closeByPoints[rand];
-                        debugLines.Add(targetPoint.position);
-                    }
-                    else
-                    {
-                        Debug.LogError("No close by points");
-                    }
+                    //    targetPoint = closeByPoints[rand];
+                    //    debugLines.Add(targetPoint.position);
+                    //}
+                    //else
+                    //{
+                    //    Debug.LogError("No close by points");
+                    //}
 
-                    if (targetPoint != null)
-                    {
-                        traveltimer = traveltime;
-                        searchingForIdlePoint = false;
-                        enemy.navAgent.enabled = true;
-                        enemy.navAgent.SetDestination(targetPoint.position);
-                    }
+                    //if (targetPoint != null)
+                    //{
+                    //    traveltimer = traveltime;
+                    //    searchingForIdlePoint = false;
+                    //    enemy.navAgent.enabled = true;
+                    //    enemy.navAgent.SetDestination(targetPoint.position);
+                    //}
+
+                    traveltimer = traveltime;
+                    searchingForIdlePoint = false;
+                    enemy.navAgent.enabled = true;
+                    enemy.navAgent.SetDestination(RandomNavmeshLocation(pointSearchRange));
                 }
             }
+        }
+
+        public Vector3 RandomNavmeshLocation(float radius)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * radius;
+            randomDirection += centerPoint.transform.position;
+
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+
+            if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+            {
+                finalPosition = hit.position;
+            }
+
+            return finalPosition;
         }
 
         void TravelTimer()
@@ -104,7 +130,7 @@ namespace StatePattern
             if (traveltimer > 0)
                 traveltimer -= Time.deltaTime;
 
-            if(traveltimer <= 0 && !searchingForIdlePoint && idleTimer <= 0 && targetPoint)
+            if(traveltimer <= 0 && !searchingForIdlePoint && idleTimer <= 0)
             {
                 GoIdle();
             }
@@ -123,7 +149,7 @@ namespace StatePattern
 
         void GoIdle()
         {
-            enemy.navAgent.enabled = false;
+            //enemy.navAgent.enabled = false;
             idleTimer = idleTime;
             searchingForIdlePoint = true;
         }
@@ -180,6 +206,8 @@ namespace StatePattern
 
         public override void OnStateEnter()
         {
+            roming = true;
+
             Debug.Log("Entering Roming State");
             closeByPoints = new List<Transform>();
             debugLines = new List<Vector3>();
@@ -193,12 +221,14 @@ namespace StatePattern
 
             centerPoint.transform.position = enemy.gameObject.transform.position;
 
-            SetCloseByPoints();
+            //SetCloseByPoints();
             searchingForIdlePoint = true;
         }
 
         public override void OnStateExit()
         {
+            roming = false;
+
             Debug.Log("Exiting Roming State");
 
             targetPoint = null;
