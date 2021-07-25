@@ -26,12 +26,16 @@ public class EnemySpawManager : MonoBehaviour
     public int waveEnemyKilledCount;
 
     public List<GameObject> aliveEnemies;
+    public List<GameObject> spawnedEnemies;
+    public List<GameObject> previousWaveEnemies;
     private int vision = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         aliveEnemies = new List<GameObject>();
+        previousWaveEnemies = new List<GameObject>();
+        spawnedEnemies = new List<GameObject>();
         currentWave = levelStats.currentWave;
     }
 
@@ -63,6 +67,26 @@ public class EnemySpawManager : MonoBehaviour
 
     IEnumerator SpawnNewWave()
     {
+        if(previousWaveEnemies.Count > 0)
+        {
+            foreach (GameObject enemy in previousWaveEnemies)
+            {
+                Destroy(enemy);
+            }
+
+            previousWaveEnemies.Clear();
+        }
+
+        if (spawnedEnemies.Count > 0)
+        {
+            foreach (GameObject enemy in spawnedEnemies)
+            {
+                previousWaveEnemies.Add(enemy);
+            }
+
+            spawnedEnemies.Clear();
+        }
+
         waveEnemyKilledCount = 0;
         waveEnemySpawnedCount = Mathf.RoundToInt(baseWaveEnemyCount * (currentWave + waveEnemyCountMultiplier));
         EnemySpawManager sM = gameObject.GetComponent<EnemySpawManager>();
@@ -87,6 +111,21 @@ public class EnemySpawManager : MonoBehaviour
         VisionUpdate(vision);
     }
 
+    IEnumerator UpdateAliveEnemies()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (aliveEnemies.Count > 0)
+        {
+            foreach (GameObject enemy in aliveEnemies)
+            {
+                spawnedEnemies.Add(enemy);
+            }
+
+            //aliveEnemies.Clear();
+        }
+    }
+
     void UpdateEnemyCounterUI()
     {
         enemyCounter.text = "Enemies to kill: " + waveEnemyKilledCount + " / " + waveEnemySpawnedCount;
@@ -95,6 +134,11 @@ public class EnemySpawManager : MonoBehaviour
     public void AddEnemy(GameObject enemy)
     {
         aliveEnemies.Add(enemy);
+
+        if(aliveEnemies.Count >= waveEnemySpawnedCount)
+        {
+            StartCoroutine("UpdateAliveEnemies");
+        }
     }
 
     public void KilledEnemy(GameObject enemy)

@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     void AutoHeal()
     {
-        if(canHeal && healthRegenMultiplier > 0)
+        if(canHeal && healthRegenMultiplier > 0 && !isDead)
         {
             if(currentHealth < maxHealth)
             {
@@ -68,7 +68,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         if (healthText)
             healthText.text = currentHealth.ToString();
@@ -114,6 +114,11 @@ public class EnemyHealth : MonoBehaviour
                 Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
             }
+        }
+
+        if (gameObject.GetComponent<MeshRenderer>())
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }
 

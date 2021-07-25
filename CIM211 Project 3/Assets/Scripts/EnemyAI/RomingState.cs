@@ -44,7 +44,7 @@ namespace StatePattern
         {
             if (enemy.hasFoundPlayer)
             {
-                AlertNearByEnemies();
+                //AlertNearByEnemies();
 
                 if (enemy.rangedDamage > 0)
                 {

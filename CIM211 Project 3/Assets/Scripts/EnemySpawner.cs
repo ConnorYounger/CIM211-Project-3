@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StatePattern;
 
 public class EnemySpawner : MonoBehaviour
 {
     private InvDeadBody enemyInv;
+    private Enemy enemyAI;
+    private EnemyHealth enemyHealth;
     private int minLootSpawn = 0;
     private int maxLootSpawn = 2;
     private int currentWave;
@@ -19,7 +22,9 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
         enemyInv = enemy.GetComponent<InvDeadBody>();
-        enemy.GetComponent<EnemyHealth>().spawManager = spawnManager;
+        enemyAI = enemy.GetComponent<Enemy>();
+        enemyHealth = enemy.GetComponent<EnemyHealth>();
+        enemyHealth.spawManager = spawnManager;
 
         //switch (wave)
         //{
@@ -180,5 +185,10 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnedLoot < lootToSpawn)
             StartCoroutine("RandomizeItemsTest");
+        else
+        {
+            enemyAI.SetStats();
+            enemyHealth.UpdateHealthUI();
+        }
     }
 }

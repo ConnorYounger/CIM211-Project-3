@@ -63,17 +63,37 @@ namespace StatePattern
 
         public void SetStats()
         {
-            enemyVisionDistance *= 1 + inventory.eyes.vision / 2;
+            Debug.Log("Set Enemy Stats");
 
-            enemyHealth.maxHealth += inventory.body.maxHealthMultiplier + inventory.head.maxHealthMultiplier;
+            if(inventory.eyes != null)
+                enemyVisionDistance *= 1 + inventory.eyes.vision / 2;
 
-            travelTime *= 1.0f + (inventory.lungs.maxStaminaMultiplier / 100f);
+            if (inventory.body != null)
+                enemyHealth.maxHealth += inventory.body.maxHealthMultiplier;
+            if (inventory.head != null)
+                enemyHealth.maxHealth += inventory.head.maxHealthMultiplier;
 
-            travelChance = (int)Mathf.Round(inventory.brain.brain);
+            if (inventory.heart != null)
+                enemyHealth.healthRegenMultiplier += inventory.heart.autoHealMultilpier;
 
-            navAgent.speed *= 1 + (inventory.leftLeg.movementSpeedMultiplier / 4) + (inventory.rightLeg.movementSpeedMultiplier / 4);
+            if (inventory.lungs != null)
+                travelTime *= 1.0f + (inventory.lungs.maxStaminaMultiplier / 100f);
 
-            numbOfAlerts *= Mathf.Round(inventory.brain.brain);
+            if (inventory.brain != null)
+            {
+                travelChance = (int)Mathf.Round(inventory.brain.brain);
+                numbOfAlerts *= Mathf.Round(inventory.brain.brain);
+            }
+
+            if (inventory.leftLeg != null)
+                navAgent.speed *= 1 + (inventory.leftLeg.movementSpeedMultiplier / 4);
+            if (inventory.rightLeg != null)
+                navAgent.speed *= 1 + (inventory.rightLeg.movementSpeedMultiplier / 4);
+
+            if ((inventory.leftArm && inventory.leftArm.leftArmWeaponCode > 2) || (inventory.rightArm && inventory.rightArm.rightArmWeaponCode > 2))
+            {
+                rangedDamage = 10;
+            }
         }
 
         public void SetState(State state)

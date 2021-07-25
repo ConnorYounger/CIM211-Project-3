@@ -7,6 +7,9 @@ public class EnemyVisionCollider : MonoBehaviour
 {
     public Enemy enemy;
 
+    public bool playerInCollider;
+    public bool canSeePlayer;
+
     private void Update()
     {
         RaycastHit hit = CalculateHit(enemy.gameObject.transform.position, enemy.player.transform.position, ~LayerMask.GetMask("Vision"));
@@ -18,6 +21,8 @@ public class EnemyVisionCollider : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+            playerInCollider = true;
+
             RaycastHit hit = CalculateHit(enemy.gameObject.transform.position, enemy.player.transform.position, ~LayerMask.GetMask("Vision"));
             //Physics.Raycast(enemy.gameObject.transform.position, enemy.player.transform.position, out hit, enemy.playerVisionDistance, ~LayerMask.GetMask("Vision"));
 
@@ -27,9 +32,13 @@ public class EnemyVisionCollider : MonoBehaviour
             {
                 //Debug.Log("Has found the player");
                 enemy.hasFoundPlayer = true;
+                canSeePlayer = true;
             }
             else
+            {
                 enemy.hasFoundPlayer = false;
+
+            }
         }
     }
 
