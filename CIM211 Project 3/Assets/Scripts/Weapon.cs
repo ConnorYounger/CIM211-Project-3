@@ -92,7 +92,7 @@ public class Weapon : MonoBehaviour
             shootDir.x += Random.Range(-bulletSpread, bulletSpread);
             shootDir.y += Random.Range(-bulletSpread, bulletSpread);
 
-            Physics.Raycast(playerCam.position, shootDir, out hit, 1000, ~LayerMask.GetMask("Player"));
+            Physics.Raycast(playerCam.position, shootDir, out hit, 1000, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Vision")));
 
             GameObject proj = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
 

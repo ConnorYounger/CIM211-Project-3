@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
+using StatePattern;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     private InvDeadBody inv;
     public EnemySpawManager spawManager;
+
+    public Enemy enemy;
 
     public bool isDead;
 
@@ -42,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("EnemyDie");
 
         if (healthText)
-            healthText.text = "Dead X(";
+            healthText.text = "Dead";
 
         if(inv != null)
         {
@@ -52,6 +56,20 @@ public class EnemyHealth : MonoBehaviour
         if (spawManager)
         {
             spawManager.KilledEnemy(gameObject);
+        }
+
+        if (enemy)
+        {
+            enemy.enabled = false;
+
+            if (gameObject.GetComponent<NavMeshAgent>())
+                gameObject.GetComponent<NavMeshAgent>().enabled = false;
+
+            if (gameObject.GetComponent<Rigidbody>())
+            {
+                Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.None;
+            }
         }
     }
 
