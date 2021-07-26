@@ -75,7 +75,7 @@ public class EnemyHealth : MonoBehaviour
     public void UpdateHealthUI()
     {
         if (healthText)
-            healthText.text = currentHealth.ToString();
+            healthText.text = Mathf.RoundToInt(currentHealth).ToString();
     }
 
     IEnumerator AutoHealCoolDown()
