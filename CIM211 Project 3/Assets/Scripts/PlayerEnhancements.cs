@@ -34,6 +34,7 @@ public class PlayerEnhancements : MonoBehaviour
     public int baseVisionMultiplier = 1;
     public float baseBrain = 0;
     public float brainMultiplier = 0;
+    public float fogDensity = 0.005f;
 
     [Header("Refrences")]
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
@@ -136,13 +137,13 @@ public class PlayerEnhancements : MonoBehaviour
         switch (vision)
         {
             case 2:
-                RenderSettings.fogDensity = 0.035f;
+                RenderSettings.fogDensity = fogDensity / 2;
                 break;
             case 3:
-                RenderSettings.fogDensity = 0.02f; ;
+                RenderSettings.fogDensity = fogDensity / 3; ;
                 break;
             default:
-                RenderSettings.fogDensity = 0.05f;
+                RenderSettings.fogDensity = fogDensity;
                 break;
         }
     }

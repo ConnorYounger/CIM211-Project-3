@@ -13,9 +13,11 @@ public class Projectile : MonoBehaviour
     public float explosionForce = 100;
 
     public GameObject destroyFx;
+    public GameObject bulletDecal;
     private Vector3 lastPoint;
 
     private bool deltDamage;
+    private bool hasSpawnedDecal;
 
     // Update is called once per frame
     void Update()
@@ -86,7 +88,22 @@ public class Projectile : MonoBehaviour
             enemy.TakeDamage(damage);
         }
 
+        SpawnDecal(enemy.transform);
+
         Destroy(gameObject);
+    }
+
+    void SpawnDecal(Transform point)
+    {
+        if (bulletDecal && !hasSpawnedDecal)
+        {
+            GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
+            decal.transform.parent = point;
+
+            Destroy(decal, 100);
+
+            hasSpawnedDecal = true;
+        }
     }
 
     void DealDamage(PlayerHealth player)
@@ -141,6 +158,13 @@ public class Projectile : MonoBehaviour
         {
             GameObject fx = Instantiate(destroyFx, transform.position, Quaternion.identity);
             Destroy(fx, 2);
+        }
+
+        if(bulletDecal && !hasSpawnedDecal)
+        {
+            GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
+
+            Destroy(decal, 100);
         }
 
         if (isGrenade)
