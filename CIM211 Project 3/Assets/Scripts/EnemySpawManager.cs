@@ -10,9 +10,11 @@ public class EnemySpawManager : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    public EnemySpawner[] spawnPoints;
+    public GameObject spawnPoints;
 
     public LootPool[] lootPools;
+
+    public bool spawnAtStart;
 
     [Header("UI")]
     public TMP_Text waveCounter;
@@ -37,24 +39,30 @@ public class EnemySpawManager : MonoBehaviour
         previousWaveEnemies = new List<GameObject>();
         spawnedEnemies = new List<GameObject>();
         currentWave = levelStats.currentWave;
+
+        if(spawnAtStart)
+            StartCoroutine("SpawnNewWave");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if (!spawnAtStart)
         {
-            StartCoroutine("SpawnNewWave");
-        }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine("SpawnNewWave");
+            }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentWave++;
-        }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                currentWave++;
+            }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && currentWave > 0)
-        {
-            currentWave--;
+            if (Input.GetKeyDown(KeyCode.DownArrow) && currentWave > 0)
+            {
+                currentWave--;
+            }
         }
     }
 
@@ -98,12 +106,12 @@ public class EnemySpawManager : MonoBehaviour
 
         for(int i = 0; i < waveEnemySpawnedCount; i++)
         {
-            int randPoint = Random.Range(0, spawnPoints.Length);
+            int randPoint = Random.Range(0, spawnPoints.transform.childCount);
 
             if (currentWave - 1 < lootPools.Length)
-                spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1], sM);
+                spawnPoints.transform.GetChild(randPoint).GetComponent<EnemySpawner>().SpawnEnemy(enemyPrefab, currentWave, lootPools[currentWave - 1], sM);
             else
-                spawnPoints[randPoint].SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1], sM);
+                spawnPoints.transform.GetChild(randPoint).GetComponent<EnemySpawner>().SpawnEnemy(enemyPrefab, currentWave, lootPools[lootPools.Length - 1], sM);
 
             yield return new WaitForSeconds(0.1f);
         }

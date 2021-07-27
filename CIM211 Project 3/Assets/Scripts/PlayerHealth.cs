@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
     public Slider staminaSlider;
     public Slider healthSlider;
 
+    public Animator uIHitEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -137,6 +139,9 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= damage;
             StartCoroutine("TakeDamageCoolDown");
+
+            if (uIHitEffect)
+                uIHitEffect.Play("TakeDamage");
 
             StopCoroutine("AutoHealCoolDown");
             StartCoroutine("AutoHealCoolDown");

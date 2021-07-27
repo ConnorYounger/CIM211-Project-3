@@ -2468,7 +2468,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 125744760}
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
-        m_MethodName: ModifySliderValues
+        m_MethodName: ModifyAudioVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2838,7 +2838,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 125744760}
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
-        m_MethodName: ModifySliderValues
+        m_MethodName: ModifyMusicVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

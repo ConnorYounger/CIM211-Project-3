@@ -81,7 +81,7 @@ namespace StatePattern
 
             if (inventory.brain != null)
             {
-                travelChance = (int)Mathf.Round(inventory.brain.brain);
+                travelChance -= (int)Mathf.Round(inventory.brain.brain);
                 numbOfAlerts *= Mathf.Round(inventory.brain.brain);
             }
 

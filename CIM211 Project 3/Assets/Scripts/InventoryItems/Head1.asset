@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: Head
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 0, g: 0.6435872, b: 0.9528302, a: 1}
-  maxHealthMultiplier: 50
+  maxHealthMultiplier: 10
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0
   movementSpeedMultiplier: 0
