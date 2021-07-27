@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public Canvas[] gamePlayCanvas;
-    public Canvas pauseCanvas;
+    public GameObject pauseCanvas;
     public Canvas inventoryCanvas;
+    public GameObject optionsCanvas;
+
+    public Options options;
 
     public bool isPauseMenu = true;
 
@@ -16,7 +19,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fPSController = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        if(isPauseMenu)
+            fPSController = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
     }
 
     // Update is called once per frame
@@ -30,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
     void PauseInput()
     {
-        if (!pauseCanvas.enabled)
+        if (!pauseCanvas.activeSelf)
         {
             PauseGame();
         }
@@ -49,12 +53,15 @@ public class LevelManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        pauseCanvas.enabled = true;
+        pauseCanvas.SetActive(true);
 
         foreach(Canvas canvas in gamePlayCanvas)
         {
             canvas.enabled = false;
         }
+
+        if (optionsCanvas)
+            optionsCanvas.SetActive(false);
 
         inventoryCanvas.enabled = false;
     }
@@ -68,12 +75,35 @@ public class LevelManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        pauseCanvas.enabled = false;
+        pauseCanvas.SetActive(false);
+
+        if (optionsCanvas)
+            optionsCanvas.SetActive(false);
 
         foreach (Canvas canvas in gamePlayCanvas)
         {
             canvas.enabled = true;
         }
+    }
+
+    public void OpenOptionsMenu()
+    {
+        pauseCanvas.SetActive(false);
+
+        options.UpdateVolumeSliders();
+
+        if (optionsCanvas)
+            optionsCanvas.SetActive(true);
+    }
+
+    public void CloseOptionsMenu()
+    {
+        options.UpdatePlayerPrefs();
+
+        if (optionsCanvas)
+            optionsCanvas.SetActive(false);
+
+        pauseCanvas.SetActive(true);
     }
 
     public void LoadScene(string scene)
