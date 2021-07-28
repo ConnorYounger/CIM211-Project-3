@@ -32,6 +32,7 @@ public class Weapon : MonoBehaviour
     public Animator animator;
 
     private bool canFire = true;
+    public bool canUse = true;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (canFire)
+        if (canFire && canUse)
         {
             if (!right && Input.GetButton("Fire1"))
                 FireWeapon();
@@ -73,13 +74,16 @@ public class Weapon : MonoBehaviour
 
     void FireRateCoolDown()
     {
-        if(fireRateCoolDown > 0 && !canFire)
+        if (canUse)
         {
-            fireRateCoolDown -= Time.deltaTime;
-        }
-        else if (!canFire)
-        {
-            canFire = true;
+            if (fireRateCoolDown > 0 && !canFire)
+            {
+                fireRateCoolDown -= Time.deltaTime;
+            }
+            else if (!canFire)
+            {
+                canFire = true;
+            }
         }
     }
 

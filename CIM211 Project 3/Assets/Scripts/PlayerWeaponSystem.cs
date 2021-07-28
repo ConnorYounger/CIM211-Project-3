@@ -25,6 +25,32 @@ public class PlayerWeaponSystem : MonoBehaviour
         UpdateWeapons();
     }
 
+    public void WeaponsCanFire()
+    {
+        foreach(GameObject weapon in leftArmWeapons)
+        {
+            weapon.GetComponent<Weapon>().canUse = true;
+        }
+
+        foreach (GameObject weapon in rightArmWeapons)
+        {
+            weapon.GetComponent<Weapon>().canUse = true;
+        }
+    }
+
+    public void WeaponsCantFire()
+    {
+        foreach (GameObject weapon in leftArmWeapons)
+        {
+            weapon.GetComponent<Weapon>().canUse = false;
+        }
+
+        foreach (GameObject weapon in rightArmWeapons)
+        {
+            weapon.GetComponent<Weapon>().canUse = false;
+        }
+    }
+
     public void UpdateWeapons()
     {
         // Left Arms

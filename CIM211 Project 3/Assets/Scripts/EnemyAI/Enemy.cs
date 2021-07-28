@@ -46,6 +46,8 @@ namespace StatePattern
 
         public NavMeshAgent navAgent;
 
+        public GameObject destroyFx;
+
         private void Start()
         {
             Debug.Log("Startt");
@@ -94,6 +96,18 @@ namespace StatePattern
             {
                 rangedDamage = 10;
             }
+        }
+
+        public void OnDisable()
+        {
+            if (destroyFx)
+            {
+                GameObject fx = Instantiate(destroyFx, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
+                Destroy(fx, 5);
+            }
+
+            if (meleeHitCollider)
+                meleeHitCollider.SetActive(false);
         }
 
         public void SetState(State state)

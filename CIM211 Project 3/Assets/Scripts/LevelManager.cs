@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public Canvas[] gamePlayCanvas;
+    public GameObject[] gamePlayCanvas;
     public GameObject pauseCanvas;
     public Canvas inventoryCanvas;
     public GameObject optionsCanvas;
@@ -15,6 +15,10 @@ public class LevelManager : MonoBehaviour
     public bool isPauseMenu = true;
 
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
+
+    [Header("Player")]
+    public PlayerHealth playerHealth;
+    public PlayerWeaponSystem playerWeapons;
 
     // Start is called before the first frame update
     void Start()
@@ -55,13 +59,16 @@ public class LevelManager : MonoBehaviour
 
         pauseCanvas.SetActive(true);
 
-        foreach(Canvas canvas in gamePlayCanvas)
+        foreach(GameObject canvas in gamePlayCanvas)
         {
-            canvas.enabled = false;
+            canvas.SetActive(false);
         }
 
         if (optionsCanvas)
             optionsCanvas.SetActive(false);
+
+        if (playerWeapons)
+            playerWeapons.WeaponsCantFire();
 
         inventoryCanvas.enabled = false;
     }
@@ -80,10 +87,16 @@ public class LevelManager : MonoBehaviour
         if (optionsCanvas)
             optionsCanvas.SetActive(false);
 
-        foreach (Canvas canvas in gamePlayCanvas)
+        foreach (GameObject canvas in gamePlayCanvas)
         {
-            canvas.enabled = true;
+            canvas.SetActive(true);
         }
+
+        if (playerHealth)
+            playerHealth.DeathMenu();
+
+        if (playerWeapons)
+            playerWeapons.WeaponsCanFire();
     }
 
     public void OpenOptionsMenu()
@@ -109,6 +122,8 @@ public class LevelManager : MonoBehaviour
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
+
+        Time.timeScale = 1;
     }
 
     public void MainMenu()

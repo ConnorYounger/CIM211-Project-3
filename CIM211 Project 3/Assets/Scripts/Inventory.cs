@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public Canvas canvas;
     public GameObject invDragDropPrefab;
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
+    public PlayerWeaponSystem playerWeapons;
 
     #region inventoryStuff
     public InvSlot[] enemyInvSlots;
@@ -38,6 +39,7 @@ public class Inventory : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        playerWeapons.WeaponsCanFire();
 
         currentDeadBody = null;
         RemoveItems();
@@ -50,6 +52,7 @@ public class Inventory : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        playerWeapons.WeaponsCantFire();
     }
 
     public void AddEnemyInventory(InvItem i)

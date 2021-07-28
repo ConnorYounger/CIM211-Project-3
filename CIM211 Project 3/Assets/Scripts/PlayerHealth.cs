@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
     public Color stamRechargeColour;
 
     [Header("UI Refrences")]
+    public Canvas playerHUD;
+    public Canvas deathCanvas;
     public Slider staminaSlider;
     public Slider healthSlider;
 
@@ -173,6 +175,29 @@ public class PlayerHealth : MonoBehaviour
 
     void Lose()
     {
+        DeathMenu();
+
         Debug.Log("Player lose");
+    }
+
+    public void DeathMenu()
+    {
+        if (currentHealth <= 0)
+        {
+            Time.timeScale = 0;
+
+            fPSController.enabled = false;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            if (deathCanvas)
+            {
+                deathCanvas.enabled = true;
+            }
+
+            if (playerHUD)
+                playerHUD.enabled = false;
+        }
     }
 }

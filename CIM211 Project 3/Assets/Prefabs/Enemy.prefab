@@ -734,6 +734,7 @@ MonoBehaviour:
   numbOfAlerts: 2
   hasFoundPlayer: 0
   navAgent: {fileID: 0}
+  destroyFx: {fileID: 507766920778391231, guid: 9a59d4303c814e64ab434cea790f72a2, type: 3}
 --- !u!195 &1151532565
 NavMeshAgent:
   m_ObjectHideFlags: 0

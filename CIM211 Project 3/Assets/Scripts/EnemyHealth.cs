@@ -94,9 +94,12 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("EnemyDie");
 
         if (healthText)
+        {
             healthText.text = "Dead";
+            HideHealthUI();
+        }
 
-        if(inv != null)
+        if (inv != null)
         {
             inv.UpdateInventory();
         }
