@@ -4923,11 +4923,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c0a15d884e5e7a9468ab38bba8a32604, type: 3}
+      propertyPath: simulationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: c0a15d884e5e7a9468ab38bba8a32604, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c0a15d884e5e7a9468ab38bba8a32604, type: 3}
       propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: c0a15d884e5e7a9468ab38bba8a32604, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: c0a15d884e5e7a9468ab38bba8a32604, type: 3}

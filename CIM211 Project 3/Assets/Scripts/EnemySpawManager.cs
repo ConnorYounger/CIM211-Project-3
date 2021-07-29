@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using StatePattern;
 
 public class EnemySpawManager : MonoBehaviour
 {
@@ -134,6 +135,17 @@ public class EnemySpawManager : MonoBehaviour
         }
     }
 
+    void CheckForRemainingEnemies()
+    {
+        if(waveEnemyKilledCount > Mathf.Round(waveEnemySpawnedCount / 3))
+        {
+            foreach(GameObject enemy in aliveEnemies)
+            {
+                enemy.GetComponent<Enemy>().hasFoundPlayer = true;
+            }
+        }
+    }
+
     void UpdateEnemyCounterUI()
     {
         enemyCounter.text = "Enemies to kill: " + waveEnemyKilledCount + " / " + waveEnemySpawnedCount;
@@ -160,8 +172,9 @@ public class EnemySpawManager : MonoBehaviour
 
         waveEnemyKilledCount++;
         UpdateEnemyCounterUI();
+        CheckForRemainingEnemies();
 
-        if(waveEnemyKilledCount == waveEnemySpawnedCount)
+        if (waveEnemyKilledCount == waveEnemySpawnedCount)
         {
             NewWave();
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class PlayerHealth : MonoBehaviour
     public Canvas deathCanvas;
     public Slider staminaSlider;
     public Slider healthSlider;
+    public TMP_Text healthText;
+    public TMP_Text stamText;
 
     public Animator uIHitEffect;
 
@@ -119,6 +122,9 @@ public class PlayerHealth : MonoBehaviour
     {
         staminaSlider.value = currentStamina / maxStamina;
         healthSlider.value = currentHealth / maxHealth;
+
+        healthText.text = Mathf.Round(currentHealth) + "/" + maxHealth;
+        stamText.text = Mathf.Round(currentStamina) + "/" + maxStamina;
     }
 
     IEnumerator RestoreStamina()
