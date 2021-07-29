@@ -194,6 +194,7 @@ public class PlayerHealth : MonoBehaviour
             if (deathCanvas)
             {
                 deathCanvas.enabled = true;
+                deathCanvas.transform.GetChild(0).gameObject.SetActive(true);
             }
 
             if (playerHUD)
