@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2168248523832276956}
   - component: {fileID: 3373790154297139782}
   - component: {fileID: 753040179222964168}
+  - component: {fileID: -5838970055596979047}
   m_Layer: 0
   m_Name: BulletHole1Decal
   m_TagString: Untagged
@@ -81,3 +82,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5838970055596979047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304981189613657572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fea4df5e4831845b0c2c77a170bb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 0}
+  fadeOutDelayTime: 1
+  fadeOutMultiplier: 0.4

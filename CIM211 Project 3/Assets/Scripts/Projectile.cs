@@ -100,7 +100,7 @@ public class Projectile : MonoBehaviour
             GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
             decal.transform.parent = point;
 
-            Destroy(decal, 100);
+            //Destroy(decal, 100);
 
             hasSpawnedDecal = true;
         }
