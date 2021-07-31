@@ -201,6 +201,7 @@ namespace StatePattern
         void LeftArmShoot()
         {
             lFireRateTimer = leftArmFireRate;
+            enemy.laudioSource.Play();
 
             FireProjectile(lProjectile, enemy.leftArmShootPoint);
         }
@@ -208,6 +209,7 @@ namespace StatePattern
         void RightArmShoot()
         {
             RFireRateTimer = rightArmFireRate;
+            enemy.raudioSource.Play();
 
             FireProjectile(rProjectile, enemy.rightArmShootPoint);
         }
@@ -262,18 +264,21 @@ namespace StatePattern
                     leftArmFireRate = 2;
 
                     lProjectile = enemy.projectile;
+                    enemy.laudioSource.clip = enemy.projectileSound;
                 }
                 else if (enemy.inventory.leftArm.leftArmWeaponCode == 4)
                 {
                     leftArmFireRate = 0.7f;
 
                     lProjectile = enemy.projectile;
+                    enemy.laudioSource.clip = enemy.projectileSound;
                 }
                 else if (enemy.inventory.leftArm.leftArmWeaponCode == 5)
                 {
                     leftArmFireRate = 0.7f;
 
                     lProjectile = enemy.grenade;
+                    enemy.laudioSource.clip = enemy.grenadeSound;
                 }
 
                 hasLeftWeapon = true;
@@ -288,18 +293,21 @@ namespace StatePattern
                     rightArmFireRate = 2;
 
                     rProjectile = enemy.projectile;
+                    enemy.raudioSource.clip = enemy.projectileSound;
                 }
                 else if (enemy.inventory.rightArm.rightArmWeaponCode == 4)
                 {
                     rightArmFireRate = 0.7f;
 
                     rProjectile = enemy.projectile;
+                    enemy.raudioSource.clip = enemy.projectileSound;
                 }
                 else if (enemy.inventory.rightArm.rightArmWeaponCode == 5)
                 {
                     rightArmFireRate = 0.7f;
 
                     rProjectile = enemy.grenade;
+                    enemy.raudioSource.clip = enemy.grenadeSound;
                 }
 
                 hasRightWeapon = true;

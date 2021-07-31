@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public GameObject optionsCanvas;
 
     public Options options;
+    public AudioManager audioManager;
 
     public bool isPauseMenu = true;
 
@@ -115,6 +116,9 @@ public class LevelManager : MonoBehaviour
 
         if (optionsCanvas)
             optionsCanvas.SetActive(false);
+
+        if (audioManager)
+            audioManager.UpdateVolume();
 
         pauseCanvas.SetActive(true);
     }

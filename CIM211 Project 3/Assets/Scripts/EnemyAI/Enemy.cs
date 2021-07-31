@@ -30,6 +30,12 @@ namespace StatePattern
         public GameObject projectile;
         public GameObject grenade;
 
+        public AudioSource laudioSource;
+        public AudioSource raudioSource;
+
+        public AudioClip projectileSound;
+        public AudioClip grenadeSound;
+
         [Header("State Stats")]
         public float enemyVisionDistance = 10;
         public float stateWaitTime = 10;

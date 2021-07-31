@@ -34,12 +34,19 @@ public class Weapon : MonoBehaviour
     private bool canFire = true;
     public bool canUse = true;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         if (meleeCollision)
             meleeCollision.SetStats(damage, multiHitCount, hitDelayTime, hitFinishTime);
 
         //bulletSpread = baseBulletSpread;
+
+        if (gameObject.GetComponent<AudioSource>())
+        {
+            audioSource = gameObject.GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -70,6 +77,9 @@ public class Weapon : MonoBehaviour
         {
             animator.Play("Fire");
         }
+
+        if (audioSource)
+            audioSource.Play();
     }
 
     void FireRateCoolDown()
