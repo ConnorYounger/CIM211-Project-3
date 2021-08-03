@@ -17,6 +17,8 @@ public class EnemySpawManager : MonoBehaviour
 
     public bool spawnAtStart;
 
+    public GameModeManager gameModeManager;
+
     [Header("UI")]
     public TMP_Text waveCounter;
     public TMP_Text enemyCounter;
@@ -33,6 +35,8 @@ public class EnemySpawManager : MonoBehaviour
     public List<GameObject> previousWaveEnemies;
     private int vision = 1;
 
+    private int gameMode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +45,8 @@ public class EnemySpawManager : MonoBehaviour
         spawnedEnemies = new List<GameObject>();
         currentWave = levelStats.currentWave;
 
-        if(spawnAtStart)
-            StartCoroutine("SpawnNewWave");
+        //if(spawnAtStart)
+        //    StartCoroutine("SpawnNewWave");
     }
 
     // Update is called once per frame
@@ -67,14 +71,49 @@ public class EnemySpawManager : MonoBehaviour
         }
     }
 
-    void NewWave()
+    public void SetGameMode(int mode)
+    {
+        gameMode = mode;
+
+        switch (gameMode)
+        {
+            case 1:
+                StartCoroutine("SpawnNewWave");
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void NewWave()
     {
         currentWave++;
         waveCounter.text = "Wave: " + currentWave;
         StartCoroutine("SpawnNewWave");
     }
 
-    IEnumerator SpawnNewWave()
+    void StartNewWave()
+    {
+        if (gameMode == 0)
+        {
+            if(currentWave == 4)
+            {
+                gameModeManager.StartCoroutine("PlayMiddleCutscene");
+            }
+            else if(currentWave == 5)
+            {
+                gameModeManager.StartCoroutine("PlayEndCutscene");
+            }
+            else
+            {
+                NewWave();
+            }
+        }
+        else
+            NewWave();
+    }
+
+    public IEnumerator SpawnNewWave()
     {
         if(previousWaveEnemies.Count > 0)
         {
@@ -176,7 +215,7 @@ public class EnemySpawManager : MonoBehaviour
 
         if (waveEnemyKilledCount == waveEnemySpawnedCount)
         {
-            NewWave();
+            StartNewWave();
         }
     }
 

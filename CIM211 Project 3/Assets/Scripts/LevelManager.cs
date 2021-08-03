@@ -130,6 +130,22 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void StartStoryMode()
+    {
+        PlayerPrefs.SetInt("gameMode", 0);
+        SceneManager.LoadScene("Test Scene");
+
+        Time.timeScale = 1;
+    }
+
+    public void StartArcadeMode()
+    {
+        PlayerPrefs.SetInt("gameMode", 1);
+        SceneManager.LoadScene("Test Scene");
+
+        Time.timeScale = 1;
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
