@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using TMPro;
 using StatePattern;
@@ -13,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     private bool canHeal = true;
 
     public TMP_Text healthText;
+    public Slider healthSlider;
 
     private InvDeadBody inv;
     public EnemySpawManager spawManager;
@@ -23,11 +25,21 @@ public class EnemyHealth : MonoBehaviour
 
     public bool isDead;
 
+    [Header("Audio")]
+    private AudioSource audioSource;
+    public AudioClip damageSound;
+    public AudioClip deathSound;
+
+    [Space()]
+    public Animator animator;
+
     void Start()
     {
         currentHealth = maxHealth;
 
         inv = gameObject.GetComponent<InvDeadBody>();
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -58,6 +70,8 @@ public class EnemyHealth : MonoBehaviour
         {
             currentHealth -= damage;
 
+            PlaySound(damageSound);
+
             if (currentHealth > 0)
             {
                 UpdateHealthUI();
@@ -76,6 +90,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (healthText)
             healthText.text = Mathf.RoundToInt(currentHealth).ToString();
+
+        if (healthSlider)
+            healthSlider.value = currentHealth / maxHealth;
     }
 
     IEnumerator AutoHealCoolDown()
@@ -127,12 +144,36 @@ public class EnemyHealth : MonoBehaviour
         {
             meshRenderer.material.color = Color.red;
         }
+
+        if (audioSource && deathSound)
+        {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+        }
+
+        if (animator)
+            animator.enabled = false;
+    }
+
+    public void PlaySound(AudioClip sound)
+    {
+        GameObject soundOb = Instantiate(new GameObject(), transform.position, transform.rotation);
+        AudioSource aSource = soundOb.AddComponent<AudioSource>();
+
+        aSource.volume = PlayerPrefs.GetFloat("audioVolume");
+        aSource.spatialBlend = 1;
+        aSource.maxDistance = 100;
+        aSource.clip = sound;
+        aSource.Play();
+
+        Destroy(soundOb, sound.length);
     }
 
     public void ShowHealthUI()
     {
-        healthText.enabled = true;
+        //healthText.enabled = true;
         healthText.transform.GetChild(0).gameObject.SetActive(true);
+        UpdateHealthUI();
     }
 
     public void HideHealthUI()

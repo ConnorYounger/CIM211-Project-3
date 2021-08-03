@@ -155,6 +155,8 @@ namespace StatePattern
             attackStage = 0;
             collisionTimer = 0;
             coolDownTimer = 0;
+
+            enemy.PlayAlertSound();
         }
 
         public override void OnStateExit()

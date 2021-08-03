@@ -13,7 +13,7 @@ namespace StatePattern
 
         private GameObject centerPoint;
         private List<Transform> closeByPoints;
-        private Transform targetPoint;
+        private Vector3 targetPoint;
 
         public float pointSearchRange = 20;
         public float travelTimer;
@@ -52,6 +52,24 @@ namespace StatePattern
             if(travelTimer <= 0 && isTraveling)
             {
                 enemy.SetState(new RomingState(enemy));
+            }
+
+            if (targetPoint != null)
+            {
+                if (Vector3.Distance(enemy.transform.position, targetPoint) < 1)
+                {
+                    if (enemy.animator)
+                    {
+                        enemy.animator.SetBool("isWalking", false);
+                    }
+                }
+                else
+                {
+                    if (enemy.animator)
+                    {
+                        enemy.animator.SetBool("isWalking", true);
+                    }
+                }
             }
         }
 
@@ -105,6 +123,7 @@ namespace StatePattern
 
             Debug.Log("random point");
 
+            targetPoint = finalPosition;
             return finalPosition;
         }
 
@@ -144,6 +163,7 @@ namespace StatePattern
 
             isTraveling = false;
             GameObject.Destroy(centerPoint);
+            targetPoint = new Vector3();
         }
     }
 }

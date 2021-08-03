@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour
     private bool deltDamage;
     private bool hasSpawnedDecal;
 
+    public AudioClip destroySound;
+
     // Update is called once per frame
     void Update()
     {
@@ -167,6 +169,9 @@ public class Projectile : MonoBehaviour
             Destroy(decal, 100);
         }
 
+        if(destroySound)
+            PlaySound(destroySound);
+
         if (isGrenade)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -193,5 +198,20 @@ public class Projectile : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlaySound(AudioClip sound)
+    {
+        GameObject soundOb = Instantiate(new GameObject(), transform.position, transform.rotation);
+        AudioSource aSource = soundOb.AddComponent<AudioSource>();
+
+        aSource.volume = PlayerPrefs.GetFloat("audioVolume");
+        aSource.spatialBlend = 1;
+        aSource.minDistance = 5;
+        aSource.maxDistance = 200;
+        aSource.clip = sound;
+        aSource.Play();
+
+        Destroy(soundOb, sound.length);
     }
 }

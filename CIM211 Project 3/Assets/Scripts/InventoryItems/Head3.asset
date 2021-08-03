@@ -26,5 +26,5 @@ MonoBehaviour:
   rightArmWeaponCode: 0
   itemName: Mechanical Skull
   itemLevel: 3
-  itemBuff: Max Health +150
+  itemBuff: Max Health +30
   itemFlavourText: A robot skull.

@@ -134,6 +134,7 @@ MonoBehaviour:
   explosionForce: 500
   destroyFx: {fileID: 100006, guid: a49596ebf788acd4ab1281bffea444b1, type: 3}
   bulletDecal: {fileID: 0}
+  destroySound: {fileID: 8300000, guid: 4c7f0e627ed3b1742b5efdf71d6e68e1, type: 3}
 --- !u!96 &-755478367375881922
 TrailRenderer:
   serializedVersion: 2

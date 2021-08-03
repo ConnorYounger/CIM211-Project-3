@@ -54,6 +54,10 @@ namespace StatePattern
 
         public GameObject destroyFx;
 
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip[] alertSound;
+
         private void Start()
         {
             Debug.Log("Startt");
@@ -62,6 +66,11 @@ namespace StatePattern
             currentState = new IdleState(this);
 
             navAgent = gameObject.GetComponent<NavMeshAgent>();
+
+            if (!audioSource)
+                gameObject.GetComponent<AudioSource>();
+
+            audioSource.volume = PlayerPrefs.GetFloat("audioVolume");
         }
 
         private void Update()
@@ -114,6 +123,14 @@ namespace StatePattern
 
             if (meleeHitCollider)
                 meleeHitCollider.SetActive(false);
+        }
+
+        public void PlayAlertSound()
+        {
+            int rand = Random.Range(0, alertSound.Length);
+
+            audioSource.clip = alertSound[rand];
+            audioSource.Play();
         }
 
         public void SetState(State state)

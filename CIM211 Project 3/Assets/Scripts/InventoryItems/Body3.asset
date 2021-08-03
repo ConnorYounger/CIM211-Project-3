@@ -26,5 +26,5 @@ MonoBehaviour:
   rightArmWeaponCode: 0
   itemName: Robot Body
   itemLevel: 3
-  itemBuff: Max Health +200
+  itemBuff: Max Health +40
   itemFlavourText: A metal body.

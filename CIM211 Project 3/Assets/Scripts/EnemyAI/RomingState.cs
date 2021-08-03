@@ -15,7 +15,7 @@ namespace StatePattern
 
         private GameObject centerPoint;
         private List<Transform> closeByPoints;
-        private Transform targetPoint;
+        private Vector3 targetPoint;
 
         private float pointDistance = 2;
         private float idleTime = 5;
@@ -125,6 +125,8 @@ namespace StatePattern
                 finalPosition = hit.position;
             }
 
+            targetPoint = finalPosition;
+
             return finalPosition;
         }
 
@@ -143,11 +145,37 @@ namespace StatePattern
         {
             if(idleTimer <= 0 && !searchingForIdlePoint && targetPoint != null)
             {
-                if(Vector3.Distance(enemy.transform.position, targetPoint.transform.position) < pointDistance)
+                if(Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance)
                 {
                     GoIdle();
                 }
             }
+
+            if (targetPoint != null)
+            {
+                Debug.Log(Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance / 2);
+
+                if (Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance / 2)
+                {
+                    if (enemy.animator)
+                    {
+                        enemy.animator.SetBool("isWalking", false);
+                    }
+                }
+                else
+                {
+                    if (enemy.animator)
+                    {
+                        enemy.animator.SetBool("isWalking", true);
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("No targetPoint");
+            }
+
+            // ANIMATOR: PLAY WALKING
         }
 
         void GoIdle()
@@ -155,6 +183,14 @@ namespace StatePattern
             //enemy.navAgent.enabled = false;
             idleTimer = idleTime;
             searchingForIdlePoint = true;
+
+            Debug.Log("Idle");
+
+            if (enemy.animator)
+            {
+                enemy.animator.SetBool("isWalking", false);
+            }
+            // ANIMATOR: PLAY IDLE
         }
 
         void IdleTimer()
@@ -234,7 +270,7 @@ namespace StatePattern
 
             Debug.Log("Exiting Roming State");
 
-            targetPoint = null;
+            targetPoint = new Vector3();
             searchingForIdlePoint = false;
             enemy.navAgent.enabled = true;
             GameObject.Destroy(centerPoint);

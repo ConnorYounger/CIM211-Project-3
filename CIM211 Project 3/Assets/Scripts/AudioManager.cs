@@ -9,9 +9,25 @@ public class AudioManager : MonoBehaviour
     public AudioClip music;
 
     public AudioSource[] audioSources;
+    public float[] audioSourcesVolume;
 
     private void Start()
     {
+        SetStartVolumes();
+    }
+
+    void SetStartVolumes()
+    {
+        if (audioSources.Length > 0)
+        {
+            audioSourcesVolume = new float[audioSources.Length];
+
+            for(int i =  0; i < audioSources.Length; i++)
+            {
+                audioSourcesVolume[i] = audioSources[i].volume;
+            }
+        }
+
         UpdateVolume();
     }
 
@@ -25,10 +41,15 @@ public class AudioManager : MonoBehaviour
     {
         if(audioSources.Length > 0)
         {
-            foreach (AudioSource a in audioSources)
+            for(int i = 0; i < audioSources.Length; i++)
             {
-                a.volume = PlayerPrefs.GetFloat("audioVolume");
+                audioSources[i].volume = audioSourcesVolume[i] * PlayerPrefs.GetFloat("audioVolume");
             }
+
+            //foreach (AudioSource a in audioSources)
+            //{
+            //    a.volume = PlayerPrefs.GetFloat("audioVolume");
+            //}
         }
     }
 

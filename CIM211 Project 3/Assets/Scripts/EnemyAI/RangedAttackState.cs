@@ -200,7 +200,8 @@ namespace StatePattern
 
         void LeftArmShoot()
         {
-            lFireRateTimer = leftArmFireRate;
+            float rand = Random.Range(-(leftArmFireRate/3), (leftArmFireRate / 3));
+            lFireRateTimer = rand + leftArmFireRate;
             enemy.laudioSource.Play();
 
             FireProjectile(lProjectile, enemy.leftArmShootPoint);
@@ -208,7 +209,8 @@ namespace StatePattern
 
         void RightArmShoot()
         {
-            RFireRateTimer = rightArmFireRate;
+            float rand = Random.Range(-(rightArmFireRate / 3), (rightArmFireRate / 3));
+            RFireRateTimer = rand + rightArmFireRate;
             enemy.raudioSource.Play();
 
             FireProjectile(rProjectile, enemy.rightArmShootPoint);
@@ -268,7 +270,7 @@ namespace StatePattern
                 }
                 else if (enemy.inventory.leftArm.leftArmWeaponCode == 4)
                 {
-                    leftArmFireRate = 0.7f;
+                    leftArmFireRate = 0.4f;
 
                     lProjectile = enemy.projectile;
                     enemy.laudioSource.clip = enemy.projectileSound;
@@ -297,7 +299,7 @@ namespace StatePattern
                 }
                 else if (enemy.inventory.rightArm.rightArmWeaponCode == 4)
                 {
-                    rightArmFireRate = 0.7f;
+                    rightArmFireRate = 0.4f;
 
                     rProjectile = enemy.projectile;
                     enemy.raudioSource.clip = enemy.projectileSound;
@@ -319,6 +321,8 @@ namespace StatePattern
         {
             Debug.Log("Entering RangedAttack State");
             SetWeaponStats();
+
+            enemy.PlayAlertSound();
         }
 
         public override void OnStateExit()

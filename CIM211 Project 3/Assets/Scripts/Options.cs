@@ -11,6 +11,8 @@ public class Options : MonoBehaviour
     public Slider musicSlider;
     public Slider audioSlider;
 
+    public AudioManager audioManager;
+
     public void UpdateVolumeSliders()
     {
         musicVolume = PlayerPrefs.GetFloat("musicVolume");
@@ -28,6 +30,11 @@ public class Options : MonoBehaviour
     public void ModifyMusicVolume()
     {
         musicVolume = musicSlider.value;
+
+        PlayerPrefs.SetFloat("musicVolume", musicVolume);
+
+        if (audioManager)
+            audioManager.UpdateMusicVolume();
     }
 
     public void UpdatePlayerPrefs()
