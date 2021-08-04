@@ -20,7 +20,7 @@ public class PlayerCam : MonoBehaviour
     void SearchForBody()
     {
         RaycastHit hit;
-        Physics.SphereCast(transform.position, 0.5f, transform.forward, out hit, 100);
+        Physics.SphereCast(transform.position, 0.5f, transform.forward, out hit, 100, ~LayerMask.GetMask("Enemy"));
 
         if (hit.collider != null)
         {
