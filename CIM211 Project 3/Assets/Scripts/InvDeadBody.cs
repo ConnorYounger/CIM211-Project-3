@@ -19,6 +19,10 @@ public class InvDeadBody : MonoBehaviour
 
     public List<InvItem> inv;
 
+    public bool showOutline;
+    public Outline outline;
+    public Color unLootedColour;
+
     private void Start()
     {
         inv = new List<InvItem>();
@@ -52,6 +56,40 @@ public class InvDeadBody : MonoBehaviour
             inv.Add(rightLeg);
 
         showInv = true;
+        StartCoroutine("UpdateLootStatus");
+    }
+
+    IEnumerator UpdateLootStatus()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (outline && showOutline)
+        {
+            outline.OutlineMode = Outline.Mode.OutlineVisible;
+            outline.OutlineWidth = 3;
+            outline.OutlineColor = unLootedColour;
+            outline.enabled = true;
+        }
+    }
+
+    public void RemovedItem()
+    {
+        if(inv.Count <= 0 && outline && showOutline)
+        {
+            outline.enabled = false;
+
+            if (gameObject.GetComponent<BoxCollider>())
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+    public void InventoryOpened()
+    {
+        if (outline && showOutline)
+        {
+            outline.OutlineWidth = 1;
+            outline.OutlineColor = Color.cyan;
+        }
     }
 
     public void InventoryPassThroughItems(Inventory i)

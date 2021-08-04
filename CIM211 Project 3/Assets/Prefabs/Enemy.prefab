@@ -797,6 +797,9 @@ MonoBehaviour:
   leftLeg: {fileID: 0}
   rightLeg: {fileID: 0}
   inv: []
+  showOutline: 0
+  outline: {fileID: 2783885508985079766}
+  unLootedColour: {r: 0, g: 0.5905471, b: 1, a: 1}
 --- !u!54 &1714205190
 Rigidbody:
   m_ObjectHideFlags: 0

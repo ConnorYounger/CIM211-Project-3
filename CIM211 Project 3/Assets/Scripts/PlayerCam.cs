@@ -32,6 +32,7 @@ public class PlayerCam : MonoBehaviour
             {
                 inv.OpenInventory();
                 hit.collider.GetComponent<InvDeadBody>().InventoryPassThroughItems(inv);
+                hit.collider.GetComponent<InvDeadBody>().InventoryOpened();
             }
         }
     }

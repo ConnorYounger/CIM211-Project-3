@@ -241,10 +241,17 @@ public class EnemySpawManager : MonoBehaviour
                     case 3:
                         o.enabled = true;
                         o.OutlineMode = Outline.Mode.OutlineVisible;
+                        enemy.GetComponent<Enemy>().inventory.showOutline = true;
+
+                        if (enemy.GetComponent<Enemy>())
+                            enemy.GetComponent<Enemy>().inventory.showOutline = true;
                         break;
                     case 4:
                         o.enabled = true;
                         o.OutlineMode = Outline.Mode.OutlineAndSilhouette;
+
+                        if(enemy.GetComponent<Enemy>())
+                            enemy.GetComponent<Enemy>().inventory.showOutline = true;
                         break;
                     default:
                         o.enabled = false;

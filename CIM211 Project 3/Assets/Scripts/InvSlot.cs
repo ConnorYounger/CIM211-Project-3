@@ -44,6 +44,7 @@ public class InvSlot : MonoBehaviour, IDropHandler
                 {
                     inv.enemyItems.Remove(eventData.pointerDrag.GetComponent<InvDragDrop>().invItem);
                     inv.currentDeadBody.inv.Remove(eventData.pointerDrag.GetComponent<InvDragDrop>().invItem);
+                    inv.currentDeadBody.RemovedItem();
                     eventData.pointerDrag.GetComponent<InvDragDrop>().isEnemy = false;
                 }
             }
