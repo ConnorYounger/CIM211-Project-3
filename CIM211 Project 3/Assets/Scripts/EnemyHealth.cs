@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        inv = gameObject.GetComponent<InvDeadBody>();
+        inv = enemy.GetComponent<Enemy>().inventory;
 
         audioSource = gameObject.GetComponent<AudioSource>();
     }
@@ -135,9 +135,12 @@ public class EnemyHealth : MonoBehaviour
 
             if (gameObject.GetComponent<Rigidbody>())
             {
-                Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.None;
+                //Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+                //rb.constraints = RigidbodyConstraints.None;
             }
+
+            if (gameObject.GetComponent<BoxCollider>())
+                gameObject.GetComponent<BoxCollider>().enabled = false;
         }
 
         if (meshRenderer)

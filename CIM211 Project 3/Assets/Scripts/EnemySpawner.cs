@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy(GameObject enemyPrefab, int wave, LootPool lp, EnemySpawManager spawnManager)
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-        enemyInv = enemy.GetComponent<InvDeadBody>();
+        enemyInv = enemy.GetComponent<Enemy>().inventory;
         enemyAI = enemy.GetComponent<Enemy>();
         enemyHealth = enemy.GetComponent<EnemyHealth>();
         enemyHealth.spawManager = spawnManager;
