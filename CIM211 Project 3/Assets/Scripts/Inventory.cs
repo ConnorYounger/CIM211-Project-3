@@ -95,7 +95,7 @@ public class Inventory : MonoBehaviour
     {
         GameObject newItem = Instantiate(invDragDropPrefab, s.GetComponent<RectTransform>().localPosition, s.GetComponent<RectTransform>().localRotation);
         newItem.GetComponent<InvDragDrop>().invItem = i;
-        newItem.transform.parent = gameObject.transform;
+        newItem.transform.SetParent(gameObject.transform);
         newItem.transform.SetSiblingIndex(gameObject.transform.childCount - 2);
         newItem.GetComponent<RectTransform>().anchoredPosition = s.GetComponent<RectTransform>().localPosition;
         newItem.GetComponent<Image>().sprite = i.sprite;

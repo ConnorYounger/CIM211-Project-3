@@ -67,7 +67,7 @@ public class InvDeadBody : MonoBehaviour
         {
             outline.OutlineMode = Outline.Mode.OutlineVisible;
             outline.OutlineWidth = 3;
-            outline.OutlineColor = unLootedColour;
+            outline.OutlineColor = Color.cyan;
             outline.enabled = true;
         }
     }
@@ -76,19 +76,24 @@ public class InvDeadBody : MonoBehaviour
     {
         if(inv.Count <= 0 && outline && showOutline)
         {
-            outline.enabled = false;
+            HideOutline();
 
             if (gameObject.GetComponent<BoxCollider>())
                 gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
+    public void HideOutline()
+    {
+        outline.enabled = false;
+    }
+
     public void InventoryOpened()
     {
         if (outline && showOutline)
         {
-            outline.OutlineWidth = 1;
-            outline.OutlineColor = Color.cyan;
+            outline.OutlineWidth = 1.5f;
+            outline.OutlineColor = unLootedColour;
         }
     }
 

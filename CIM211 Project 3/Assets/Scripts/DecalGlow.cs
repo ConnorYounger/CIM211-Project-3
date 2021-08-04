@@ -9,8 +9,6 @@ public class DecalGlow : MonoBehaviour
     public float fadeOutDelayTime = 2;
     public float fadeOutMultiplier = 1;
 
-    private float fadeOutValue = 100;
-
     private bool fadeOut;
 
     // Start is called before the first frame update

@@ -130,6 +130,11 @@ public class EnemySpawManager : MonoBehaviour
             foreach (GameObject enemy in spawnedEnemies)
             {
                 previousWaveEnemies.Add(enemy);
+
+                if (enemy.GetComponent<Enemy>())
+                {
+                    enemy.GetComponent<Enemy>().inventory.HideOutline();
+                }
             }
 
             spawnedEnemies.Clear();
