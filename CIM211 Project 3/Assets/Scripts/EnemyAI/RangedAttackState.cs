@@ -38,6 +38,8 @@ namespace StatePattern
         private float attackCoolDown = 1;
         private bool canMeleeAttack = true;
 
+        private Vector3 targetPoint;
+
         public override void Tick()
         {
             ShootAtPlayer();
@@ -60,6 +62,7 @@ namespace StatePattern
                 attackStage = 1;
                 collisionTimer = 0.2f;
 
+                enemy.animator.SetBool("meleeAttack", true);
                 //play attack animation
             }
         }
@@ -92,6 +95,7 @@ namespace StatePattern
                     else if (attackStage == 2)
                     {
                         enemy.meleeHitCollider.SetActive(false);
+                        enemy.animator.SetBool("meleeAttack", false);
                         attackStage = 0;
                     }
                 }
@@ -112,6 +116,21 @@ namespace StatePattern
                 moveTimer -= Time.deltaTime;
             else
                 moveTowardsPlayer = true;
+
+            if (Vector3.Distance(enemy.transform.position, targetPoint) < 1 && attackStage == 0)
+            {
+                if (enemy.animator)
+                {
+                    enemy.animator.SetBool("isWalking", false);
+                }
+            }
+            else
+            {
+                if (enemy.animator)
+                {
+                    enemy.animator.SetBool("isWalking", true);
+                }
+            }
         }
 
         void FollowPlayer()
@@ -121,7 +140,8 @@ namespace StatePattern
                 moveTimer = moveCoolDownTime;
                 moveTowardsPlayer = false;
 
-                enemy.navAgent.SetDestination(RandomNavmeshLocation(pointRadius));
+                targetPoint = RandomNavmeshLocation(pointRadius);
+                enemy.navAgent.SetDestination(targetPoint);
             }
         }
 

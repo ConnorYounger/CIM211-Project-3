@@ -54,7 +54,7 @@ public class EnemySpawManager : MonoBehaviour
     {
         if (!spawnAtStart)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && currentWave == 1)
             {
                 StartCoroutine("SpawnNewWave");
             }

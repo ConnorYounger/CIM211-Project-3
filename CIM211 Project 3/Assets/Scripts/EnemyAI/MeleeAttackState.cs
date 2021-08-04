@@ -22,6 +22,8 @@ namespace StatePattern
         private float targetPointTimer;
         private float extraRotationSpeed = 10;
 
+        private Vector3 targetPoint;
+
         public override void Tick()
         {
             ChasePlayer();
@@ -72,6 +74,7 @@ namespace StatePattern
                     else if(attackStage == 2)
                     {
                         enemy.meleeHitCollider.SetActive(false);
+                        enemy.animator.SetBool("meleeAttack", false);
                         attackStage = 0;
                     }
                 }
@@ -105,14 +108,40 @@ namespace StatePattern
                     //enemy.navAgent.enabled = false;
                 }
             }
+
+            //Debug.Log(Vector3.Distance(enemy.transform.position, targetPoint) + ", target: " + targetPoint + ", attack stage: " + attackStage);
+
+            if (Vector3.Distance(enemy.transform.position, targetPoint) < 0.5f && attackStage == 0)
+            {
+                if (enemy.animator)
+                {
+                    enemy.animator.SetBool("isWalking", false);
+                }
+            }
+            else
+            {
+                if (enemy.animator)
+                {
+                    enemy.animator.SetBool("isWalking", true);
+                }
+            }
         }
 
         void SetTargetPoint()
         {
-            if(Vector3.Distance(enemy.transform.position, enemy.player.transform.position) > attackDistance)
-                enemy.navAgent.SetDestination(RandomNavmeshLocation(3));
+            if(Vector3.Distance(enemy.transform.position, enemy.player.transform.position) > attackDistance * 2)
+            {
+                targetPoint = RandomNavmeshLocation(3);
+                enemy.navAgent.SetDestination(targetPoint);
+            }
             else
-                enemy.navAgent.SetDestination(RandomNavmeshLocation(0));
+            {
+                //targetPoint = RandomNavmeshLocation(0);
+                //enemy.navAgent.SetDestination(targetPoint);
+
+                targetPoint = enemy.player.transform.position;
+                enemy.navAgent.SetDestination(targetPoint);
+            }
         }
 
         public Vector3 RandomNavmeshLocation(float radius)
@@ -143,6 +172,7 @@ namespace StatePattern
                     attackStage = 1;
                     collisionTimer = 0.2f;
 
+                    enemy.animator.SetBool("meleeAttack", true);
                     //play attack animation
                 }
             }
