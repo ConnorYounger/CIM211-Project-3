@@ -39,7 +39,7 @@ public class GameModeManager : MonoBehaviour
                 StartCoroutine("PlayStartCutscene");
                 break;
             case 1:
-                spawnManager.StartCoroutine("SpawnNewWave");
+                //spawnManager.StartCoroutine("SpawnNewWave");
                 break;
         }
     }

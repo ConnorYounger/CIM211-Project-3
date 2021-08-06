@@ -59,6 +59,19 @@ public class PlayerHealth : MonoBehaviour
     {
         StaminaCoolDown();
         AutoHeal();
+        LowHealth();
+    }
+
+    void LowHealth()
+    {
+        if(currentHealth <= maxHealth / 4 || currentHealth < 20)
+        {
+            uIHitEffect.SetBool("lowHealth", true);
+        }
+        else if (uIHitEffect.GetBool("lowHealth"))
+        {
+            uIHitEffect.SetBool("lowHealth", false);
+        }
     }
     
     void AutoHeal()

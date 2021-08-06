@@ -260,6 +260,9 @@ public class EnemySpawManager : MonoBehaviour
                         break;
                     default:
                         o.enabled = false;
+
+                        if (enemy.GetComponent<Enemy>())
+                            enemy.GetComponent<Enemy>().inventory.showOutline = false;
                         break;
                 }
             }

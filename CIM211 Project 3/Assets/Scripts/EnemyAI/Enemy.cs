@@ -111,6 +111,8 @@ namespace StatePattern
             {
                 rangedDamage = 10;
             }
+
+            enemyHealth.currentHealth = enemyHealth.maxHealth;
         }
 
         public void OnDisable()

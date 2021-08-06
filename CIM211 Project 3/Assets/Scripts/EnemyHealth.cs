@@ -9,7 +9,7 @@ using StatePattern;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100;
-    private float currentHealth;
+    public float currentHealth;
     public float healthRegenMultiplier;
     private bool canHeal = true;
 

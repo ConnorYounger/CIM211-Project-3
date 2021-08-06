@@ -40,6 +40,8 @@ public class PlayerEnhancements : MonoBehaviour
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
     public PlayerHealth player;
     public EnemySpawManager enemySpawManager;
+    public GameObject crossHair;
+    public GameObject playerHUD;
 
     private void Start()
     {
@@ -134,17 +136,28 @@ public class PlayerEnhancements : MonoBehaviour
 
         enemySpawManager.VisionUpdate(vision);
 
-        switch (vision)
+        if(vision > 1)
         {
-            case 2:
-                RenderSettings.fogDensity = fogDensity / 2;
-                break;
-            case 3:
-                RenderSettings.fogDensity = fogDensity / 3; ;
-                break;
-            default:
-                RenderSettings.fogDensity = fogDensity;
-                break;
+            crossHair.SetActive(true);
+            playerHUD.SetActive(true);
         }
+        else
+        {
+            crossHair.SetActive(false);
+            playerHUD.SetActive(false);
+        }
+
+        //switch (vision)
+        //{
+        //    case 2:
+        //        RenderSettings.fogDensity = fogDensity / 2;
+        //        break;
+        //    case 3:
+        //        RenderSettings.fogDensity = fogDensity / 3; ;
+        //        break;
+        //    default:
+        //        RenderSettings.fogDensity = fogDensity;
+        //        break;
+        //}
     }
 }

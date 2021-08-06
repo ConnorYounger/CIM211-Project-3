@@ -94,7 +94,16 @@ public class InvDeadBody : MonoBehaviour
         {
             outline.OutlineWidth = 1.5f;
             outline.OutlineColor = unLootedColour;
+
+            StartCoroutine("HideOutlineAfterSeconds");
         }
+    }
+
+    IEnumerator HideOutlineAfterSeconds()
+    {
+        yield return new WaitForSeconds(5);
+
+        HideOutline();
     }
 
     public void InventoryPassThroughItems(Inventory i)
