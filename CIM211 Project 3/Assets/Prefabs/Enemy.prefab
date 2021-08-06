@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9700291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -512,7 +512,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871269028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  currentHealth: 0
   healthRegenMultiplier: 0
   healthText: {fileID: 1063617042037162764}
   healthSlider: {fileID: 1535170835303820523}
@@ -1630,6 +1631,18 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: 611ca44c55bfc5a439271c81247ca130, type: 3}
   deathSound: {fileID: 8300000, guid: 8c09a9879e06c4f42831a0ed77a05d45, type: 3}
   animator: {fileID: 95932647079585661}
+  limbs:
+  - {fileID: 1368755364}
+  - {fileID: 1625248589}
+  - {fileID: 777352211}
+  - {fileID: 790126883}
+  - {fileID: 1691164820}
+  - {fileID: 1714205190}
+  - {fileID: 2118465845}
+  - {fileID: 1494090635}
+  - {fileID: 1591906610}
+  - {fileID: 1289321773}
+  - {fileID: 1117286408}
 --- !u!114 &2783885508985079766
 MonoBehaviour:
   m_ObjectHideFlags: 0

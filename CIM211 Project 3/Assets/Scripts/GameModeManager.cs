@@ -96,6 +96,10 @@ public class GameModeManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         endCutsceneEGO.SetActive(false);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
         SceneManager.LoadScene("Credits");
     }
 }

@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
     [Space()]
     public Animator animator;
+    public Rigidbody[] limbs;
 
     void Start()
     {
@@ -40,6 +41,14 @@ public class EnemyHealth : MonoBehaviour
         inv = enemy.GetComponent<Enemy>().inventory;
 
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        if (limbs.Length > 0)
+        {
+            for (int i = 0; i < limbs.Length; i++)
+            {
+                limbs[i].constraints = RigidbodyConstraints.FreezeAll;
+            }
+        }
     }
 
     private void Update()
@@ -152,6 +161,14 @@ public class EnemyHealth : MonoBehaviour
         {
             audioSource.clip = deathSound;
             audioSource.Play();
+        }
+
+        if(limbs.Length > 0)
+        {
+            for(int i = 0; i < limbs.Length; i++)
+            {
+                limbs[i].constraints = RigidbodyConstraints.None;
+            }
         }
 
         if (animator)
