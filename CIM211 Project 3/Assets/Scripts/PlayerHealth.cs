@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 using TMPro;
 
 public class PlayerHealth : MonoBehaviour
@@ -36,6 +37,9 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text stamText;
 
     public Animator uIHitEffect;
+    public PostProcessVolume ppVolume;
+    public PostProcessProfile defultProfile;
+    public PostProcessProfile lowHealthProfile;
 
     // Start is called before the first frame update
     void Start()
@@ -67,10 +71,12 @@ public class PlayerHealth : MonoBehaviour
         if(currentHealth <= maxHealth / 4 || currentHealth < 20)
         {
             uIHitEffect.SetBool("lowHealth", true);
+            ppVolume.profile = lowHealthProfile;
         }
         else if (uIHitEffect.GetBool("lowHealth"))
         {
             uIHitEffect.SetBool("lowHealth", false);
+            ppVolume.profile = defultProfile;
         }
     }
     
