@@ -53,17 +53,20 @@ public class PlayerWeaponSystem : MonoBehaviour
 
     public void UpdateWeapons()
     {
-        // Left Arms
-        for(int i = 0; i < leftArmWeapons.Length; i++)
+        if (rightArmWeaponCode > 0 || leftArmWeaponCode > 0)
         {
-            if(i == leftArmWeaponCode)
+            // Left Arms
+            for (int i = 0; i < leftArmWeapons.Length; i++)
             {
-                leftArmWeapons[i].SetActive(true);
-                leftArmWeapons[i].GetComponent<Weapon>().SetBloom(weaponAccuracyMultiplier);
-            }
-            else
-            {
-                leftArmWeapons[i].SetActive(false);
+                if (i == leftArmWeaponCode)
+                {
+                    leftArmWeapons[i].SetActive(true);
+                    leftArmWeapons[i].GetComponent<Weapon>().SetBloom(weaponAccuracyMultiplier);
+                }
+                else
+                {
+                    leftArmWeapons[i].SetActive(false);
+                }
             }
         }
 

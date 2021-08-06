@@ -30,6 +30,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
+    public string fireAnimation = "Fire";
 
     private bool canFire = true;
     public bool canUse = true;
@@ -75,7 +76,7 @@ public class Weapon : MonoBehaviour
 
         if (animator)
         {
-            animator.Play("Fire");
+            animator.Play(fireAnimation);
         }
 
         if (audioSource)
