@@ -8,6 +8,7 @@ public class GameModeManager : MonoBehaviour
     public int gameMode;
 
     public EnemySpawManager spawnManager;
+    public Tutorial tutorial;
 
     public GameObject playerUI;
     public GameObject startCutsceneEGO;
@@ -56,12 +57,13 @@ public class GameModeManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         startCutsceneEGO.SetActive(false);
-        playerUI.SetActive(true);
+        //playerUI.SetActive(true);
 
-        fPSController.enabled = true;
-        playerWeaponSystem.enabled = true;
+        //fPSController.enabled = true;
+        //playerWeaponSystem.enabled = true;
 
-        spawnManager.NewWave();
+        tutorial.ShowTutorial();
+        //spawnManager.NewWave();
     }
 
     public IEnumerator PlayMiddleCutscene()
