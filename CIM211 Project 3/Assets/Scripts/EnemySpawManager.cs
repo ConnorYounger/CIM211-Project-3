@@ -78,7 +78,7 @@ public class EnemySpawManager : MonoBehaviour
         switch (gameMode)
         {
             case 1:
-                StartCoroutine("SpawnNewWave");
+                StartCoroutine("NewWave");
                 break;
             default:
                 break;
