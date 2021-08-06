@@ -99,9 +99,21 @@ public class Projectile : MonoBehaviour
     {
         if (bulletDecal && !hasSpawnedDecal)
         {
-            GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
-            decal.transform.parent = point;
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, hitScanDis, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Vision")));
 
+            if(hit.collider != null)
+            {
+                Quaternion dir = new Quaternion(hit.normal.x, hit.normal.y, hit.normal.z, transform.rotation.w);
+                GameObject decal = Instantiate(bulletDecal, hit.point, dir);
+                decal.transform.parent = point;
+            }
+            else
+            {
+                GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
+                decal.transform.parent = point;
+            }
+           
             //Destroy(decal, 100);
 
             hasSpawnedDecal = true;
@@ -122,7 +134,25 @@ public class Projectile : MonoBehaviour
     void MoveForward()
     {
         if(speed > 0)
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        {
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, hitScanDis, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Vision")));
+
+            //Debug.DrawRay();
+
+            if (hit.collider)
+            {
+                if (hit.collider.GetComponent<EnemyHealth>())
+                    DealDamage(hit.collider.GetComponent<EnemyHealth>());
+                else
+                {
+                    SpawnDecal(hit.collider.transform);
+                    Destroy(gameObject);
+                }
+            }
+            else
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -162,12 +192,12 @@ public class Projectile : MonoBehaviour
             Destroy(fx, 2);
         }
 
-        if(bulletDecal && !hasSpawnedDecal)
-        {
-            GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
+        //if(bulletDecal && !hasSpawnedDecal)
+        //{
+        //    GameObject decal = Instantiate(bulletDecal, transform.position, transform.rotation);
 
-            Destroy(decal, 100);
-        }
+        //    Destroy(decal, 100);
+        //}
 
         if(destroySound)
             PlaySound(destroySound);

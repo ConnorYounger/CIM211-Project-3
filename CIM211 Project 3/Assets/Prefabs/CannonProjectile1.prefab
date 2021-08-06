@@ -118,6 +118,7 @@ MonoBehaviour:
   explosionForce: 100
   destroyFx: {fileID: 4942812516054273534, guid: 04842a5134001ab43af8560c2dfab691, type: 3}
   bulletDecal: {fileID: 4304981189613657572, guid: c0e3710cc0afa8c49ac8009c033daf4c, type: 3}
+  destroySound: {fileID: 0}
 --- !u!54 &8825614290324096542
 Rigidbody:
   m_ObjectHideFlags: 0
