@@ -104,8 +104,8 @@ public class Projectile : MonoBehaviour
 
             if(hit.collider != null)
             {
-                Quaternion dir = new Quaternion(hit.normal.x, hit.normal.y, hit.normal.z, transform.rotation.w);
-                GameObject decal = Instantiate(bulletDecal, hit.point, dir);
+                //Quaternion dir = new Quaternion(hit.normal.x + 90, hit.normal.y, hit.normal.z, hit.collider.transform.rotation.w);
+                GameObject decal = Instantiate(bulletDecal, hit.point, transform.rotation);
                 decal.transform.parent = point;
             }
             else
