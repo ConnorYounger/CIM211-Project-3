@@ -144,6 +144,8 @@ public class Projectile : MonoBehaviour
             {
                 if (hit.collider.GetComponent<EnemyHealth>())
                     DealDamage(hit.collider.GetComponent<EnemyHealth>());
+                else if(hit.collider.GetComponent<PlayerHealth>())
+                    DealDamage(hit.collider.GetComponent<PlayerHealth>());
                 else
                 {
                     SpawnDecal(hit.collider.transform);

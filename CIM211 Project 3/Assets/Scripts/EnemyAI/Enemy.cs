@@ -37,6 +37,8 @@ namespace StatePattern
         public AudioClip grenadeSound;
 
         [Header("State Stats")]
+        public int currentWave;
+
         public float enemyVisionDistance = 10;
         public float stateWaitTime = 10;
         public float idleCoolDownTime = 10;
@@ -110,6 +112,38 @@ namespace StatePattern
             if ((inventory.leftArm && inventory.leftArm.leftArmWeaponCode > 2) || (inventory.rightArm && inventory.rightArm.rightArmWeaponCode > 2))
             {
                 rangedDamage = 10;
+            }
+
+            // Set melee damage
+            if(currentWave >= 4)
+            {
+                meleeDamage = 10;
+            }
+            else if(inventory.leftArm)
+            {
+                if(inventory.leftArm.leftArmWeaponCode == 1)
+                {
+                    meleeDamage = 10;
+                }
+                else if(inventory.leftArm.leftArmWeaponCode == 2)
+                {
+                    meleeDamage = 15;
+                }
+            }
+            else if(inventory.rightArm)
+            {
+                if(inventory.rightArm.rightArmWeaponCode == 1)
+                {
+                    meleeDamage = 10;
+                }
+                else if(inventory.rightArm.rightArmWeaponCode == 2)
+                {
+                    meleeDamage = 15;
+                }
+            }
+            else
+            {
+                meleeDamage = 5;
             }
 
             enemyHealth.currentHealth = enemyHealth.maxHealth;

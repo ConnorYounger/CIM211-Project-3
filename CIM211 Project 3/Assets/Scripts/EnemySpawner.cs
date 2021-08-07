@@ -24,6 +24,8 @@ public class EnemySpawner : MonoBehaviour
         enemyInv = enemy.GetComponent<Enemy>().inventory;
         enemyAI = enemy.GetComponent<Enemy>();
         enemyHealth = enemy.GetComponent<EnemyHealth>();
+
+        enemyAI.currentWave = wave;
         enemyHealth.spawManager = spawnManager;
 
         //switch (wave)
