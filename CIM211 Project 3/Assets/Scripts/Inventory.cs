@@ -81,11 +81,7 @@ public class Inventory : MonoBehaviour
         playerWeapons.WeaponsCantFire();
 
         if (firstTimeOpen)
-        {
             tutorialEGO.SetActive(true);
-            firstTimeOpen = false;
-            gameModeManager.ShowObjective(2);
-        }
 
         inventoryIsOpen = true;
     }
@@ -170,5 +166,12 @@ public class Inventory : MonoBehaviour
     public void UpdatePlayerEnhancements()
     {
         playerEnhancements.UpdateStats();
+
+        if (firstTimeOpen)
+        {
+            tutorialEGO.SetActive(false);
+            firstTimeOpen = false;
+            gameModeManager.ShowObjective(2);
+        }
     }
 }
