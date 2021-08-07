@@ -23,6 +23,8 @@ public class EnemyHealth : MonoBehaviour
 
     public MeshRenderer meshRenderer;
 
+    public ParticleSystem[] dmgeffects;
+
     public bool isDead;
 
     [Header("Audio")]
@@ -33,6 +35,10 @@ public class EnemyHealth : MonoBehaviour
     [Space()]
     public Animator animator;
     public Rigidbody[] limbs;
+
+    [Header("Tutorial")]
+    public bool firstEnemy;
+    public GameModeManager gameModeManager;
 
     void Start()
     {
@@ -89,6 +95,14 @@ public class EnemyHealth : MonoBehaviour
                 StartCoroutine("AutoHealCoolDown");
 
                 enemy.hasFoundPlayer = true;
+
+                if(dmgeffects.Length > 0)
+                {
+                    foreach(ParticleSystem system in dmgeffects)
+                    {
+                        system.Play();
+                    }
+                }
             }
             else
                 Die();
@@ -113,7 +127,7 @@ public class EnemyHealth : MonoBehaviour
         canHeal = true;
     }
 
-    void Die()
+    public void Die()
     {
         isDead = true;
 
@@ -173,6 +187,11 @@ public class EnemyHealth : MonoBehaviour
 
         if (animator)
             animator.enabled = false;
+
+        if (firstEnemy && gameModeManager)
+        {
+            gameModeManager.ShowObjective(1);
+        }
     }
 
     public void PlaySound(AudioClip sound)

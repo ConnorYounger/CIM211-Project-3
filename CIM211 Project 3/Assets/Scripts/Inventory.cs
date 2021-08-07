@@ -22,6 +22,14 @@ public class Inventory : MonoBehaviour
     public InvDeadBody currentDeadBody;
 
     private PlayerEnhancements playerEnhancements;
+
+    private bool inventoryIsOpen;
+    [HideInInspector()] public int invCheck;
+
+    [Header("Tutorial")]
+    public bool firstTimeOpen;
+    public GameObject tutorialEGO;
+    public GameModeManager gameModeManager;
     #endregion
 
     private void Start()
@@ -32,8 +40,21 @@ public class Inventory : MonoBehaviour
         playerEnhancements = GameObject.Find("Player").GetComponent<PlayerEnhancements>();
     }
 
+    private void Update()
+    {
+        if(inventoryIsOpen == true && Input.GetKeyDown(KeyCode.E))
+        {
+            if (invCheck < 1)
+                invCheck++;
+            else
+                CloseInventory();
+        }
+    }
+
     public void CloseInventory()
     {
+        inventoryIsOpen = false;
+        invCheck = 0;
         player.enabled = true;
         canvas.enabled = false;
         Time.timeScale = 1;
@@ -43,6 +64,11 @@ public class Inventory : MonoBehaviour
 
         currentDeadBody = null;
         RemoveItems();
+
+        if (tutorialEGO.activeSelf)
+        {
+            tutorialEGO.SetActive(false);
+        }
     }
 
     public void OpenInventory()
@@ -53,6 +79,15 @@ public class Inventory : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         playerWeapons.WeaponsCantFire();
+
+        if (firstTimeOpen)
+        {
+            tutorialEGO.SetActive(true);
+            firstTimeOpen = false;
+            gameModeManager.ShowObjective(2);
+        }
+
+        inventoryIsOpen = true;
     }
 
     public void AddEnemyInventory(InvItem i)

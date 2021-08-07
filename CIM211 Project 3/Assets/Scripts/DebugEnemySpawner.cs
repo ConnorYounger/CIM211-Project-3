@@ -10,7 +10,14 @@ public class DebugEnemySpawner : MonoBehaviour
 
     private GameObject spawnedEnemy;
 
+    public GameModeManager gameModeManager;
+
     public bool debugMode;
+    public bool firstEnemy;
+
+    [Header("Outline")]
+    public bool outline;
+    public Color outlineColour;
 
     // Start is called before the first frame update
     void Start()
@@ -59,5 +66,20 @@ public class DebugEnemySpawner : MonoBehaviour
 
         spawnedEnemy.GetComponent<Enemy>().SetStats();
         spawnedEnemy.GetComponent<EnemyHealth>().UpdateHealthUI();
+
+        if (gameModeManager)
+        {
+            spawnedEnemy.GetComponent<EnemyHealth>().gameModeManager = gameModeManager;
+            gameModeManager.firstEnemy = spawnedEnemy;
+        }
+
+        if (firstEnemy)
+            spawnedEnemy.GetComponent<EnemyHealth>().firstEnemy = true;
+
+        if (outline)
+        {
+            spawnedEnemy.GetComponent<Outline>().OutlineColor = outlineColour;
+            spawnedEnemy.GetComponent<Outline>().enabled = true;
+        }
     }
 }

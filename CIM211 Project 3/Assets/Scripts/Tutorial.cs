@@ -12,7 +12,9 @@ public class Tutorial : MonoBehaviour
 
     public TMP_Text buttonText;
 
+    public DebugEnemySpawner enemySpawner;
     public EnemySpawManager spawnManager;
+    public GameModeManager gameModeManager;
 
     [Header("Player Refs")]
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
@@ -75,11 +77,14 @@ public class Tutorial : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         playerUI.SetActive(true);
-        waveEGO.SetActive(true);
+        //waveEGO.SetActive(true);
 
         fPSController.enabled = true;
         playerWeaponSystem.enabled = true;
 
-        spawnManager.NewWave();
+        enemySpawner.SpawnEnemy();
+        gameModeManager.ShowObjective(0);
+
+        //spawnManager.NewWave();
     }
 }

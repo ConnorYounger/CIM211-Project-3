@@ -11,13 +11,23 @@ public class GameModeManager : MonoBehaviour
     public Tutorial tutorial;
 
     public GameObject playerUI;
+    public GameObject waveUI;
     public GameObject startCutsceneEGO;
     public GameObject middleCutsceneEGO;
     public GameObject endCutsceneEGO;
+    public GameObject levelStartZone;
+
+    public GameObject[] objectives;
+
+    [HideInInspector()] public GameObject firstEnemy;
 
     [Header("Player Refs")]
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
     public PlayerWeaponSystem playerWeaponSystem;
+
+    public Inventory playerInventory;
+
+    private bool hasStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +50,7 @@ public class GameModeManager : MonoBehaviour
                 StartCoroutine("PlayStartCutscene");
                 break;
             case 1:
-                //spawnManager.StartCoroutine("SpawnNewWave");
+                waveUI.SetActive(true);
                 break;
         }
     }
@@ -63,6 +73,8 @@ public class GameModeManager : MonoBehaviour
         //playerWeaponSystem.enabled = true;
 
         tutorial.ShowTutorial();
+        playerInventory.firstTimeOpen = true;
+        levelStartZone.SetActive(true);
         //spawnManager.NewWave();
     }
 
@@ -83,6 +95,55 @@ public class GameModeManager : MonoBehaviour
         playerWeaponSystem.enabled = true;
 
         spawnManager.NewWave();
+    }
+
+    public void ShowObjective(int number)
+    {
+        if (!hasStarted)
+        {
+            if (number < objectives.Length)
+            {
+                for (int i = 0; i < objectives.Length; i++)
+                {
+                    if (i == number)
+                        objectives[i].SetActive(true);
+                    else
+                        objectives[i].SetActive(false);
+                }
+            }
+            else
+            {
+                foreach (GameObject objective in objectives)
+                {
+                    objective.SetActive(false);
+                }
+            }
+        }
+
+        if(number == 2 && !hasStarted)
+        {
+            waveUI.SetActive(true);
+            spawnManager.NewWave();
+            firstEnemy.GetComponent<Outline>().enabled = false;
+            playerInventory.firstTimeOpen = false;
+            playerInventory.invCheck = 5;
+
+            if (firstEnemy.GetComponent<EnemyHealth>().currentHealth > 0)
+            {
+                firstEnemy.GetComponent<EnemyHealth>().firstEnemy = false;
+                firstEnemy.GetComponent<EnemyHealth>().Die();
+            }
+
+            StartCoroutine("EndTutorial");
+            hasStarted = true;
+        }
+    }
+
+    IEnumerator EndTutorial()
+    {
+        yield return new WaitForSeconds(5);
+
+        ShowObjective(3);
     }
 
     public IEnumerator PlayEndCutscene()
