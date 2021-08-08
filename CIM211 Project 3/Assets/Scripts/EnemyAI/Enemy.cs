@@ -62,7 +62,7 @@ namespace StatePattern
 
         private void Start()
         {
-            Debug.Log("Startt");
+            //Debug.Log("Startt");
             player = GameObject.Find("Player");
 
             currentState = new IdleState(this);
@@ -82,7 +82,7 @@ namespace StatePattern
 
         public void SetStats()
         {
-            Debug.Log("Set Enemy Stats");
+            //Debug.Log("Set Enemy Stats");
 
             if(inventory.eyes != null)
                 enemyVisionDistance *= 1 + inventory.eyes.vision / 2;

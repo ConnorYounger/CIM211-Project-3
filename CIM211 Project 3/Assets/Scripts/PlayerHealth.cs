@@ -41,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
     public PostProcessProfile defultProfile;
     public PostProcessProfile lowHealthProfile;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] hitSounds;
+    private int currentHitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -174,9 +179,31 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine("AutoHealCoolDown");
         }
 
-        if(currentHealth <= 0)
+        PlayHitSound();
+
+        if (currentHealth <= 0)
         {
             Lose();
+        }
+    }
+
+    void PlayHitSound()
+    {
+        if (audioSource)
+        {
+            if (currentHitSound < hitSounds.Length)
+            {
+                currentHitSound++;
+            }
+            else
+            {
+                currentHitSound = 1;
+            }
+
+            Debug.Log("Current Hit Sound: " + currentHitSound);
+
+            audioSource.clip = hitSounds[currentHitSound - 1];
+            audioSource.Play();
         }
     }
 

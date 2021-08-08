@@ -153,7 +153,7 @@ namespace StatePattern
 
             if (targetPoint != null)
             {
-                Debug.Log(Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance / 2);
+                //Debug.Log(Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance / 2);
 
                 if (Vector3.Distance(enemy.transform.position, targetPoint) < pointDistance / 2)
                 {

@@ -35,7 +35,9 @@ public class Weapon : MonoBehaviour
     private bool canFire = true;
     public bool canUse = true;
 
+    [Header("Audio")]
     private AudioSource audioSource;
+    public AudioClip[] fireSounds;
 
     void Start()
     {
@@ -80,7 +82,17 @@ public class Weapon : MonoBehaviour
         }
 
         if (audioSource)
-            audioSource.Play();
+        {
+            if(fireSounds.Length == 0)
+                audioSource.Play();
+            else
+            {
+                int rand = Random.Range(0, fireSounds.Length);
+
+                audioSource.clip = fireSounds[rand];
+                audioSource.Play();
+            }
+        }
     }
 
     void FireRateCoolDown()
