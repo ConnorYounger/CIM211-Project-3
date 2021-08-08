@@ -49,6 +49,7 @@ public class Weapon : MonoBehaviour
         if (gameObject.GetComponent<AudioSource>())
         {
             audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.volume = PlayerPrefs.GetFloat("audioVolume");
         }
     }
 

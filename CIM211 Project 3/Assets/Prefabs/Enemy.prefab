@@ -1735,11 +1735,19 @@ MonoBehaviour:
   destroyFx: {fileID: 507766920778391231, guid: 9a59d4303c814e64ab434cea790f72a2, type: 3}
   audioSource: {fileID: 4317801935451046821}
   alertSound:
-  - {fileID: 8300000, guid: 36095bfcfd9b7a645936cead4ea1a81e, type: 3}
-  - {fileID: 8300000, guid: d15de2c5a74db274ca2e5f091b8a9b63, type: 3}
-  - {fileID: 8300000, guid: 82528cfcfe6aea043b59b53cdee5b45e, type: 3}
-  - {fileID: 8300000, guid: e845e8514fbd9524aaba6ed14b6e2805, type: 3}
-  - {fileID: 8300000, guid: 22af0a4b6ed78c94397389307e290319, type: 3}
+  - {fileID: 8300000, guid: a3b2c5126dbe5894f89890e6348a0d3d, type: 3}
+  - {fileID: 8300000, guid: 62cfa799c7bcd6b40be23e160bf3f2a3, type: 3}
+  - {fileID: 8300000, guid: 957f8182d84d8384c88c1dd4ccb45db1, type: 3}
+  - {fileID: 8300000, guid: 615d58c687da2784f8eabc98e5ea6b8b, type: 3}
+  - {fileID: 8300000, guid: 8252b65ea477c70448fd666e278f7a3a, type: 3}
+  - {fileID: 8300000, guid: ee5b059cf21831a42aa74a8adaaa1fc2, type: 3}
+  - {fileID: 8300000, guid: 7344d294c3b468341993a34ea0d52c6d, type: 3}
+  - {fileID: 8300000, guid: e6b05723219c47344b74f85495b7a027, type: 3}
+  - {fileID: 8300000, guid: 76ca28a0321d35846a5064244d5855e3, type: 3}
+  - {fileID: 8300000, guid: 4f169cce74ee6b94889c31eb490c36b7, type: 3}
+  - {fileID: 8300000, guid: 1b89f82b9ad26b7469d68390c08996a7, type: 3}
+  - {fileID: 8300000, guid: 2ba69450ad6818b40b82a6886a0da1e9, type: 3}
+  - {fileID: 8300000, guid: 0c643318a298f5d45b30054c110f8a0d, type: 3}
 --- !u!195 &1151532565
 NavMeshAgent:
   m_ObjectHideFlags: 0
