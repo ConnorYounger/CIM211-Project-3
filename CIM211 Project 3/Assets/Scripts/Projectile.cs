@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     private bool deltDamage;
     private bool hasSpawnedDecal;
 
-    public AudioClip destroySound;
+    public AudioClip[] destroySounds;
 
     // Update is called once per frame
     void Update()
@@ -201,8 +201,12 @@ public class Projectile : MonoBehaviour
         //    Destroy(decal, 100);
         //}
 
-        if(destroySound)
-            PlaySound(destroySound);
+        if(destroySounds.Length > 0)
+        {
+            int rand = Random.Range(0, destroySounds.Length);
+
+            PlaySound(destroySounds[rand]);
+        }
 
         if (isGrenade)
         {
