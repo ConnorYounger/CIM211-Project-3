@@ -59,6 +59,8 @@ namespace StatePattern
         [Header("Audio")]
         public AudioSource audioSource;
         public AudioClip[] alertSound;
+        public AudioClip[] footStepSounds;
+        public float footStepIntival;
 
         private void Start()
         {
@@ -73,6 +75,35 @@ namespace StatePattern
                 gameObject.GetComponent<AudioSource>();
 
             audioSource.volume = PlayerPrefs.GetFloat("audioVolume");
+
+            StartCoroutine("FootStepSounds");
+        }
+
+        IEnumerator FootStepSounds()
+        {
+            yield return new WaitForSeconds(footStepIntival);
+
+            if (animator.GetBool("isWalking") && !enemyHealth.isDead)
+            {
+                int rand = Random.Range(0, footStepSounds.Length);
+                PlaySound(footStepSounds[rand]);
+            }
+
+            StartCoroutine("FootStepSounds");
+        }
+
+        public void PlaySound(AudioClip sound)
+        {
+            GameObject soundOb = Instantiate(new GameObject(), transform.position, transform.rotation);
+            AudioSource aSource = soundOb.AddComponent<AudioSource>();
+
+            aSource.volume = PlayerPrefs.GetFloat("audioVolume") / 2;
+            aSource.spatialBlend = 1;
+            aSource.maxDistance = 100;
+            aSource.clip = sound;
+            aSource.Play();
+
+            Destroy(soundOb, sound.length);
         }
 
         private void Update()

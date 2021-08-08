@@ -1748,6 +1748,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b89f82b9ad26b7469d68390c08996a7, type: 3}
   - {fileID: 8300000, guid: 2ba69450ad6818b40b82a6886a0da1e9, type: 3}
   - {fileID: 8300000, guid: 0c643318a298f5d45b30054c110f8a0d, type: 3}
+  footStepSounds:
+  - {fileID: 8300000, guid: 62f7e12f6cb071241b64cf2d0370ff3f, type: 3}
+  - {fileID: 8300000, guid: dc2088bb79038b64ab0ae108e055ebc4, type: 3}
+  - {fileID: 8300000, guid: 44ac0992607e3fd4dbbf52de41cccaec, type: 3}
+  - {fileID: 8300000, guid: 349d6ebdc67ec8c4c92d3d96334072db, type: 3}
+  - {fileID: 8300000, guid: 281711670fbd4d446a8a83aa262c39be, type: 3}
+  footStepIntival: 0.5
 --- !u!195 &1151532565
 NavMeshAgent:
   m_ObjectHideFlags: 0
