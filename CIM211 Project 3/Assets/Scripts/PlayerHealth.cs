@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text stamText;
 
     public Animator uIHitEffect;
+    public Animator hitCamAni;
     public PostProcessVolume ppVolume;
     public PostProcessProfile defultProfile;
     public PostProcessProfile lowHealthProfile;
@@ -177,6 +178,9 @@ public class PlayerHealth : MonoBehaviour
 
             StopCoroutine("AutoHealCoolDown");
             StartCoroutine("AutoHealCoolDown");
+
+            if (hitCamAni)
+                hitCamAni.Play("PlayerHitCam");
         }
 
         PlayHitSound();
