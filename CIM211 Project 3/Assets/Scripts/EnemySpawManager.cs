@@ -296,6 +296,7 @@ public class EnemySpawManager : MonoBehaviour
         AudioSource aSource = soundOb.AddComponent<AudioSource>();
         sounds.Add(soundOb);
 
+        soundOb.name = "EnemySoundEGO";
         aSource.volume = PlayerPrefs.GetFloat("audioVolume") / 2;
         aSource.spatialBlend = 1;
         aSource.maxDistance = 100;

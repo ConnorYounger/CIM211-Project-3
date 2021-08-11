@@ -11,7 +11,7 @@ namespace StatePattern
 
         private List<Vector3> debugLines;
 
-        private GameObject centerPoint;
+        private Vector3 centerPoint;
         private List<Transform> closeByPoints;
         private Vector3 targetPoint;
 
@@ -111,7 +111,7 @@ namespace StatePattern
         public Vector3 RandomNavmeshLocation(float radius)
         {
             Vector3 randomDirection = Random.insideUnitSphere * radius;
-            randomDirection += centerPoint.transform.position;
+            randomDirection += centerPoint;
 
             NavMeshHit hit;
             Vector3 finalPosition = Vector3.zero;
@@ -149,10 +149,10 @@ namespace StatePattern
 
             if (centerPoint == null)
             {
-                centerPoint = new GameObject();
+                centerPoint = new Vector3();
             }
 
-            centerPoint.transform.position = enemy.player.transform.position;
+            centerPoint = enemy.player.transform.position;
 
             SetCloseByPoints();
         }
@@ -162,7 +162,7 @@ namespace StatePattern
             Debug.Log("Exiting Travel State");
 
             isTraveling = false;
-            GameObject.Destroy(centerPoint);
+            //GameObject.Destroy(centerPoint);
             targetPoint = new Vector3();
         }
     }

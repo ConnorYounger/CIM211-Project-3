@@ -13,7 +13,7 @@ namespace StatePattern
 
         public float pointSearchRange = 10;
 
-        private GameObject centerPoint;
+        private Vector3 centerPoint;
         private List<Transform> closeByPoints;
         private Vector3 targetPoint;
 
@@ -44,7 +44,7 @@ namespace StatePattern
         {
             if (enemy.hasFoundPlayer)
             {
-                //AlertNearByEnemies();
+                AlertNearByEnemies();
 
                 if (enemy.rangedDamage > 0)
                 {
@@ -115,7 +115,7 @@ namespace StatePattern
         public Vector3 RandomNavmeshLocation(float radius)
         {
             Vector3 randomDirection = Random.insideUnitSphere * radius;
-            randomDirection += centerPoint.transform.position;
+            randomDirection += centerPoint;
 
             NavMeshHit hit;
             Vector3 finalPosition = Vector3.zero;
@@ -203,7 +203,7 @@ namespace StatePattern
         {
             closeByPoints.Clear();
 
-            Collider[] colliders = Physics.OverlapSphere(centerPoint.transform.position, pointSearchRange);
+            Collider[] colliders = Physics.OverlapSphere(centerPoint, pointSearchRange);
 
             foreach(Collider collider in colliders)
             {
@@ -255,10 +255,10 @@ namespace StatePattern
 
             if(centerPoint == null)
             {
-                centerPoint = new GameObject();
+                //centerPoint = new Vector3();
             }
 
-            centerPoint.transform.position = enemy.gameObject.transform.position;
+            centerPoint = enemy.gameObject.transform.position;
 
             //SetCloseByPoints();
             searchingForIdlePoint = true;
@@ -273,7 +273,7 @@ namespace StatePattern
             targetPoint = new Vector3();
             searchingForIdlePoint = false;
             enemy.navAgent.enabled = true;
-            GameObject.Destroy(centerPoint);
+            //GameObject.Destroy(centerPoint);
         }
     }
 }

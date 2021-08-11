@@ -1684,7 +1684,7 @@ MonoBehaviour:
   grenadeSound: {fileID: 8300000, guid: 50a679a08423dd842b9701b1860f57ef, type: 3}
   currentWave: 0
   enemyVisionDistance: 10
-  stateWaitTime: 3
+  stateWaitTime: 1
   idleCoolDownTime: 10
   travelTime: 7
   travelChance: 5
