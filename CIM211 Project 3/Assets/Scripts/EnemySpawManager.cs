@@ -37,6 +37,12 @@ public class EnemySpawManager : MonoBehaviour
 
     private int gameMode;
 
+    [Header("FootStepSounds")]
+    public float playDistance = 50;
+    public int maxCount;
+    private List<GameObject> sounds;
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +50,11 @@ public class EnemySpawManager : MonoBehaviour
         previousWaveEnemies = new List<GameObject>();
         spawnedEnemies = new List<GameObject>();
         currentWave = levelStats.currentWave;
+
+        sounds = new List<GameObject>();
+
+        if (GameObject.Find("Player"))
+            player = GameObject.Find("Player");
 
         //if(spawnAtStart)
         //    StartCoroutine("SpawnNewWave");
@@ -267,5 +278,40 @@ public class EnemySpawManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlayFootStepSound(AudioClip clip, Transform enemyTransform)
+    {
+        //Debug.Log("PLAYSOUND! Clip: " + clip + ", transform: " + enemyTransform);
+
+        if (sounds.Count < maxCount && Vector3.Distance(enemyTransform.position, player.transform.position) < playDistance)
+        {
+            CreateSound(clip, enemyTransform);
+        }
+    }
+
+    void CreateSound(AudioClip sound, Transform t)
+    {
+        GameObject soundOb = Instantiate(new GameObject(), t.position, t.rotation);
+        AudioSource aSource = soundOb.AddComponent<AudioSource>();
+        sounds.Add(soundOb);
+
+        aSource.volume = PlayerPrefs.GetFloat("audioVolume") / 2;
+        aSource.spatialBlend = 1;
+        aSource.maxDistance = 100;
+        aSource.clip = sound;
+        aSource.Play();
+
+        StartCoroutine("DestroySound", sound);
+    }
+
+    IEnumerator DestroySound()
+    {
+        yield return new WaitForSeconds(3);
+
+        GameObject sound = sounds[0];
+        sounds.RemoveAt(0);
+
+        Destroy(sound);
     }
 }

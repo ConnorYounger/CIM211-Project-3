@@ -94,16 +94,18 @@ namespace StatePattern
 
         public void PlaySound(AudioClip sound)
         {
-            GameObject soundOb = Instantiate(new GameObject(), transform.position, transform.rotation);
-            AudioSource aSource = soundOb.AddComponent<AudioSource>();
+            //GameObject soundOb = Instantiate(new GameObject(), transform.position, transform.rotation);
+            //AudioSource aSource = soundOb.AddComponent<AudioSource>();
 
-            aSource.volume = PlayerPrefs.GetFloat("audioVolume") / 2;
-            aSource.spatialBlend = 1;
-            aSource.maxDistance = 100;
-            aSource.clip = sound;
-            aSource.Play();
+            //aSource.volume = PlayerPrefs.GetFloat("audioVolume") / 2;
+            //aSource.spatialBlend = 1;
+            //aSource.maxDistance = 100;
+            //aSource.clip = sound;
+            //aSource.Play();
 
-            Destroy(soundOb, sound.length);
+            //Destroy(soundOb, sound.length);
+
+            enemyHealth.spawManager.PlayFootStepSound(sound, transform);
         }
 
         private void Update()
