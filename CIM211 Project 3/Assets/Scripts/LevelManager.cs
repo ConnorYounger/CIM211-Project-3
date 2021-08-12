@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerWeaponSystem playerWeapons;
 
+    public GameModeManager gameModeManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,13 +78,6 @@ public class LevelManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        Time.timeScale = 1;
-
-        fPSController.enabled = true;
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         pauseCanvas.SetActive(false);
 
         if (optionsCanvas)
@@ -96,8 +91,18 @@ public class LevelManager : MonoBehaviour
         if (playerHealth)
             playerHealth.DeathMenu();
 
+        Time.timeScale = 1;
+
+        if (gameModeManager && gameModeManager.inTutorial)
+            return;
+
         if (playerWeapons)
             playerWeapons.WeaponsCanFire();
+
+        fPSController.enabled = true;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OpenOptionsMenu()

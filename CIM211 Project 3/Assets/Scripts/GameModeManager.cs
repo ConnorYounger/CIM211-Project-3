@@ -27,7 +27,8 @@ public class GameModeManager : MonoBehaviour
 
     public Inventory playerInventory;
 
-    private bool hasStarted;
+    public bool hasStarted;
+    public bool inTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -48,9 +49,11 @@ public class GameModeManager : MonoBehaviour
         {
             case 0:
                 StartCoroutine("PlayStartCutscene");
+                inTutorial = true;
                 break;
             case 1:
                 waveUI.SetActive(true);
+                hasStarted = true;
                 break;
         }
     }
@@ -58,7 +61,7 @@ public class GameModeManager : MonoBehaviour
     IEnumerator PlayStartCutscene()
     {
         fPSController.enabled = false;
-        playerWeaponSystem.enabled = false;
+        playerWeaponSystem.WeaponsCantFire();
 
         playerUI.SetActive(false);
         startCutsceneEGO.SetActive(true);
@@ -81,7 +84,7 @@ public class GameModeManager : MonoBehaviour
     public IEnumerator PlayMiddleCutscene()
     {
         fPSController.enabled = false;
-        playerWeaponSystem.enabled = false;
+        playerWeaponSystem.WeaponsCantFire();
 
         playerUI.SetActive(false);
         middleCutsceneEGO.SetActive(true);
@@ -92,7 +95,7 @@ public class GameModeManager : MonoBehaviour
         playerUI.SetActive(true);
 
         fPSController.enabled = true;
-        playerWeaponSystem.enabled = true;
+        playerWeaponSystem.WeaponsCanFire();
 
         spawnManager.NewWave();
     }
@@ -149,7 +152,7 @@ public class GameModeManager : MonoBehaviour
     public IEnumerator PlayEndCutscene()
     {
         fPSController.enabled = false;
-        playerWeaponSystem.enabled = false;
+        playerWeaponSystem.WeaponsCantFire();
 
         playerUI.SetActive(false);
         endCutsceneEGO.SetActive(true);

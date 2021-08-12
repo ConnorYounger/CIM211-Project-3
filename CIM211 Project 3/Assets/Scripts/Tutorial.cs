@@ -31,6 +31,7 @@ public class Tutorial : MonoBehaviour
         //Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        playerWeaponSystem.WeaponsCantFire();
     }
 
     public void NextSlide()
@@ -80,10 +81,11 @@ public class Tutorial : MonoBehaviour
         //waveEGO.SetActive(true);
 
         fPSController.enabled = true;
-        playerWeaponSystem.enabled = true;
+        playerWeaponSystem.WeaponsCanFire();
 
         enemySpawner.SpawnEnemy();
         gameModeManager.ShowObjective(0);
+        gameModeManager.inTutorial = false;
 
         //spawnManager.NewWave();
     }
