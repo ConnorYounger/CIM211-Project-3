@@ -5,8 +5,11 @@ using UnityEngine;
 public class RiotDrone : MonoBehaviour
 {
     private GameObject player;
+    private Vector3 target;
     public GameObject head;
     public Transform shootPoint;
+    public Transform spawnPoint;
+    public DroneSpawner droneSpawner;
 
     [Header("Projectile")]
     public GameObject projectile;
@@ -29,34 +32,68 @@ public class RiotDrone : MonoBehaviour
     public AudioSource shootAudioSource;
 
     private bool canSeePlayer;
+    public bool engaguePlayer;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        target = player.transform.position;
         currentProjectile = projectile;
+
+        StartCoroutine("RandomMovement");
     }
 
     void Update()
     {
-        AimAtPlayer();
-        ShootPlayer();
-        CheckForSwitchProjectile();
-        Movement();
+        if (engaguePlayer)
+        {
+            AimAtPlayer();
+            ShootPlayer();
+            CheckForSwitchProjectile();
+            Movement();
+        }
+        else
+            FlyBackToSpawn();
+    }
+
+    IEnumerator RandomMovement()
+    {
+        yield return new WaitForSeconds(1);
+
+        float rand = 1;
+        float randx = Random.Range(-rand, rand);
+        float randz = Random.Range(-rand, rand);
+
+        target = player.transform.position;
+        target = new Vector3(target.x + randx, target.y, target.z + randz);
+
+        StartCoroutine("RandomMovement");
+    }
+
+    void FlyBackToSpawn()
+    {
+        //movementSpeed += Time.deltaTime / 8;
+        transform.position = Vector3.Lerp(transform.position, spawnPoint.position, movementSpeed * Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, spawnPoint.transform.position) < 5)
+        {
+            droneSpawner.RemoveDrone(gameObject);
+        }
     }
 
     void Movement()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > speedDistanceFromPlayer)
-            movementSpeed = baseMovementSpeed * 3;
+        if (Vector3.Distance(transform.position, target) > speedDistanceFromPlayer)
+            movementSpeed = baseMovementSpeed / 2;
         else
             movementSpeed = baseMovementSpeed;
 
         //Debug.Log("Distance to player = " + Vector3.Distance(transform.position, player.transform.position));
 
-        if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
+        if (Vector3.Distance(transform.position, target) > distanceFromPlayer)
             TravelToPlayer();
 
-        Vector3 playerPos = new Vector3(transform.position.x, player.transform.position.y + heightDistance, transform.position.z);
+        Vector3 playerPos = new Vector3(transform.position.x, target.y + heightDistance, transform.position.z);
 
         transform.position = Vector3.Lerp(transform.position, playerPos, movementSpeed * Time.deltaTime);
 
@@ -66,7 +103,7 @@ public class RiotDrone : MonoBehaviour
 
     void TravelToPlayer()
     {
-        Vector3 playerPos = player.transform.position;
+        Vector3 playerPos = target;
         playerPos = new Vector3(playerPos.x, transform.position.y, playerPos.z);
 
         transform.position = Vector3.Lerp(transform.position, playerPos, movementSpeed * Time.deltaTime);
