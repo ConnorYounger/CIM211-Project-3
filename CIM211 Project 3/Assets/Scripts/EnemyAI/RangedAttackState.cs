@@ -365,6 +365,16 @@ namespace StatePattern
             SetWeaponStats();
 
             enemy.PlayAlertSound();
+
+            if (enemy.inventory.leftArm && enemy.inventory.leftArm.leftArmWeaponCode > 2)
+            {
+                enemy.animator.SetBool("leftArm", true);
+            }
+
+            if (enemy.inventory.rightArm && enemy.inventory.rightArm.rightArmWeaponCode > 2)
+            {
+                enemy.animator.SetBool("rightArm", true);
+            }
         }
 
         public override void OnStateExit()

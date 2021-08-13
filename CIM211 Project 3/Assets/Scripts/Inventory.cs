@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
     private bool inventoryIsOpen;
     [HideInInspector()] public int invCheck;
 
+    private Canvas itemInfoCanvas;
+
     [Header("Tutorial")]
     public bool firstTimeOpen;
     public GameObject tutorialEGO;
@@ -38,6 +40,7 @@ public class Inventory : MonoBehaviour
         canvas = gameObject.GetComponent<Canvas>();
         player = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         playerEnhancements = GameObject.Find("Player").GetComponent<PlayerEnhancements>();
+        itemInfoCanvas = GameObject.Find("ItemInfoCanvas").GetComponent<Canvas>();
     }
 
     private void Update()
@@ -61,6 +64,7 @@ public class Inventory : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         playerWeapons.WeaponsCanFire();
+        itemInfoCanvas.enabled = false;
 
         currentDeadBody = null;
         RemoveItems();
