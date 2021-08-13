@@ -180,6 +180,28 @@ namespace StatePattern
 
             var rotation = (Quaternion.LookRotation(lookPos));
             enemy.aimPoint.transform.rotation = Quaternion.Slerp(enemy.aimPoint.transform.rotation, rotation, Time.deltaTime * damping);
+
+            if (enemy.spine)
+            {
+                //float d = 2;
+                //Vector3 l = enemy.player.transform.position - enemy.spine.transform.position;
+
+                //Quaternion p = enemy.spine.transform.localRotation;
+                //Quaternion q = new Quaternion(p.x, 0, p.z, p.w);
+
+                //var r = (Quaternion.LookRotation(l));
+                //enemy.spine.transform.localRotation = Quaternion.Slerp(q, r, Time.deltaTime * d);
+
+                //Transform look = enemy.spine.transform;
+                //look.LookAt(enemy.player.transform.position);
+                //Vector3 v = new Vector3(look.rotation.x, 0, look.rotation.z);
+
+                //Quaternion p = enemy.spine.transform.rotation;
+                //Quaternion q = new Quaternion(p.x + 90, p.y, p.z, p.w);
+
+                //var r2 = (Quaternion.LookRotation(v));
+                //enemy.spine.transform.localRotation = Quaternion.Slerp(q, r2, Time.deltaTime * 2); ;
+            }
         }
 
         public float CalculateRotationValue(float value)

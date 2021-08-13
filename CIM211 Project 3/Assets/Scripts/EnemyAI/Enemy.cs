@@ -26,6 +26,7 @@ namespace StatePattern
         public Transform leftArmShootPoint;
         public Transform rightArmShootPoint;
         public Transform aimPoint;
+        public GameObject spine;
 
         public GameObject projectile;
         public GameObject grenade;
@@ -105,7 +106,8 @@ namespace StatePattern
 
             //Destroy(soundOb, sound.length);
 
-            enemyHealth.spawManager.PlayFootStepSound(sound, transform);
+            if(enemyHealth.spawManager)
+                enemyHealth.spawManager.PlayFootStepSound(sound, transform);
         }
 
         private void Update()
@@ -137,18 +139,25 @@ namespace StatePattern
                 numbOfAlerts *= Mathf.Round(inventory.brain.brain);
             }
 
-            if (inventory.leftLeg != null)
+            if (inventory.leftLeg != null && navAgent != null)
                 navAgent.speed *= 1 + (inventory.leftLeg.movementSpeedMultiplier / 4);
-            if (inventory.rightLeg != null)
+            if (inventory.rightLeg != null && navAgent != null)
                 navAgent.speed *= 1 + (inventory.rightLeg.movementSpeedMultiplier / 4);
 
-            if ((inventory.leftArm && inventory.leftArm.leftArmWeaponCode > 2) || (inventory.rightArm && inventory.rightArm.rightArmWeaponCode > 2))
+            if (inventory.leftArm && inventory.leftArm.leftArmWeaponCode > 2)
             {
+                animator.SetBool("leftArm", true);
+                rangedDamage = 10;
+            }
+
+            if(inventory.rightArm && inventory.rightArm.rightArmWeaponCode > 2)
+            {
+                animator.SetBool("rightArm", true);
                 rangedDamage = 10;
             }
 
             // Set melee damage
-            if(currentWave >= 4)
+            if (currentWave >= 4)
             {
                 meleeDamage = 10;
             }
