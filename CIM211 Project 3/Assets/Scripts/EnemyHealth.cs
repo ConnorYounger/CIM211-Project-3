@@ -40,11 +40,15 @@ public class EnemyHealth : MonoBehaviour
     public bool firstEnemy;
     public GameModeManager gameModeManager;
 
+    [Header("Drone")]
+    public RiotDrone drone;
+
     void Start()
     {
         currentHealth = maxHealth;
 
-        inv = enemy.GetComponent<Enemy>().inventory;
+        if(enemy)
+            inv = enemy.GetComponent<Enemy>().inventory;
 
         audioSource = gameObject.GetComponent<AudioSource>();
 
@@ -94,7 +98,8 @@ public class EnemyHealth : MonoBehaviour
                 StopCoroutine("AutoHealCoolDown");
                 StartCoroutine("AutoHealCoolDown");
 
-                enemy.hasFoundPlayer = true;
+                if(enemy)
+                    enemy.hasFoundPlayer = true;
 
                 if(dmgeffects.Length > 0)
                 {
@@ -191,6 +196,39 @@ public class EnemyHealth : MonoBehaviour
         if (firstEnemy && gameModeManager)
         {
             gameModeManager.ShowObjective(1);
+        }
+
+        if (drone)
+        {
+            drone.droneSpawner.RemoveDrone(drone.gameObject, 10);
+            drone.alive = false;
+
+            if (drone.gameObject.GetComponent<Rigidbody>())
+            {
+                drone.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                drone.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+                float rand = 45;
+                float randx = Random.Range(-rand, rand);
+                float randy = Random.Range(-rand, rand);
+                float randz = Random.Range(-rand, rand);
+
+                drone.gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(randx, randy, randz));
+            }
+
+            if (drone.destroyFx)
+            {
+                GameObject fx = Instantiate(drone.destroyFx, transform.position, Quaternion.identity);
+                Destroy(fx, 5);
+            }
+
+            if (drone.audioSource)
+                drone.audioSource.enabled = false;
+
+            if (drone.eyeGlow)
+                drone.eyeGlow.Stop();
+
+            drone.enabled = false;
         }
     }
 

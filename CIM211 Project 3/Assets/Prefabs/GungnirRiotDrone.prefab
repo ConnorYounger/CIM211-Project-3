@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4294529236006198154}
   - component: {fileID: 4784065280339914004}
   - component: {fileID: 3990866489483522507}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4055287580141277002}
   - component: {fileID: 2279861380172430208}
   - component: {fileID: 334196184004467287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GungnirRiotDroneModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,9 +275,10 @@ GameObject:
   m_Component:
   - component: {fileID: 604085402649698485}
   - component: {fileID: 604085402649698484}
+  - component: {fileID: 4139178937181946753}
   - component: {fileID: 2449345254644618184}
   - component: {fileID: 3108937770434980811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GungnirRiotDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,6 +327,38 @@ MonoBehaviour:
   audioSource: {fileID: 334196184004467287}
   shootAudioSource: {fileID: 604085403086081217}
   engaguePlayer: 0
+  alive: 1
+  destroyFx: {fileID: 100006, guid: 18dceb60e6f03ef4f9df42f453a21e42, type: 3}
+  eyeGlow: {fileID: 604085404062588332}
+--- !u!114 &4139178937181946753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604085402649698491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4222f4129372b47a5ff3dbce3f02e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
+  healthRegenMultiplier: 0
+  healthText: {fileID: 0}
+  healthSlider: {fileID: 0}
+  spawManager: {fileID: 0}
+  enemy: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  dmgeffects: []
+  isDead: 0
+  damageSound: {fileID: 8300000, guid: 611ca44c55bfc5a439271c81247ca130, type: 3}
+  deathSound: {fileID: 8300000, guid: 8c09a9879e06c4f42831a0ed77a05d45, type: 3}
+  animator: {fileID: 9098794809327470128}
+  limbs: []
+  firstEnemy: 0
+  gameModeManager: {fileID: 0}
+  drone: {fileID: 604085402649698484}
 --- !u!65 &2449345254644618184
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -365,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604085403086081216}
   - component: {fileID: 604085403086081217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +526,7 @@ GameObject:
   - component: {fileID: 604085403518987115}
   - component: {fileID: 604085403518987109}
   - component: {fileID: 604085403518987108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 604085403868732867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +638,7 @@ GameObject:
   - component: {fileID: 604085404062588338}
   - component: {fileID: 604085404062588332}
   - component: {fileID: 604085404062588339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5418,7 +5451,7 @@ GameObject:
   - component: {fileID: 1083935281422743221}
   - component: {fileID: 4147172264904894513}
   - component: {fileID: 8918162123609912993}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5499,7 +5532,7 @@ GameObject:
   - component: {fileID: 454849120527800301}
   - component: {fileID: 6110519406395637053}
   - component: {fileID: 8740476499005499481}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5580,7 +5613,7 @@ GameObject:
   - component: {fileID: 2899760283722966882}
   - component: {fileID: 6405381785987685705}
   - component: {fileID: 6180177667135437729}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5661,7 +5694,7 @@ GameObject:
   - component: {fileID: 7524379183082276639}
   - component: {fileID: 6460933602816179437}
   - component: {fileID: 7361607966143275135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5742,7 +5775,7 @@ GameObject:
   - component: {fileID: 8884261667576453069}
   - component: {fileID: 1065177733387941419}
   - component: {fileID: 4032149906035064558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5824,7 +5857,7 @@ GameObject:
   - component: {fileID: 2809672861854866033}
   - component: {fileID: 1414652690776400148}
   - component: {fileID: 1564415030820996244}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5908,7 +5941,8 @@ GameObject:
   - component: {fileID: 3559433810886063893}
   - component: {fileID: 7657182838623522750}
   - component: {fileID: 9098794809327470128}
-  m_Layer: 0
+  - component: {fileID: 5020134678424191364}
+  m_Layer: 10
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5999,3 +6033,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5020134678424191364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098794809327470135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.007023242}
+  m_Center: {x: -0.0000019390136, y: -0.0000018775463, z: 0.000112329355}

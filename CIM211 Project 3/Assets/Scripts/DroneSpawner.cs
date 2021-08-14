@@ -11,11 +11,15 @@ public class DroneSpawner : MonoBehaviour
 
     public float spawnHeight;
 
-    public int maxDroneCount = 15;
-    public float droneSpawnIntival = 2;
+    public int baseMaxDroneCount = 15;
+    public int maxDroneCount;
+    public float baseDroneSpawnIntival = 2;
+    public float droneSpawnIntival;
     private float droneSpawnIntivalTimer;
 
     public List<GameObject> spawnedDrones;
+
+    private float timer;
 
     void Start()
     {
@@ -40,6 +44,8 @@ public class DroneSpawner : MonoBehaviour
                 rt.engaguePlayer = false;
             }
         }
+
+        timer = 0;
     }
 
     void SpawnDrones()
@@ -60,6 +66,33 @@ public class DroneSpawner : MonoBehaviour
                 rt.engaguePlayer = true;
             }
         }
+
+        timer += Time.deltaTime;
+        IncreaseFrequency();
+    }
+
+    void IncreaseFrequency()
+    {
+        if(timer > 90)
+        {
+            maxDroneCount = baseMaxDroneCount * 3;
+            droneSpawnIntival = baseDroneSpawnIntival - ((baseDroneSpawnIntival * 2) / 3);
+        }
+        else if(timer > 60)
+        {
+            maxDroneCount = baseMaxDroneCount * 2;
+            droneSpawnIntival = baseDroneSpawnIntival - (baseDroneSpawnIntival / 2);
+        }
+        else if(timer > 30)
+        {
+            maxDroneCount = baseMaxDroneCount + 5;
+            droneSpawnIntival = baseDroneSpawnIntival - (baseDroneSpawnIntival / 4);
+        }
+        else
+        {
+            maxDroneCount = baseMaxDroneCount;
+            droneSpawnIntival = baseDroneSpawnIntival;
+        }
     }
 
     void SpawnDrone()
@@ -75,10 +108,10 @@ public class DroneSpawner : MonoBehaviour
         spawnedDrones.Add(drone);
     }
 
-    public void RemoveDrone(GameObject drone)
+    public void RemoveDrone(GameObject drone, float time)
     {
         spawnedDrones.Remove(drone);
-        Destroy(drone);
+        Destroy(drone, time);
     }
 
     bool PlayerHeight()

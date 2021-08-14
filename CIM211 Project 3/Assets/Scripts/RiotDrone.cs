@@ -31,8 +31,13 @@ public class RiotDrone : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource shootAudioSource;
 
+    [Header("Other")]
     private bool canSeePlayer;
     public bool engaguePlayer;
+    public bool alive = true;
+
+    public GameObject destroyFx;
+    public ParticleSystem eyeGlow;
 
     void Start()
     {
@@ -45,15 +50,18 @@ public class RiotDrone : MonoBehaviour
 
     void Update()
     {
-        if (engaguePlayer)
+        if (alive)
         {
-            AimAtPlayer();
-            ShootPlayer();
-            CheckForSwitchProjectile();
-            Movement();
+            if (engaguePlayer)
+            {
+                AimAtPlayer();
+                ShootPlayer();
+                CheckForSwitchProjectile();
+                Movement();
+            }
+            else
+                FlyBackToSpawn();
         }
-        else
-            FlyBackToSpawn();
     }
 
     IEnumerator RandomMovement()
@@ -72,12 +80,12 @@ public class RiotDrone : MonoBehaviour
 
     void FlyBackToSpawn()
     {
-        //movementSpeed += Time.deltaTime / 8;
+        movementSpeed = baseMovementSpeed / 4;
         transform.position = Vector3.Lerp(transform.position, spawnPoint.position, movementSpeed * Time.deltaTime);
 
         if(Vector3.Distance(transform.position, spawnPoint.transform.position) < 5)
         {
-            droneSpawner.RemoveDrone(gameObject);
+            droneSpawner.RemoveDrone(gameObject, 0);
         }
     }
 
@@ -191,5 +199,15 @@ public class RiotDrone : MonoBehaviour
             canSeePlayer = true;
         else
             canSeePlayer = false;
+    }
+
+    private void OnDestroy()
+    {
+        if(!alive && destroyFx)
+        {
+            GameObject fx = Instantiate(destroyFx, transform.position, Quaternion.identity);
+
+            Destroy(fx, 5);
+        }
     }
 }

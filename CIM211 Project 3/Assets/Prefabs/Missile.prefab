@@ -119,15 +119,20 @@ MonoBehaviour:
   destroyFx: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 3}
   bulletDecal: {fileID: 0}
   destroySounds:
-  - {fileID: 8300000, guid: 419a47512e198db47bcd21f526f8ae18, type: 3}
-  - {fileID: 8300000, guid: 29300199f614d5c408621a335f4f5ded, type: 3}
-  - {fileID: 8300000, guid: 7d18f881f6934434bbca5cb7a35e02c1, type: 3}
-  - {fileID: 8300000, guid: 04456e844f9618d4f9d0ceb6389c9d9f, type: 3}
-  - {fileID: 8300000, guid: 629b326b04ff98b4da37542bc1f7650e, type: 3}
-  - {fileID: 8300000, guid: a9ae35270a925364f9d1517356e63533, type: 3}
-  - {fileID: 8300000, guid: 4af1f21f2ba67bb48ae56de74699d593, type: 3}
-  - {fileID: 8300000, guid: 856cdc7adf5100b46927ec9cb6f5e9cc, type: 3}
-  - {fileID: 8300000, guid: e73a853f739af5c448f51de6f4417b65, type: 3}
+  - {fileID: 8300000, guid: 2cf6e44ed33794e48a2cc32aa4e02194, type: 3}
+  - {fileID: 8300000, guid: b4834575af62d8144b756b3c07c96fde, type: 3}
+  - {fileID: 8300000, guid: 6ee74829da944ee45b7cefb052a40de6, type: 3}
+  - {fileID: 8300000, guid: 4144f1cb88a1b1a468db992eaf83bb85, type: 3}
+  - {fileID: 8300000, guid: a0aab546cf417794c84f50c56a003a42, type: 3}
+  - {fileID: 8300000, guid: 917da60f25cdfb84eb4f8d2cd2467d97, type: 3}
+  - {fileID: 8300000, guid: a46026192cf0ef84b9b6e605c842716e, type: 3}
+  - {fileID: 8300000, guid: 32b67a2d0d347b741abbc13a805656c6, type: 3}
+  - {fileID: 8300000, guid: d0560f16a462a094d8a9c28ada595a2a, type: 3}
+  - {fileID: 8300000, guid: aa0db9b66328cb64bad41d0ca35d27f8, type: 3}
+  - {fileID: 8300000, guid: 9782793ff86374748ba36861ae8d8288, type: 3}
+  - {fileID: 8300000, guid: a48297484f337db40b2a497516531725, type: 3}
+  - {fileID: 8300000, guid: 819e83860340a5c42a9ee7942e7f7124, type: 3}
+  - {fileID: 8300000, guid: a6ae5da510808a34e99a70380151d013, type: 3}
 --- !u!54 &8825614290324096542
 Rigidbody:
   m_ObjectHideFlags: 0
