@@ -8,6 +8,7 @@ public class DroneSpawner : MonoBehaviour
     public GameObject player;
 
     public Transform[] spawnPoints;
+    public bool randomSpawnPoint;
 
     public float spawnHeight;
 
@@ -99,10 +100,25 @@ public class DroneSpawner : MonoBehaviour
     {
         droneSpawnIntivalTimer = droneSpawnIntival;
 
-        int rand = Random.Range(0, spawnPoints.Length);
-        GameObject drone = Instantiate(dronePrefab, spawnPoints[rand].position, spawnPoints[rand].rotation);
+        Vector3 point = new Vector3();
 
-        drone.GetComponent<RiotDrone>().spawnPoint = spawnPoints[rand];
+        if (!randomSpawnPoint)
+        {
+            int rand = Random.Range(0, spawnPoints.Length);
+            point = spawnPoints[rand].position;
+        }
+        else
+        {
+            int value = 100;
+            int randx = Random.Range(100, 400);
+            int randz = Random.Range(-50, 300);
+
+            point = new Vector3(randx, 100, randz);
+        }
+
+        GameObject drone = Instantiate(dronePrefab, point, spawnPoints[0].rotation);
+
+        drone.GetComponent<RiotDrone>().spawnPoint = point;
         drone.GetComponent<RiotDrone>().droneSpawner = this;
 
         spawnedDrones.Add(drone);

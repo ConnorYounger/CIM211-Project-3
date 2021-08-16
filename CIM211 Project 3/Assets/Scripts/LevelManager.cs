@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour
     {
         if(isPauseMenu)
             fPSController = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -130,9 +132,9 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(scene);
-
         Time.timeScale = 1;
+
+        SceneManager.LoadScene(scene);
     }
 
     public void StartStoryMode()

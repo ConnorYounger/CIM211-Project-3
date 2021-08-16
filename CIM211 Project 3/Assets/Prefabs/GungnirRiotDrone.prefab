@@ -189,10 +189,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 604085403868732866}
   shootPoint: {fileID: 604085403086081216}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   droneSpawner: {fileID: 0}
   projectile: {fileID: 5953138763934446095, guid: 09e6d2aaabdc1f046947c615c4ca50ed, type: 3}
   missile: {fileID: 5953138763934446095, guid: 0687ffc07c665d3468a1d6535246f73f, type: 3}
@@ -413,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604085403086081223}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0293, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0332, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4294529236006198154}

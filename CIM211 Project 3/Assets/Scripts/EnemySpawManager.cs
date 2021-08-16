@@ -293,7 +293,8 @@ public class EnemySpawManager : MonoBehaviour
     void CreateSound(AudioClip sound, Transform t)
     {
         GameObject soundOb = Instantiate(new GameObject(), t.position, t.rotation);
-        AudioSource aSource = soundOb.AddComponent<AudioSource>();
+        soundOb.AddComponent<AudioSource>();
+        AudioSource aSource = soundOb.GetComponent<AudioSource>();
         sounds.Add(soundOb);
 
         soundOb.name = "EnemySoundEGO";

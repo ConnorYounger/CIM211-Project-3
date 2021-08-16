@@ -9,9 +9,6 @@ namespace StatePattern
     {
         public GameObject player;
 
-        public GameObject wanderPointCollection;
-        public GameObject idlePointCollection;
-
         [Header("Animation")]
         public Animator animator;
         public GameObject meleeHitCollider;

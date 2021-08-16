@@ -226,7 +226,7 @@ public class EnemyHealth : MonoBehaviour
                 drone.audioSource.enabled = false;
 
             if (drone.eyeGlow)
-                drone.eyeGlow.Stop();
+                drone.eyeGlow.gameObject.SetActive(false);
 
             drone.enabled = false;
         }

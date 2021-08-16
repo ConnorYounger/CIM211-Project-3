@@ -8,7 +8,7 @@ public class RiotDrone : MonoBehaviour
     private Vector3 target;
     public GameObject head;
     public Transform shootPoint;
-    public Transform spawnPoint;
+    public Vector3 spawnPoint;
     public DroneSpawner droneSpawner;
 
     [Header("Projectile")]
@@ -46,6 +46,9 @@ public class RiotDrone : MonoBehaviour
         currentProjectile = projectile;
 
         StartCoroutine("RandomMovement");
+
+        if (audioSource)
+            audioSource.Play();
     }
 
     void Update()
@@ -81,9 +84,9 @@ public class RiotDrone : MonoBehaviour
     void FlyBackToSpawn()
     {
         movementSpeed = baseMovementSpeed / 4;
-        transform.position = Vector3.Lerp(transform.position, spawnPoint.position, movementSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, spawnPoint, movementSpeed * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, spawnPoint.transform.position) < 5)
+        if(Vector3.Distance(transform.position, spawnPoint) < 5)
         {
             droneSpawner.RemoveDrone(gameObject, 0);
         }
@@ -164,7 +167,7 @@ public class RiotDrone : MonoBehaviour
 
         Destroy(p, 10);
 
-        if (audioSource)
+        if (shootAudioSource)
         {
             shootAudioSource.volume = PlayerPrefs.GetFloat("audioVolume");
             shootAudioSource.Play();
