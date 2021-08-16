@@ -11,9 +11,20 @@ public class AudioManager : MonoBehaviour
     public AudioSource[] audioSources;
     public float[] audioSourcesVolume;
 
+    [Header("Ambiant Sounds")]
+    public AudioClip[] ambiantSounds;
+    public AudioSource ambiantSoundsAudioSource;
+    public float ambiantPlayTime;
+    private float playTime;
+
     private void Start()
     {
         SetStartVolumes();
+
+        playTime = ambiantPlayTime;
+
+        if(ambiantSoundsAudioSource)
+            StartCoroutine("PlayAmbiantSound");
     }
 
     void SetStartVolumes()
@@ -51,6 +62,20 @@ public class AudioManager : MonoBehaviour
             //    a.volume = PlayerPrefs.GetFloat("audioVolume");
             //}
         }
+    }
+
+    IEnumerator PlayAmbiantSound()
+    {
+        yield return new WaitForSeconds(playTime);
+
+        int rand = Random.Range(0, ambiantSounds.Length);
+        ambiantSoundsAudioSource.clip = ambiantSounds[rand];
+        ambiantSoundsAudioSource.Play();
+
+        float r = Random.Range(-(ambiantPlayTime / 2), (ambiantPlayTime / 2));
+        playTime = ambiantPlayTime + r + ambiantSoundsAudioSource.clip.length;
+
+        StartCoroutine("PlayAmbiantSound");
     }
 
     public void UpdateMusicVolume()
