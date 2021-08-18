@@ -255,14 +255,14 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerRedOutRedIn:
-    overrideState: 0
-    value: 100
+    overrideState: 1
+    value: 200
   mixerRedOutGreenIn:
     overrideState: 0
-    value: 0
+    value: 45
   mixerRedOutBlueIn:
     overrideState: 0
     value: 0
@@ -285,8 +285,8 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 1
-    value: {x: 1, y: 0.92928946, z: 0.9182062, w: 0}
+    overrideState: 0
+    value: {x: 1, y: 0.98960847, z: 0.9375339, w: 0}
   gamma:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}

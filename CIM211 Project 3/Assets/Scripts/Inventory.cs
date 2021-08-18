@@ -133,7 +133,7 @@ public class Inventory : MonoBehaviour
         newItem.transform.SetParent(gameObject.transform);
         newItem.transform.SetSiblingIndex(gameObject.transform.childCount - 2);
         newItem.GetComponent<RectTransform>().anchoredPosition = s.GetComponent<RectTransform>().localPosition;
-        newItem.GetComponent<Image>().sprite = i.sprite;
+        newItem.transform.GetChild(0).GetComponent<Image>().sprite = i.sprite;
         s.currentItem = newItem;
         spawnedItems.Add(newItem);
         newItem.GetComponent<Image>().color = i.color;

@@ -25,6 +25,9 @@ public class Options : MonoBehaviour
     public void ModifyAudioVolume()
     {
         audioVolume = audioSlider.value;
+
+        if (audioManager)
+            audioManager.UpdateAudioVolume();
     }
 
     public void ModifyMusicVolume()

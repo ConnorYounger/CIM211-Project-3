@@ -254,6 +254,10 @@ public class EnemySpawManager : MonoBehaviour
 
                 switch (v)
                 {
+                    case 2:
+                        if (enemy.GetComponent<Enemy>())
+                            enemy.GetComponent<Enemy>().inventory.showOutline = true;
+                        break;
                     case 3:
                         o.enabled = true;
                         o.OutlineMode = Outline.Mode.OutlineVisible;

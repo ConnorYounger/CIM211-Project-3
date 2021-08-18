@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Head3
   m_EditorClassIdentifier: 
   itemType: Head
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 6de263e347f5b314fa66b6e31a3f570e, type: 3}
   color: {r: 1, g: 0.8469602, b: 0, a: 1}
   maxHealthMultiplier: 30
   maxStaminaMultiplier: 0

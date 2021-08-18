@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heart3
   m_EditorClassIdentifier: 
   itemType: Heart
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 01839a0ad550f65458dc96a37cdb6947, type: 3}
   color: {r: 1, g: 0.8469602, b: 0, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0

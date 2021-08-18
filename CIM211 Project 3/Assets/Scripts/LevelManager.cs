@@ -28,6 +28,15 @@ public class LevelManager : MonoBehaviour
     {
         if(isPauseMenu)
             fPSController = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        else
+        {
+            PlayerPrefs.SetFloat("audioVolume", 1);
+            PlayerPrefs.SetFloat("musicVolume", 0.5f);
+
+            options.UpdateVolumeSliders();
+            options.ModifyAudioVolume();
+            options.ModifyMusicVolume();
+        }
 
         Time.timeScale = 1;
     }

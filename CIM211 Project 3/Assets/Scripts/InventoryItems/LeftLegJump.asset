@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LeftLegJump
   m_EditorClassIdentifier: 
   itemType: LeftLeg
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 1b0c1ceed1148d2409966cfe0b795940, type: 3}
   color: {r: 0, g: 0.6293888, b: 1, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0

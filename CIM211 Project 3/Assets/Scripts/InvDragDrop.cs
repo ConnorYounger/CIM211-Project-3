@@ -98,17 +98,21 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         itemInfo.itemLevelText.text = "Lv: " + invItem.itemLevel;
         itemInfo.itemBuffText.text = invItem.itemBuff;
         itemInfo.itemFlavourText.text = invItem.itemFlavourText;
+        itemInfo.spirte.sprite = invItem.sprite;
 
         switch (invItem.itemLevel)
         {
             case 2:
                 itemInfo.itemLevelText.color = level2Colour;
+                itemInfo.spirteFrame.color = level2Colour;
                 break;
             case 3:
                 itemInfo.itemLevelText.color = level3Colour;
+                itemInfo.spirteFrame.color = level3Colour;
                 break;
             default:
                 itemInfo.itemLevelText.color = level1Colour;
+                itemInfo.spirteFrame.color = level1Colour;
                 break;
         }
 

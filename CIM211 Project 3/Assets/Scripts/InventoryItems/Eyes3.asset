@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Eyes3
   m_EditorClassIdentifier: 
   itemType: Eyes
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 168fd66e152675748aae39e3917f19f1, type: 3}
   color: {r: 1, g: 0.8469602, b: 0, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0

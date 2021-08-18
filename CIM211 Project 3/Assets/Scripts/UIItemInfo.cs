@@ -12,6 +12,9 @@ public class UIItemInfo : MonoBehaviour
     public TMP_Text itemBuffText;
     public TMP_Text itemFlavourText;
 
+    public Image spirte;
+    public Image spirteFrame;
+
     private Canvas canvas;
     private RectTransform rectTransform;
 
@@ -29,7 +32,7 @@ public class UIItemInfo : MonoBehaviour
             float posY = 0;
 
             float xBuffer = 480;
-            float yBuffer = 400;
+            float yBuffer = 300;
 
             Debug.Log(Input.mousePosition);
             Debug.Log(Screen.height - yBuffer + ", " + Input.mousePosition.y);

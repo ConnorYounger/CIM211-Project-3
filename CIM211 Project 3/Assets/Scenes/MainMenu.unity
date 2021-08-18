@@ -50580,6 +50580,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162734513}
   m_Mesh: {fileID: 4300000, guid: a03e9d59aaf4ec6448ef664e111ee66a, type: 3}
+--- !u!82 &1164449607 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5237876153621062080, guid: 46db5b1dc2de2384da9a75fc063273be, type: 3}
+  m_PrefabInstance: {fileID: 1323844696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166819102
 GameObject:
   m_ObjectHideFlags: 0
@@ -64882,6 +64887,9 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 5c6526a9d6d8aa0409ddee23f23f474a, type: 3}
   audioSources:
   - {fileID: 846944301}
+  - {fileID: 1164449607}
+  - {fileID: 1614249319}
+  - {fileID: 1775727169}
   audioSourcesVolume: []
   ambiantSounds: []
   ambiantSoundsAudioSource: {fileID: 0}
@@ -71999,6 +72007,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613456570}
   m_Mesh: {fileID: 4300000, guid: 67c8dea8c7e672e4d9f28d58e3aeffeb, type: 3}
+--- !u!82 &1614249319 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5237876153621062080, guid: 46db5b1dc2de2384da9a75fc063273be, type: 3}
+  m_PrefabInstance: {fileID: 630270431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1617485773
 GameObject:
   m_ObjectHideFlags: 0
@@ -77789,6 +77802,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775186916}
   m_Mesh: {fileID: 4300004, guid: 300d9f3f63482524ab999af07dc008ba, type: 3}
+--- !u!82 &1775727169 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5237876153621062080, guid: 46db5b1dc2de2384da9a75fc063273be, type: 3}
+  m_PrefabInstance: {fileID: 1244047376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1784438714
 GameObject:
   m_ObjectHideFlags: 0
