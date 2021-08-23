@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LGrenadeLauncher
   m_EditorClassIdentifier: 
   itemType: LeftArm
-  sprite: {fileID: 21300000, guid: ece23a1810b3cad4b8865043c68ce01d, type: 3}
+  sprite: {fileID: 21300000, guid: db34c807a8845004a9139e2d61e9cb46, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 5
   rightArmWeaponCode: 0
   itemName: Grenade Launcher
-  itemLevel: 1
+  itemLevel: 4
   itemBuff: 
   itemFlavourText: These are pretty cool :)

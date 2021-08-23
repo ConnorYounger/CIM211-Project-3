@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 3
   rightArmWeaponCode: 0
   itemName: Arm Cannon
-  itemLevel: 1
+  itemLevel: 2
   itemBuff: 
   itemFlavourText: Pew Pew arms

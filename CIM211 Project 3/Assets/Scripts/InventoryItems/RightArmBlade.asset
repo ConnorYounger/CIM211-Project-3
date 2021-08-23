@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RightArmBlade
   m_EditorClassIdentifier: 
   itemType: RightArm
-  sprite: {fileID: 21300000, guid: 3f9a3f2fb0f898b489764570484bed9f, type: 3}
+  sprite: {fileID: 21300000, guid: 7c98a2f3c6209be4487c65cb28f4de63, type: 3}
   color: {r: 0.09803921, g: 0.25168055, b: 1, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0

@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        if (gameModeManager && gameModeManager.inTutorial)
+        if (gameModeManager && (gameModeManager.inTutorial || gameModeManager.inCutscene))
             return;
 
         if (playerWeapons)

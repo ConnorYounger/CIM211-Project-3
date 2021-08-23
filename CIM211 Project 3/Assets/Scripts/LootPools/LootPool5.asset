@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b6f5c8654adfa14c8881317c50a63e7, type: 2}
   brain:
   - {fileID: 11400000, guid: efc379dabb41b4247bed37c4d279e7ac, type: 2}
+  - {fileID: 11400000, guid: 4a070ec52630100468fae0ebd3fa6e9f, type: 2}
   lungs:
   - {fileID: 11400000, guid: 79b72d44129da17468a0a733a731bf97, type: 2}
   heart:

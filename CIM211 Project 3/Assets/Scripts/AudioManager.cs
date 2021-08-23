@@ -83,4 +83,16 @@ public class AudioManager : MonoBehaviour
         if(audioSource)
             audioSource.volume = PlayerPrefs.GetFloat("musicVolume");
     }
+
+    public void PlayMusicTrack(AudioClip track)
+    {
+        audioSource.clip = track;
+        audioSource.Play();
+    }
+
+    public void PlayMusicTrack()
+    {
+        audioSource.clip = music;
+        audioSource.Play();
+    }
 }

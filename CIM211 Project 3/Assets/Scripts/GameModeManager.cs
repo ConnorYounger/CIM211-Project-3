@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameModeManager : MonoBehaviour
 {
@@ -10,12 +11,22 @@ public class GameModeManager : MonoBehaviour
     public EnemySpawManager spawnManager;
     public Tutorial tutorial;
 
+    [Header("Cutscene Refrences")]
     public GameObject playerUI;
     public GameObject waveUI;
     public GameObject startCutsceneEGO;
     public GameObject middleCutsceneEGO;
     public GameObject endCutsceneEGO;
     public GameObject levelStartZone;
+
+    public TMP_Text startCutsceneButton;
+    public TMP_Text middleCutsceneButton;
+    public TMP_Text endCutsceneButton;
+
+    [Header("Cutscene Audio")]
+    public AudioManager audioManager;
+    public AudioClip cutsceneTrack1;
+    public AudioClip cutsceneTrack2;
 
     public GameObject[] objectives;
 
@@ -29,6 +40,7 @@ public class GameModeManager : MonoBehaviour
 
     public bool hasStarted;
     public bool inTutorial;
+    public bool inCutscene;
 
     // Start is called before the first frame update
     void Start()
@@ -65,20 +77,36 @@ public class GameModeManager : MonoBehaviour
 
         playerUI.SetActive(false);
         startCutsceneEGO.SetActive(true);
+        startCutsceneButton.text = "Skip";
+
+        inCutscene = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (audioManager)
+            audioManager.PlayMusicTrack(cutsceneTrack1);
 
         // Wait for cutscene legnth
         yield return new WaitForSeconds(5);
 
-        startCutsceneEGO.SetActive(false);
-        //playerUI.SetActive(true);
+        startCutsceneButton.text = "Continue";
+    }
 
-        //fPSController.enabled = true;
-        //playerWeaponSystem.enabled = true;
+    public void FinishStartCutscene()
+    {
+        startCutsceneEGO.SetActive(false);
 
         tutorial.ShowTutorial();
         playerInventory.firstTimeOpen = true;
         levelStartZone.SetActive(true);
-        //spawnManager.NewWave();
+
+        inCutscene = false;
+
+        if (audioManager)
+            audioManager.PlayMusicTrack();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public IEnumerator PlayMiddleCutscene()
@@ -88,9 +116,22 @@ public class GameModeManager : MonoBehaviour
 
         playerUI.SetActive(false);
         middleCutsceneEGO.SetActive(true);
+        middleCutsceneButton.text = "Skip";
+
+        inCutscene = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (audioManager)
+            audioManager.PlayMusicTrack(cutsceneTrack1);
 
         yield return new WaitForSeconds(5);
 
+        middleCutsceneButton.text = "Continue";
+    }
+
+    public void FinishMiddleSutScene()
+    {
         middleCutsceneEGO.SetActive(false);
         playerUI.SetActive(true);
 
@@ -98,6 +139,46 @@ public class GameModeManager : MonoBehaviour
         playerWeaponSystem.WeaponsCanFire();
 
         spawnManager.NewWave();
+
+        inCutscene = false;
+
+        if (audioManager)
+            audioManager.PlayMusicTrack();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+    public IEnumerator PlayEndCutscene()
+    {
+        fPSController.enabled = false;
+        playerWeaponSystem.WeaponsCantFire();
+
+        playerUI.SetActive(false);
+        endCutsceneEGO.SetActive(true);
+        endCutsceneButton.text = "Skip";
+
+        inCutscene = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (audioManager)
+            audioManager.PlayMusicTrack(cutsceneTrack2);
+
+        yield return new WaitForSeconds(5);
+
+        endCutsceneButton.text = "Continue";
+    }
+
+    public void FinishEndCutscene()
+    {
+        endCutsceneEGO.SetActive(false);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        SceneManager.LoadScene("Credits");
     }
 
     public void ShowObjective(int number)
@@ -147,23 +228,5 @@ public class GameModeManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         ShowObjective(3);
-    }
-
-    public IEnumerator PlayEndCutscene()
-    {
-        fPSController.enabled = false;
-        playerWeaponSystem.WeaponsCantFire();
-
-        playerUI.SetActive(false);
-        endCutsceneEGO.SetActive(true);
-
-        yield return new WaitForSeconds(5);
-
-        endCutsceneEGO.SetActive(false);
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        
-        SceneManager.LoadScene("Credits");
     }
 }

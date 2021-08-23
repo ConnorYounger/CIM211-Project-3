@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 0
   rightArmWeaponCode: 0
   itemName: Robot Brain
-  itemLevel: 1
+  itemLevel: 3
   itemBuff: Improves Accruacy x2
   itemFlavourText: A robot brain.

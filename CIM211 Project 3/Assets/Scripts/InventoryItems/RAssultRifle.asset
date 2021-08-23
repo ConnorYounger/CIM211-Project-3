@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 0
   rightArmWeaponCode: 4
   itemName: Assult Cannon
-  itemLevel: 1
+  itemLevel: 3
   itemBuff: 
   itemFlavourText: A robot assult gun for an arm.

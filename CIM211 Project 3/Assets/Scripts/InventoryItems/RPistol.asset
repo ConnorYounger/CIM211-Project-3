@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RPistol
   m_EditorClassIdentifier: 
   itemType: RightArm
-  sprite: {fileID: 21300000, guid: 5078baa696325c2498e7d56fcaba760f, type: 3}
+  sprite: {fileID: 21300000, guid: 394f389183e2bbe4bb84b24ff2205c52, type: 3}
   color: {r: 0.9339623, g: 0, b: 0.72333544, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
@@ -25,6 +25,6 @@ MonoBehaviour:
   leftArmWeaponCode: 0
   rightArmWeaponCode: 3
   itemName: Arm Cannon
-  itemLevel: 1
+  itemLevel: 2
   itemBuff: 
   itemFlavourText: Pew Pew arms

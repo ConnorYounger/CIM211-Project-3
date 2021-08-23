@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: RightLeg
   sprite: {fileID: 21300000, guid: 2c520a917d06f7943a3c2e10b7ba0b07, type: 3}
-  color: {r: 0.04285642, g: 0.008944447, b: 0.6320754, a: 1}
+  color: {r: 0, g: 0.5529412, b: 0.9254902, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
   autoHealMultilpier: 0

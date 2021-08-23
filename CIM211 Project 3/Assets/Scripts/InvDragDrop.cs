@@ -23,6 +23,7 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public Color level1Colour;
     public Color level2Colour;
     public Color level3Colour;
+    public Color level4Colour;
 
     private void Start()
     {
@@ -109,6 +110,10 @@ public class InvDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             case 3:
                 itemInfo.itemLevelText.color = level3Colour;
                 itemInfo.spirteFrame.color = level3Colour;
+                break;
+            case 4:
+                itemInfo.itemLevelText.color = level4Colour;
+                itemInfo.spirteFrame.color = level4Colour;
                 break;
             default:
                 itemInfo.itemLevelText.color = level1Colour;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RightArmRoboFist
   m_EditorClassIdentifier: 
   itemType: RightArm
-  sprite: {fileID: 21300000, guid: f6924d115c3e66948b3098ddb66a56e1, type: 3}
+  sprite: {fileID: 21300000, guid: f5a37fb8ee2b9f64fa066ec245d76949, type: 3}
   color: {r: 0.6367924, g: 0.9859229, b: 1, a: 1}
   maxHealthMultiplier: 0
   maxStaminaMultiplier: 0
